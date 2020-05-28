@@ -1,0 +1,13 @@
+dist: xenial
+sudo: required
+
+before_install:
+  - sudo ./install-dependencies.sh
+
+install:
+  - rm -rf public
+
+script:
+  - hugo
+  - pushd public && htmlproofer . --check-html --disable-external --allow-hash-href --empty-alt-ignore --file-ignore ./js/vendor/reveal.js/plugin/notes/notes.html --url-swap '\/makova_lab/:/' && popd
+
