@@ -1,0 +1,171 @@
+/****************************************************************************** 
+ ******************************************************************************/
+
+/* 
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.small-portrait {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.member-title h2 {
+  font-size: 1.5;
+  font-weight: 300;
+  text-align: center;
+  color: #000000;
+  margin: 20px 0 10px 0;
+}
+
+.member-title h3 {
+  font-size: 1rem;
+  font-weight: 300;
+  text-align: center;
+  color: rgba(0,0,0, 0.54);
+  margin: 5px 0 20px 0;
+}
+*/
+
+/**********************************************************************
+ *  Members
+ **********************************************************************/
+
+.members-container {
+  display: block;
+  position: relative;
+  /*margin-top: 5rem;*/
+  overflow: hidden;
+}
+
+.member-item {
+  margin-bottom: 1.5rem;
+}
+
+.member-item:last-of-type {
+  margin-bottom: 0;
+}
+
+.member-isotope-item {
+  z-index: 2;
+}
+
+.member-isotope-item:hover{
+  z-index: 3;
+}
+
+.member-info {
+    padding: 0 0 20px 0;
+}
+
+#member {
+  text-align: center;
+  padding: 30px 10px;
+  position: relative;
+}
+
+#member .portrait {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#member-info .portrait {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.member-info .portrait-title h2 {
+  font-size: 1em;
+  font-weight: 300;
+  text-align: center;
+  color: #000000;
+  margin: 20px 0 10px 0;
+}
+
+.member-info .portrait-title h2 {
+  font-size: 1em;
+  font-weight: 300;
+  text-align: center;
+  color: #000000;
+  margin: 20px 0 10px 0;
+}
+
+.dark .member-info .portrait-title h2 {
+  color: #fff;
+}
+
+.member-info .portrait-title h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000000;
+  margin: 10px 0 10px 0;
+}
+
+.dark .member-info .portrait-title h3 {
+  color: #fff;
+}
+
+#member .portrait-title h2 {
+  font-size: 1em;
+  font-weight: 300;
+  text-align: center;
+  color: #000000;
+  margin: 20px 0 10px 0;
+}
+
+.dark #member .portrait-title h2 {
+  color: #fff;
+}
+
+#member .portrait-title h3 {
+  font-size: 1rem;
+  font-weight: 300;
+  text-align: center;
+  color: rgba(0,0,0, 0.54);
+  margin: 0px 0 10px 0;
+}
+
+.dark #member .portrait-title h3 {
+  color: rgba(255, 255, 255, 0.54);
+}
+
+#member .network-icon {
+  margin-top: 30px;
+}
+
+#container-members {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/**********************************************************************
+ *  Press Releases
+ **********************************************************************/
+
+figure.image-right {
+  float: right;
+  width: 47%;
+  padding: 0 0 0 1em;
+  margin: 0.5em 0 .25em 1em;
+  clear: right;
+}
+
+figure.image-right figcaption {
+  font-family: inherit;
+  font-size: smaller;
+}
+

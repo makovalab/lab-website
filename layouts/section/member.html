@@ -1,0 +1,42 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+<div class="universal-wrapper pt-3">
+  <h1 itemprop="name">Members</h1>
+</div>
+
+<div class="universal-wrapper">
+  <div id="container-members">
+    <div class="row">
+      <div class="col-12">
+      {{ range (sort .Data.Pages ".Params.sort_position") }}
+        {{ if not .Params.is_former_member }}
+          {{ partial "member_li" . }}
+        {{ end }}
+      {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+
+{{ $alumni_len := len (where .Data.Pages ".Params.is_former_member" true ) }}
+{{ if gt $alumni_len 0 }}
+<div class="universal-wrapper pt-3">
+  <h1 itemprop="name">Alumni</h1>
+</div>
+
+<div class="universal-wrapper">
+  <div id="container-members">
+    <div class="row">
+      <div class="col-12">
+      {{ range (sort (where .Data.Pages ".Params.is_former_member" true) ".Params.sort_position") }}
+        {{ partial "member_li" . }}
+      {{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
+
+{{ partial "footer_container.html" . }}
+{{ partial "footer.html" . }}

@@ -1,0 +1,178 @@
+{{ partial "header.html" . }}
+{{ partial "navbar.html" . }}
+
+<div class="row" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <div class="col-xs-12 col-md-4">
+    <div id="profile">
+
+      <img class="portrait" src="{{ (printf "img/collaborator/%s" .Params.portrait) | relURL }}" itemprop="image" alt="Avatar">
+
+      <div class="portrait-title">
+        <h2 itemprop="name">{{ .Params.name }}</h2>
+        <h3 itemprop="jobTitle">{{ .Params.role }}</h3>
+        {{ range .Params.organizations }}
+        <h4>{{ .role }}, {{.name}}</h4>
+        {{ end }}
+      </div>
+
+      <ul class="network-icon" aria-hidden="true">
+        {{ range .Params.social }}
+        {{ $pack := or .icon_pack "fas" }}
+        {{ $pack_prefix := $pack }}
+        {{ if in (slice "fab" "fas" "far" "fal") $pack }}
+          {{ $pack_prefix = "fa" }}
+        {{ end }}
+        {{ $link := .link }}
+        {{ $scheme := (urls.Parse $link).Scheme }}
+        {{ $target := "" }}
+        {{ if not $scheme }}
+          {{ $link = .link | relLangURL }}
+        {{ else if in (slice "http" "https") $scheme }}
+          {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+        {{ end }}
+        <li>
+          <a itemprop="sameAs" href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }}>
+            <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }} big-icon"></i>
+          </a>
+        </li>
+        {{ end }}
+      </ul>
+
+      <div class="group">
+        {{ with .Params.cv_link }}
+        {{ $link := . }}
+        {{ $scheme := (urls.Parse $link).Scheme }}
+        {{ $target := "" }}
+        {{ if not $scheme }}
+          {{ $link = .link | relLangURL }}
+        {{ else }}
+          {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+        {{ end }}
+        <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }}>
+          <i class="fa fa-external-link-alt" aria-hidden="true"></i>
+          Curriculum vitae
+        </a>
+        {{ end }}
+      </div>
+
+      <div class="group">
+        {{ with .Params.personal_website }}
+        {{ $link := . }}
+        {{ $scheme := (urls.Parse $link).Scheme }}
+        {{ $target := "" }}
+        {{ if not $scheme }}
+          {{ $link = .link | relLangURL }}
+        {{ else }}
+          {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+        {{ end }}
+        <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }}>
+          <i class="fa fa-external-link-alt" aria-hidden="true"></i>
+          Personal website
+        </a>
+        {{ end }}
+      </div>
+
+    </div>
+  </div>
+
+  <div class="visible-sm visible-xs"></div>
+  <div class="col-xs-12 col-md-8" itemprop="description">
+    <div class="row">
+
+      <div class="col-sm-5">
+        <h3>Interests</h3>
+        <ul>
+          {{ range .Params.interests }}
+          <li>{{ . }}</li>
+          {{ end }}
+        </ul>
+      </div>
+
+      <div class="col-sm-7">
+        <h3>Education</h3>
+        <ul class="ul-edu fa-ul">
+          {{ range .Params.education }}
+          <li>
+            <i class="fa-li fa fa-graduation-cap"></i>
+            <div class="description">
+              <p class="course">{{ .course }}, {{ .year }}</p>
+              <p class="institution">{{ .institution }}</p>
+            </div>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>Biography</h3>
+        <div class="article-style">{{ .Content }}</div>
+      </div>
+    </div>
+
+    {{ $page := . }}
+
+    {{ $items := where (where .Site.RegularPages "Type" "publication") ".Params.authors" "intersect" .Params.author_names }}
+    {{ $pubs_len := len $items }}
+    {{ if ge $pubs_len 1 }}
+      <div class = "row">
+        <div class="col-sm-12">
+          <h3>{{ (i18n "publications") }}</h3>
+          {{ range $items.ByDate.Reverse }}
+            {{ if eq $page.Site.Params.members.publication_format 1 }}
+              {{ partial "publication_li_detailed" . }}
+            {{ else if eq $page.Site.Params.members.publication_format 2 }}
+              {{ partial "publication_li_apa" . }}
+            {{ else if eq $page.Site.Params.members.publication_format 3 }}
+              {{ partial "publication_li_mla" . }}
+            {{ else if eq $page.Site.Params.members.publication_format 4 }}
+              {{ partial "publication_li_stream" . }}
+            {{ else }}
+              {{ partial "publication_li_simple" . }}
+            {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+
+
+{{/*
+        
+    {{ $.Scratch.Add "found" false }}
+    {{ $member_id:= .Params.id }}
+    {{ $projects:= where .Site.Pages "Section" "project" }}
+    {{ range $projects }}
+      {{ $current_project := . }}
+      {{ range .Params.participants }}
+        {{ if eq .id $member_id }}
+          {{ if not ($.Scratch.Get "found") }}    
+    <div class="row">
+      <div class="col-sm-12">
+        <h3>Projects</h3>
+        <ul>
+            {{ $.Scratch.Set "found" true }}
+          {{ end }}
+          <li>
+            <a href="{{$current_project.Permalink}}">{{ $current_project.Title }}</a>
+          </li>
+        {{ end }}
+      {{ end }}
+    {{ end }}
+    {{ if ($.Scratch.Get "found") }}
+        </ul>
+      </div>
+    </div>
+    {{ end }}
+
+*/}}
+            
+
+        
+  </div>
+</div>
+
+{{ partial "footer_container.html" . }}
+{{ partial "footer.html" . }}
+

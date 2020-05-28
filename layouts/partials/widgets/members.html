@@ -1,0 +1,32 @@
+{{ $ := .root }}
+{{ $page := .page }}
+
+<!-- Members widget -->
+<div class="row">
+  <div class="col-12 col-md-4 section-heading">
+    <h1>{{ with $page.Title }}{{ . | markdownify }}{{ end }}</h1>
+    {{ with $page.Params.subtitle }}<p>{{ . | markdownify }}</p>{{ end }}
+    <p class="view-all">
+      <a href="{{ ($.Site.GetPage "section" "member").RelPermalink }}">
+        All members
+        <i class="fas fa-angle-double-right"></i>
+      </a>
+    </p>
+  </div>
+  <div class="col-12 col-md-8">
+    <div class="row isotope members-container" data-isotope='{ "itemSelector": ".member-item", "layoutMode": "fitRows" }'>
+      {{ range $idx, $item := (sort (where $.Site.RegularPages "Type" ($page.Params.folder | default "member")) ".Params.sort_position" ) }}
+        {{ $link := $item.RelPermalink }}
+        {{ $target := "" }}
+        {{ if $item.Params.external_link }}
+          {{ $link = $item.Params.external_link }}
+          {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+        {{ end }}
+        {{ if not .Params.is_former_member }}
+          {{ partial "member_li_simple" (dict "widget" $page "index" $idx "item" $item "link" $link "target" $target) }}
+        {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</div>
+

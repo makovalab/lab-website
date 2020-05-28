@@ -1,0 +1,17 @@
+{{ $item := .item }}
+{{ $widget := .widget }}
+{{ $link := .link }}
+{{ $target := .target }}
+
+<div class="col-12 col-md-6 col-lg-4 member-item member-isotope-item" itemscope itemtype="http://schema.org/Person">
+  <div id="member">
+    <a href="{{ $link }}" {{ $target | safeHTMLAttr }}>
+      <img src="{{ (printf "img/member/%s" $item.Params.portrait) }}" alt="" class="img-responsive">
+    </a>
+    <div class="portrait-title">
+      <h2 itemprop="name"><a href="{{ $link }}">{{ $item.Params.name }}</a></h2>
+      {{ with $item.Params.role }}<h3 itemprop="jobTitle">{{ . }}</h3>{{end}}
+    </div>
+  </div>
+</div>
+

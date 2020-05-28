@@ -1,0 +1,33 @@
+{{ $item := .item }}
+{{ $widget := .widget }}
+{{ $link := .link }}
+{{ $target := .target }}
+{{ $js_tag_classes := delimit (apply (apply $item.Params.tags "replace" "." " " "-") "printf" "js-id-%s" ".") " " }}
+
+<div class="col-12 col-md-6 col-lg-4 project-item isotope-item {{ $js_tag_classes | safeHTMLAttr }}">
+  <div id="profile">
+    <a href="{{ $link }}" {{ $target | safeHTMLAttr }} class="hover-overlay">
+      <img src="{{ (printf "img/member/%s" $item.Params.portrait) }}" alt="" class="img-responsive">
+    </a>
+    <div class="member-title">
+      <h4 itemprop="name"><a href="{{ $link }}">{{ $item.Params.name }}</a></h4>
+      {{ with $item.Params.role }}<p>{{ . | markdownify }}</p>{{ end }}
+    </div>
+  </div>
+</div>
+
+
+{{/*
+<div class="col-lg-12 project-item isotope-item {{ $js_tag_classes | safeHTMLAttr }}" itemscope itemtype="http://schema.org/CreativeWork">
+  <div id="profile">
+    <a href="{{ $link }}" >
+      <img class="portrait" src="{{ (printf "img/member/%s" $item.Params.portrait) | relURL }}" itemprop="image" alt="Avatar">
+    </a>
+    <div class="member-title">
+      <h2 itemprop="name"><a href="{{ $link }}">{{ $item.Params.name }}</a></h2>
+      {{ with $item.Params.role }}<h3 itemprop="jobTitle">{{ . }}</h3>{{end}}
+    </div>
+  </div>
+</div>
+*/}}
+

@@ -1,0 +1,17 @@
+<div class="row member-info">
+  <div class="col-12 col-md-3">
+    <a href="{{ .Permalink }}">
+      <img class="portrait" src="{{ (printf "img/member/%s" .Params.portrait) | relURL }}" itemprop="image" alt="Avatar">
+    </a>
+    <div class="portrait-title">
+      <h2 itemprop="name"><a href="{{ .Permalink }}">{{ .Params.name }}</a></h2>
+    </div>
+  </div>
+
+  <div class="col-12 col-md-9">
+    <div class="portrait-title">
+      <h3>{{ .Params.role }}</h3>
+      {{ .Params.short_bio | markdownify }}
+    </div>
+  </div>
+</div>
