@@ -11,6 +11,8 @@ script:
   - hugo
   - pushd public && htmlproofer . --check-html --disable-external --allow-hash-href --empty-alt-ignore --file-ignore ./js/vendor/reveal.js/plugin/notes/notes.html --url-swap '\/makova_lab/:/' && popd
 
+before_deploy:
+  - openssl aes-256-cbc -K $encrypted_bb416c079b5b_key -iv $encrypted_bb416c079b5b_iv -in deploy_ssh.enc -out deploy_ssh -d
 
 env:
   global:
