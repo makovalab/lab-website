@@ -13,7 +13,21 @@ script:
 
 before_deploy:
   - openssl aes-256-cbc -K $encrypted_bb416c079b5b_key -iv $encrypted_bb416c079b5b_iv -in deploy_ssh.enc -out deploy_ssh -d
+  - eval "$( ssh-agent -s )"
+  - chmod 600 /tmp/deploy_ssh
+  - ssh-add /tmp/deploy_ssh
+  - echo -e "Host ${DEPLOY_HOST}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: rsync -r --quiet ${TRAVIS_BUILD_DIR}/public/ ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_DIRECTORY}
+  on:
+    branch: master
 
 env:
   global:
     - HUGO_RELEASE=0.50
+    - secure: bd/WA1uzAJ5SCm3cNV0H56guIqMPwdvQsseUM8qstl3Arbdk6isQcpOjN+9RBKuA0gLnslYDd4M3KbVakqHCubhyJFb9Paro6JUPIoTMhkPmUQGyAWLyD/Yu0ulXsT+/gslSGoCW1SlinEtM+FrU9S79Rx0S+W574WCjLXoTWSq88EyBaJV/I9gUxeNW7K5mmyaPvT/oSPGV2m1BTZJ+oILWMAYZM630cuiZfHbR8qaE96l9i3Sktl4qKaP3IQ8GkKQwjOAJSFifchI5sPix8EEnqVGPFbSJ5ev3817+jRgST7uOcLfLh1LT20x1iK9alvgLV1CJJspG4kL5wB9ymQx73sVoYP9u6G51pDZJUnThZF1GvEkEYOIbk6JtvwOD9sxQPNIy5Q14n9VcIfIU7D4fVUFlWFYVmZHGIdPbfXa3xYqUMx6vwGImQ+3uiZWeas/00hf0ZTRLb40pOhQbUiSKYFCQw9uirpp43jS9HtfjHt3eSePxiQ+qtVgSf21AtC0GfaDJemTGJBLGpCB9GiYNxX7soG2I6uM3gGAu1hrzlR4PaBg8vCOnmPOBoWhHHSapOfUTHXPTOw36A++nVRe6h+IbzwPXxbCe+v7ij5pDqoHz8zWxL6psgL371UuJrnjlsnHgMn/c+O53hDoxLUYhhLY9Deq3yafgUqxnK1w=
+  - secure: SnOOsFllCvEMODF20C9ugYmGsIpSin2gxWWVXA1rKp3/Qlrq5bzuo/cgJLp6OSKsgUJt5n9AdsHlCnHhrDn9UMgW4ndJvgn9d14GzKyVfUSoq5tj/cwQQ6CwVnR1YgT7+bC4NiTWFahznyQ+YzjgttvC9VkExXUonIv59wXerqj9M1Wiq8dEX1gdLudQrr1SMnOJ+3dhEziL00fBKMBTWK7HBuiaKf90wQ9/jiMxfSZ9XGj+SJnqyknDh94OLSs1Qw/xb/izA+13aifFza1oVc2LfNUQp3QyXsG9VkWfBgHyuPWNzerlu1yF8iIaHzExHu3VQoPAk6mx6WUhq4zpmPjwzcmowcfN+if/rY4LwnpGCiFdnUAtB15hNFYpia0qKlWNGFT6id0IjL0FZ2X/VQzLtHyRaXj+zK/yxgRsCvmOh7Fou1a1etT/q/5Ow88dMp3y1efhStPKFPNfxgAz74RyABJEqv9oE6cKKHJs2MZcoMiHgAsD7pe3UO1PSWR6kODbsSXR+rM4wZ4RmAcR3Da4FjB1nI6Fi7O/yKSH6+5ZQnPeJE1j61vgkefghNc6OC/vBsM5hkRAreGYGXDAsBRNXttYX0qQIayCEhwBdxljwzb+yQtleXk+O+U7VINpZ4m7XSK5XeUkcqvNFnH66tyDHSCZhpoYqT20mTJN+0U=
+    - secure: jiXxbKfkzlktKQkrukyujb8Prr8ZEq7Z1BI/JVpqKxG43jvSfUVr0pCTD3fHM3f7vSciR6MflDTtLe3UsF1K1BKXjtKo3/VyvvR4mmHaUAD50bXrPCSayK5DpmJPedvBk7L/j/L0D0/r6NYtlB5hnh0I9DgutapysslWqDHs1VDGdyKzJ2y28RG8FVDrEbIMkYUfJB/N301MdvIw42VtnX5krVK28xtVlb84pEUwZny+6cLVe/eWulccB+mCpTiKyVm9jAo8VJ6qR1sdMSwUx0EQWsrYgBHDNhTPq915x/tClqL20m0lGc9s/+rnNCgdktyf4Tjv7TsiWMae+1fPEMyqjxKRMZOMkjyr7+dlOGrN7QgLsFQ57/UMGzYKYzko1kTyDJq7VGXXW7ASMnyyNK/OZqflNDxvrOKKBZQ6MQ/V31DfkLgUmCC8Qk+e/sZ2XU3O6hbjSkS45yllESwufpV/J7R46duv7eNgWN1pF6RprdevI0kTFH1nL26q/QhYajrg9rDJD+LCcTSmE+3uPeyGRfe6wwk4APGAxHcJO9vQQ54eYNff6Pu+BTHAbJun21WMs74C/fLfxm5/xumK4BLJiHfdS+81mQ8iXCeKFs0C0ddWte1KaAICxUbCYGydhAvdXSLje7PlpOhUFJp57ON/JeCeiZySS+u1cMq1JLQ=
