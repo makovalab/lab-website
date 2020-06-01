@@ -10,9 +10,9 @@ apt-get -qq update || {
     exit 1
 }
 
-## download hugo c0.50 binary
-(cd /var/tmp && curl -LO https://github.com/gohugoio/hugo/releases/download/v0.50/hugo_0.50_Linux-64bit.deb)
-(dpkg -i /var/tmp/hugo_0.50_Linux-64bit.deb && rm -f /var/tmp/hugo_0.50_Linux-64bit.deb)
+## download hugo binary
+(cd /var/tmp && curl -LO https://github.com/gohugoio/hugo/releases/download/v${HUGO_RELEASE}/hugo_${HUGO_RELEASE}_Linux-64bit.deb)
+(dpkg -i /var/tmp/hugo_${HUGO_RELEASE}_Linux-64bit.deb && rm -f /var/tmp/hugo_${HUGO_RELEASE}_Linux-64bit.deb)
 
 ## use rvm to setup a ruby environment: https://rvm.io/
 set +o nounset

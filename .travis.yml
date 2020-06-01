@@ -11,3 +11,7 @@ script:
   - hugo
   - pushd public && htmlproofer . --check-html --disable-external --allow-hash-href --empty-alt-ignore --file-ignore ./js/vendor/reveal.js/plugin/notes/notes.html --url-swap '\/makova_lab/:/' && popd
 
+
+env:
+  global:
+    - HUGO_RELEASE=0.50
