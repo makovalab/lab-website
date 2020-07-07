@@ -9,7 +9,7 @@ interests = ["", ""]
 cv_link = ""
 personal_website = "http://sites.psu.edu/biomonika/"
 sort_position = 90
-is_former_member = false
+is_former_member = true
 projects = ["sex_chromosome_evolution"]
 
 [[social]]
