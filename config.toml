@@ -244,6 +244,12 @@ enableGitInfo = false
     # Publication list format.
     #   0 = Simple
     #   1 = Detailed
+    #   2 = Stream
+    press_release_format = 2
+
+    # Publication list format.
+    #   0 = Simple
+    #   1 = Detailed
     #   2 = APA
     #   3 = MLA
     #   4 = Stream

@@ -43,6 +43,21 @@
         {{ end }}
       {{ end }}
 
+      {{ $items := where (where .Site.RegularPages "Type" "press_release") ".Params.projects" "intersect" (slice $project) }}
+      {{ $count := len $items }}
+      {{ if ge $count 1 }}
+        <h2>Press Releases</h2>
+        {{ range $items }}
+          {{ if eq $page.Site.Params.projects.press_release_format 0 }}
+            {{ partial "post_li_simple" . }}
+          {{ else if eq $page.Site.Params.projects.press_release_format 1 }}
+            {{ partial "post_li_detailed" . }}
+          {{ else }}
+            {{ partial "post_li_stream" . }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
       {{ $items := where (where .Site.RegularPages "Type" "publication") ".Params.projects" "intersect" (slice $project) }}
       {{ $pubs_len := len $items }}
       {{ if ge $pubs_len 1 }}
