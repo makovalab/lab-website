@@ -1,5 +1,5 @@
 +++
-title = "Public Lecture by Kateryna Makova: Predicting mutation and disease occurrence from DNA and omics data"
+title = "Frontiers public lecture presented by Kateryna Makova: Predicting mutation and disease occurrence from DNA and omics data"
 summary = "With affordable DNA sequencing, information on mutations in an individual’s genome is readily available. Kateryna Makova will present how mutation frequency depends on gender, age, and DNA location. Statistical models explaining and predicting mutation occurrence and applications to pregnancy planning and genetic counseling will be discussed. Mutations can cause numerous human genetic diseases but are only one contributor to the probability of disease development for an individual. Also, we now can generate microbiomics, metabolomics, epigenomics, and viromics data. Analysis of these omics data may help us understand the patterns of disease occurrence. As an example, the analysis of various omics data sets related to childhood obesity will be covered."
 date = 2020-02-22T11:00:00
 draft = false
