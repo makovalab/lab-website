@@ -1,6 +1,6 @@
 +++
 title = "Age-related accumulation of de novo mitochondrial mutations in mammalian oocytes and somatic tissues"
-date = 2020-05-27T00:00:00
+date = 2020-07-15T00:00:00
 draft = false
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
@@ -19,8 +19,8 @@ authors = ["B Arbeithuber", "J Hester", "MA Cremona", "N Stoler", "A Zaidi", "B 
 publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
-publication = "_IN PRESS PLOS Biology_"
-publication_short = "_IN PRESS PLOS BIOL_"
+publication = "_PLOS Biology_"
+publication_short = "_PLOS BIOL_"
 
 # Abstract and optional shortened version.
 abstract = ""
@@ -67,8 +67,7 @@ url_source = ""
 
 
 # Digital Object Identifier (DOI)
-#doi = "10.1093/gbe/evaa088"
-doi = ""
+doi = "10.1371/journal.pbio.3000745"
 
 
 # Featured image
