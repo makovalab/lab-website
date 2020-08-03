@@ -16,7 +16,7 @@ before_deploy:
   - eval "$( ssh-agent -s )"
   - chmod 600 /tmp/deploy_ssh
   - ssh-add /tmp/deploy_ssh
-  - echo -e "Host ${DEPLOY_HOST}\n\tStrictHostKeyChecking no\n\tLogLevel quiet\n" >> ~/.ssh/config
+  - echo -e "Host ${DEPLOY_HOST}\n\tStrictHostKeyChecking no\n\tLogLevel error\n" >> ~/.ssh/config
 
 deploy:
   provider: script
