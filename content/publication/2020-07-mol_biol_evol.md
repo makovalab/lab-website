@@ -1,6 +1,6 @@
 +++
 title = "Human L1 Transposition Dynamics Unraveled with Functional Data Analysis"
-date = 2020-07-20T00:00:00
+date = 2020-07-28T00:00:00
 draft = false
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
@@ -18,8 +18,8 @@ authors = ["D Chen", "MA Cremona", "Z Qi", "RD Mitra", "F Chiaromonte", "KD Mako
 publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
-publication = "_IN PRESS Molecular Biology and Evolution_"
-publication_short = "_IN PRESS MOL BIOL EVOL_"
+publication = "_Molecular Biology and Evolution_"
+publication_short = "_MOL BIOL EVOL_"
 
 # Abstract and optional shortened version.
 abstract = ""
@@ -66,7 +66,7 @@ url_source = ""
 
 
 # Digital Object Identifier (DOI)
-doi = ""
+doi = "10.1093/molbev/msaa194"
 
 
 
