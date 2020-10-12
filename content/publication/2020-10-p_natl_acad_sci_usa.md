@@ -51,7 +51,7 @@ tags = []
 
 # Links (optional).
 url_pdf = ""
-url_preprint = "https://www.biorxiv.org/content/10.1101/2020.01.21.913863v2.full.pdf"
+url_preprint = ""
 url_code = ""
 url_dataset = ""
 url_project = ""
