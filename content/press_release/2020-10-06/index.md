@@ -46,7 +46,9 @@ UNIVERSITY PARK, Pa. — New analysis of the DNA sequence of the male-specific Y
 
 A team of biologists and computer scientists at Penn State sequenced and assembled the Y chromosome from orangutan and bonobo and compared those sequences to the existing human, chimpanzee, and gorilla Y sequences. From the comparison, the team were able to clarify patterns of evolution that seem to fit with behavioral differences between the species and reconstruct a model of what the Y chromosome might have looked like in the ancestor of all great apes.
 
-A paper describing the research appears Oct. 5 in the journal Proceedings of the National Academy of Sciences.
+
+
+A [paper describing the research]({{< ref "/publication/2020-10-p_natl_acad_sci_usa.md" >}}) appears Oct. 5 in the journal Proceedings of the National Academy of Sciences.
 
 “The Y chromosome is important for male fertility and contains the genes critical for sperm production, but it is often neglected in genomic studies because it is so difficult to sequence and assemble,” said Monika Cechova, a graduate student at Penn State at the time of the research and co-first author of the paper. “The Y chromosome contains a lot of repetitive sequences, which are challenging for DNA sequencing, assembling sequences, and aligning sequences for comparison. There aren’t out-of-the-box software packages to deal with the Y chromosome, so we had to overcome these hurdles and optimize our experimental and computational protocols, which allowed us to address interesting biological questions.”
 
