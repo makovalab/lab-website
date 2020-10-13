@@ -36,6 +36,12 @@ projects = ["sex_chromosome_evolution"]
 
 +++
 
+{{< figure
+      class="image-center"
+      src="makova_apes.png"
+      caption="Researchers have reconstructed the ancestral sequence of the great ape Y chromosome by comparing three existing (gorilla, human, and chimpanzee) and two newly generated (orangutan and bonobo) Y chromosome assemblies. The new research shows that many gene families and multi-copy sequences were already present in the great ape Y common ancestor and that the chimpanzee and bonobo lineages experienced accelerated gene death and nucleotide substitution rates after their divergence from the human lineage. IMAGE: DANI ZEMBA AND MONIKA CECHOVA, PENN STATE"
+>}}
+
 UNIVERSITY PARK, Pa. — New analysis of the DNA sequence of the male-specific Y chromosomes from all living species of the great ape family helps to clarify our understanding of how this enigmatic chromosome evolved. A clearer picture of the evolution of the Y chromosome is important for studying male fertility in humans as well as our understanding of reproduction patterns and the ability to track male lineages in the great apes, which can help with conservation efforts for these endangered species.
 
 A team of biologists and computer scientists at Penn State sequenced and assembled the Y chromosome from orangutan and bonobo and compared those sequences to the existing human, chimpanzee, and gorilla Y sequences. From the comparison, the team were able to clarify patterns of evolution that seem to fit with behavioral differences between the species and reconstruct a model of what the Y chromosome might have looked like in the ancestor of all great apes.
