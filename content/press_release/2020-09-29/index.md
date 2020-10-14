@@ -18,7 +18,7 @@ categories = []
 #   E.g. `projects = ["deep-learning"]` references 
 #   `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
-projects = ["http://www.bx.psu.edu/makova_lab/project/regional_variation_in_mutation_rates/"]
+projects = ["regional_variation_in_mutation_rates"]
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
