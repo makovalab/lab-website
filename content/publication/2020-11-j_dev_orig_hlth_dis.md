@@ -19,7 +19,7 @@ publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
 publication = "_IN-PRESS Journal of Developmental Origins of Health and Disease_"
-publication_short = "IN-PRESS J DEV ORIG HLTH DIS_"
+publication_short = "_IN-PRESS J DEV ORIG HLTH DIS_"
 
 # Abstract and optional shortened version.
 abstract = ""
