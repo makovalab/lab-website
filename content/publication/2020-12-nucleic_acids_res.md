@@ -18,8 +18,8 @@ authors = ["D Chen", "MA Cremona", "F Chiaromonte", "KA Eckert", WM Guiblet", "R
 publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
-publication = "_IN-PRESS Nucleic Acid Research_"
-publication_short = "_IN-PRESS NUC ACID RES_"
+publication = "_IN-PRESS Nucleic Acids Research_"
+publication_short = "_IN-PRESS NUCLEIC ACIDS RES_"
 
 # Abstract and optional shortened version.
 abstract = ""
@@ -66,7 +66,8 @@ url_source = ""
 
 
 # Digital Object Identifier (DOI)
-doi = "10.1093/molbev/msaa194"
+#doi = "10.1093/molbev/msaa194"
+doi =
 
 
 
