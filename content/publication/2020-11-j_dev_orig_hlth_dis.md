@@ -18,8 +18,8 @@ authors = ["MC Carney", "X Zhan", "A Rangnekar", "MZ Chroneos", "SJ Craig", "KD 
 publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
-publication = "_IN-PRESS Journal of Developmental Origins of Health and Disease_"
-publication_short = "_IN-PRESS J DEV ORIG HLTH DIS_"
+publication = "_Journal of Developmental Origins of Health and Disease_"
+publication_short = "_J DEV ORIG HLTH DIS_"
 
 # Abstract and optional shortened version.
 abstract = ""
@@ -66,7 +66,7 @@ url_source = ""
 
 
 # Digital Object Identifier (DOI)
-doi = ""
+doi = "10.1017/S2040174420001324"
 
 
 # Featured image
