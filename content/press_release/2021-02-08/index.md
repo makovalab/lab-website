@@ -79,10 +79,10 @@ In addition to Guiblet, Makova, Cremona, Eckert, Huang, and Chiaromonte, the res
 *Work Phone: 814-863-1619*\
 \
 **Francesca Chiaromonte**, <a href="mailto:fxc11@psu.edu">fxc11@psu.edu</a>\
-*Work Phone: 814-865-7075*
+*Work Phone: 814-865-7075*\
 \
 **Yifei Huang**, <a href="mailto:yuh371@psu.edu">yuh371@psu.edu</a>\
-*Work Phone: 814-863-6829*
+*Work Phone: 814-863-6829*\
 \
 **Sam Sholtis**, <a href="mailto:samsholtis@psu.edu">samsholtis@psu.edu</a>\
 *Work Phone: 814-865-1390*
