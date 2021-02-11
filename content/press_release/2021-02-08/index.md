@@ -1,7 +1,7 @@
 +++
-title = "Scientists take a step toward understanding 'jumping genes' effect on the genome"
+title = "Unusual DNA folding increases the rates of mutations"
 subtitle = ""
-date = 2020-09-29T00:00:00
+date = 2021-02-08T00:00:00
 draft = false
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
@@ -31,21 +31,22 @@ projects = ["regional_variation_in_mutation_rates"]
   focal_point = ""
 
 
-#[header]
-#  image = "Makova7-2020_Figure_SM.jpg"
+[header]
+  image = "Makova_BDNA_HERO_0.jpg"
 
 +++
-{{< figure
-      class="image-center"
-      src="thumbnail_L1_graphical_abstract_final.jpg"
-      caption="New research shows that DNA that folds into conformations other than the classic double helix (non-B DNA), which includes as much as 13% of the human genome, leads to elevated nucleotide substitution rates in both the non-B motifs themselves and their flanking regions. These elevated mutation rates are a major contributor to the regional variation in mutation rates across the genome. Credit: Wilfried Guiblet and Dani Zemba, Penn State"
->}}
 
 DNA sequences that can fold into shapes other than the classic double helix tend to have higher mutation rates than other regions in the human genome. New research shows that the elevated mutation rate in these sequences plays a major role in determining regional variation in mutation rates across the genome.  Deciphering the patterns and causes of regional variation in mutation rates is important both for understanding evolution and for predicting sites of new mutations that could lead to disease.
  
 A paper describing the research by a team of Penn State scientists is available online in the journal Nucleic Acids Research.
  
 “Most of the time we think about DNA as the classic double helix; this basic form is referred to as ‘B-DNA,’” said Wilfried Guiblet, co-first author of the paper, a graduate student at Penn State at the time of research and now a postdoctoral scholar at the National Cancer Institute. “But, as much as 13% of the human genome can fold into different conformations called ‘non-B DNA.’ We wanted to explore what role, if any, this non-B DNA played in variation that we see in mutation rates among different regions of the genome.”
+
+{{< figure
+      class="image-center"
+      src="Makova_BDNA.jpg"
+      caption="New research shows that DNA that folds into conformations other than the classic double helix (non-B DNA), which includes as much as 13% of the human genome, leads to elevated nucleotide substitution rates in both the non-B motifs themselves and their flanking regions. These elevated mutation rates are a major contributor to the regional variation in mutation rates across the genome. Credit: Wilfried Guiblet and Dani Zemba, Penn State"
+>}}
 
 Non-B DNA can fold into a number of different conformations depending on the underlying DNA sequence. Examples include G-quadruplexes, Z-DNA, H-DNA, slipped strands, and various other conformations. Recent research has revealed that non-B DNA plays critical roles in cellular processes, including the replication of the genome and the transcription of DNA into RNA, and that mutations in non-B sequences are associated with genetic diseases.
  
