@@ -38,50 +38,51 @@ projects = ["regional_variation_in_mutation_rates"]
 {{< figure
       class="image-center"
       src="thumbnail_L1_graphical_abstract_final.jpg"
-      caption="Comparisons of DNase Hypersensitive Site (DHS) signals among L1 flanking regions and control.The figure illustrates the distribution of one genomic feature (DHS) surrounding de novo, polymorphic, human-specific L1s, and control regions. The X-axis indicates the position of L1 flanking regions (in kb from L1 insertion site), and the Y-axis shows the average number of DHS sites in each 1-kb window. **IMAGE: DI CHEN AND MARZIA CREMONA**"
+      caption="New research shows that DNA that folds into conformations other than the classic double helix (non-B DNA), which includes as much as 13% of the human genome, leads to elevated nucleotide substitution rates in both the non-B motifs themselves and their flanking regions. These elevated mutation rates are a major contributor to the regional variation in mutation rates across the genome. Credit: Wilfried Guiblet and Dani Zemba, Penn State"
 >}}
 
-UNIVERSITY PARK, Pa.  -- Using state-of-the-art statistical methods, a team of researchers said they may have taken a leap closer to understanding a class of jumping genes, sequences that move to different locations in the human genome, which is the body's complete set of DNA. They added that the work could lead to insights into the evolution of the human genome, as well as have implications for several diseases, including cancer.
+DNA sequences that can fold into shapes other than the classic double helix tend to have higher mutation rates than other regions in the human genome. New research shows that the elevated mutation rate in these sequences plays a major role in determining regional variation in mutation rates across the genome.  Deciphering the patterns and causes of regional variation in mutation rates is important both for understanding evolution and for predicting sites of new mutations that could lead to disease.
+ 
+A paper describing the research by a team of Penn State scientists is available online in the journal Nucleic Acids Research.
+ 
+“Most of the time we think about DNA as the classic double helix; this basic form is referred to as ‘B-DNA,’” said Wilfried Guiblet, co-first author of the paper, a graduate student at Penn State at the time of research and now a postdoctoral scholar at the National Cancer Institute. “But, as much as 13% of the human genome can fold into different conformations called ‘non-B DNA.’ We wanted to explore what role, if any, this non-B DNA played in variation that we see in mutation rates among different regions of the genome.”
 
-The sequences, referred to as Long Interspersed Elements-1 -- often called LINE-1 or  L1s -- constitute a class of transposable elements, also known as "jumping genes" because they can move throughout the genome, said Di Chen, doctoral student in the Intercollege Graduate Program in Genetics. He said that geneticists and medical researchers are keen to understand these jumping genes and their interaction with the genome for a number of reasons.
+Non-B DNA can fold into a number of different conformations depending on the underlying DNA sequence. Examples include G-quadruplexes, Z-DNA, H-DNA, slipped strands, and various other conformations. Recent research has revealed that non-B DNA plays critical roles in cellular processes, including the replication of the genome and the transcription of DNA into RNA, and that mutations in non-B sequences are associated with genetic diseases.
+ 
+“In a previous study, we showed that in the artificial system of a DNA sequencing instrument, which uses similar DNA copying processes as in the cell, error rates were higher in non-B DNA during polymerization,” said Kateryna Makova, Verne M. Willaman Chair of Life Sciences at Penn State and one of the leaders of the research team. “We think that this is because the enzyme that copies DNA during sequencing has a harder time reading through non-B DNA. Here we wanted to see if a similar phenomenon exists in living cells.”
+ 
+The team compared mutation rates between B- and non-B DNA at two different timescales. To look at relatively recent changes, they used an existing database of human DNA sequences to identify individual nucleotides—letters in the DNA alphabet—that varied among humans. These ‘single nucleotide polymorphisms’ (SNPs) represent places in the human genome where at some point in the past a mutation occurred in at least one individual. To look at more ancient changes, the team also compared the human genome sequence to the genome of the orangutan.
+ 
+They also investigated multiple spatial scales along the human genome, to test whether non-B DNA influenced mutation rates at nucleotides adjacent to it and further away.
+ 
+“To identify differences in mutation rates between B- and non-B DNA we used statistical tools from ‘functional data analysis’ in which we compare the data as curves rather than looking at individual data points,” said Marzia A. Cremona, co-first author of the paper, a postdoctoral researcher at Penn State at the time of the research and now an assistant professor at Université Laval in Quebec, Canada. “These methods give us the statistical power to contrast mutation rates for the various types of non-B DNA against B-DNA controls.”
+ 
+For most types of non-B DNA, the team found increased mutation rates. The differences were enough that non-B DNA mutation rates impacted regional variation in their immediate surroundings. These differences also helped explain a large portion of the variation that can be seen along the genome at the scale of millions of nucleotides.
+ 
+“When we look at all the known factors that influence regional variation in mutation rates across the genome, non-B DNA is the largest contributor,” said Francesca Chiaromonte, Huck Chair in Statistics for the Life Sciences at Penn State and one of the leaders of the research team. “We’ve been studying regional variation in mutation rates for a long time from a lot of different angles. The fact that non-B DNA is such a major contributor to this variation is an important discovery.”
 
-"First, it's the only active LINE family that's still jumping around in our genome," said Chen. "The human genome consists of different sequences and this particular retrotransposon, L1, makes up over 17% of it. Structure-wise it's very important, too. It gives rise to many other transposable element sequences and, throughout the course of evolution, it expanded the size of our genome. It also plays an important role in the regulation of its functions."
+“Our results have critical medical implications,” said Kristin Eckert, professor of pathology and biochemistry and molecular biology at Penn State College of Medicine, Penn State Cancer Institute Researcher, an author on the paper, and the team’s long-time collaborator. “For example, human geneticists should consider the potential of a locus to form non-B DNA when evaluating candidate genetic variants for human genetic diseases. Our current and future research is focused on unraveling the mechanistic basis behind the elevated mutation rates at non-B DNA.”
+ 
+The results also have evolutionary implications.
+ 
+“We know that natural selection can impact variation in the genome, so for this study we only looked at regions of the genome that we think are not under the influence of selection,” said Yi-Fei Huang, assistant professor of biology at Penn State and one of the leaders of the research team. “This allows us to establish a baseline mutation rate for each type of non-B DNA that in the future we could potentially use to help identify signatures of natural selection in these sequences.”
+ 
+Because of their increased mutation rates, non-B DNA sequences could be an important source of genetic variation, which is the ultimate source of evolutionary change.
+ 
+“Mutations are usually thought to be so rare, that when we see the same mutation in different individuals, the assumption is that those individuals shared an ancestor who passed the mutation to them both,” said Makova, a Penn State Cancer Institute researcher. “But it’s possible that the mutation rate is so high in some of these non-B DNA regions that the same mutation could occur independently in several different individuals. If this is true, it would change how we think about evolution.”
+ 
+In addition to Guiblet, Makova, Cremona, Eckert, Huang, and Chiaromonte, the research team at Penn State includes Robert S. Harris and Di Chen. The research was funded by the U.S. National Institutes of Health, Penn State Clinical and Translational Sciences Institute, the Penn State Institute of Computational and Data Sciences, the Huck Institutes of the Life Sciences at Penn State, the Penn State Eberly College of Science, the Pennsylvania Department of Health, and the CBIOS Predoctoral Training Program.
 
-The researchers, who report their findings in a recent issue of [Molecular Biology and Evolution](https://academic.oup.com/mbe/advance-article-abstract/doi/10.1093/molbev/msaa194/5877438?redirectedFrom=PDF&casa_token=gxm07t7qITQAAAAA:YFPmSO-P5YnswREyC0tP5lu8sJ8kxZ47FUVNlkSbH3WUYbIBKz09Ft0YBg-na9DSBsxIqrLUHolz), were able to build integrative models of L1s' evolution, including where L1s tend to integrate and where they tend to remain -- or become fixed -- in  the genome, according to Kateryna Makova, professor of biology, Verne M. Willaman Chair of Life Science, and director of the [Center for Medical Genomics](https://cmg.psu.edu/), [Huck Institutes of the Life Sciences](https://www.huck.psu.edu/), Penn State.
-
-"What we found out is quite interesting," said Makova, who is also an associate of the [Institute for Computational and Data Sciences](http://www.icds.psu.edu/) (ICDS). "This transposable element integrates and ends up remaining in very different genomic landscapes. Usually, they integrate mainly into particular parts of the genome, but then, after some evolutionary time, they end up being retained in other genomic locations."
-
-The researchers also found that, although the integration and fixation processes are influenced by many different genomic features, L1s are more than just bits of DNA bouncing through the genome; they actually affect the genomic landscape surrounding them.
-
-"There were a few studies before that hinted at this. Our study suggests that this is true and it's something that is quite novel -- the L1s influence the evolution of the genome," said Makova.
-
-The study may also lead to models that will give researchers a deeper understanding of L1s.
-
-"By building models, as we have done, we could have a better idea of the role played by L1s in diseases and other important traits that are encoded in the genome," said Makova. "For example, depending on where the L1s land as they move around, we could find whether they have a strong effect, a minor effect, or no effect at all. Of course, any of these predictions would need to be validated in computational and experimental studies, but it's important that we are getting close to being able to do that."
-
-Although this work is preliminary, the insights also might lead to practical and clinical applications because the study shows that L1s are not passive entities, as once thought, but are active players in the genome. Some L1 insertions are also thought to cause interference with protein coding within the genome.
-
-"It's important now to take this research towards medical applications," said Makova. "First of all, similar analysis can be done based on the datasets of L1 integrations in cancer, but also in other diseases. It's known that some L1s play important roles in neurological diseases. For example, brain DNA sequencing studies are finding polymorphic L1 insertions. We could use the same methodology and apply it to more clinically relevant datasets."
-
-The team analyzed three genome-wide datasets of human L1s representing newly integrated, polymorphic (present in some individuals but absent in others), and human-specific L1s, together with 49 genomic landscape features collated from other studies.
-
-They used a class of advanced statistical methods, called functional data analysis, to build models and precisely analyze the genomic landscape where L1s integrate and become fixed. The methods offered a way to analyze these genomic landscapes at high resolution, according to Marzia A. Cremona, assistant professor of operations and decision systems, Université Laval, and adjunct assistant professor of statistics, Penn State.
-
-"We tested for differences in genomic landscape features, between regions where we had L1s and regions where we didn't have these elements," said Cremona. "Then we took the most important features to build a model to help us understand how all of these features work together."
-
-Compared to other methods, functional data analysis techniques are better at exploiting high-resolution data, thus offering researchers a richer view of the interplay between L1s and the genomic landscape," said Francesca Chiaromonte, professor of statistics at Penn State, Lloyd and Dorothy Foehr Huck Chair in Statistics, and director of the Genome Sciences Institute, one of the Huck Institutes of the Life Sciences. "For example, we used these techniques to compare features among regions where L1s inserted a long time ago, a short time ago, or a very recent time ago with areas devoid of L1s."
-
-"Using functional data analysis, instead of contrasting average values, we can contrast curves; that is, the shapes of measurements observed at very high resolution," said Chiaromonte, who also is an ICDS affiliate. "Observing not just differences in averages, but differences in shapes of curves, allows us to better pinpoint relationships and effects."
-
-Robi D. Mitra, Alvin Goldfarb Distinguished Professor of Computational Biology and professor at Washington University School of Medicine, and his student Zongtai Qi also worked with the team.
-
-[The Penn State Clinical and Translational Sciences Institute](https://ctsi.psu.edu/), Penn State Institute for Computational and Data Sciences, and [Eberly College of Science](https://science.psu.edu/) supported this work. Additional support was provided under grants from the [Pennsylvania Department of Health using Tobacco Settlement and CURE Funds](https://www.health.pa.gov/topics/Research/CURE/Pages/CURE.aspx).
-
-**MEDIA CONTACTS**\
+ **MEDIA CONTACTS**\
 \
-**Matt Swayne**, <a href="mailto:mls29@psu.edu">mls29@psu.edu</a>\
-*Work Phone: 814-865-9481*\
+**Kateryna Makova**, <a href="mailto:kmakova@bx.psu.edu">kmakova@bx.psu.edu</a>\
+*Work Phone: 814-863-1619*\
 \
-**Liam Jackson**, <a href="mailto:lnj104@psu.edu">lnj104@psu.edu</a>\
-*Work Phone: 814-865-0171*
-
+**Francesca Chiaromonte**, <a href="mailto:fxc11@psu.edu">fxc11@psu.edu</a>\
+*Work Phone: 814-865-7075*
+\
+**Yifei Huang**, <a href="mailto:yuh371@psu.edu">yuh371@psu.edu</a>\
+*Work Phone: 814-863-6829*
+\
+**Sam Sholtis**, <a href="mailto:samsholtis@psu.edu">samsholtis@psu.edu</a>\
+*Work Phone: 814-865-1390*
