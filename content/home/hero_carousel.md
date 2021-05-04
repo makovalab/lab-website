@@ -30,7 +30,7 @@ height = "300px"
 #  cta_icon = "dna"
 
 [[item]]
-  content = "Microsatellite Variation and Evolution"
+  content = "Non-B DNA and Microsatellite Variation and Evolution"
   overlay_color = "#666"
   overlay_img = "headers/microsatellite_variation_and_evolution.png"
   overlay_filter = 0.5
