@@ -15,7 +15,7 @@ authors = ["WM Guiblet", "M DeGiorgio", "X Cheng", "F Chiaromonte", "KA Eckert",
 # 4 = Report
 # 5 = Book
 # 6 = Book section
-publication_types = ["3"]
+publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
 publication = "_Genome Research_"
@@ -62,7 +62,7 @@ url_source = ""
 
 # Custom links (optional).
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.
-url_custom = [{name = "Press Release", url = "/press_release/2018-11-13"}]
+url_custom = ""
 
 
 # Digital Object Identifier (DOI)
