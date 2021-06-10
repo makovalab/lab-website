@@ -9,7 +9,7 @@ interests = ["", ""]
 cv_link = ""
 personal_website = ""
 sort_position = 40
-is_former_member = true
+is_former_collaborator = true
 projects = ["mitochondrial_mutation_dynamics"]
 
 [[social]]
