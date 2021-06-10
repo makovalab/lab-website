@@ -9,7 +9,7 @@ cv_link = ""
 personal_website = "http://medvedevgroup.com"
 sort_position = 1
 is_former_collaborator = false
-projects = []
+projects = ["sex_chromosome_evolution"]
 
 [[education]]
   course = "Ph.D. in Computer Science"
