@@ -10,7 +10,7 @@ cv_link = ""
 personal_website = ""
 sort_position = 410
 is_former_member = false
-projects = ["mitochondrial_mutation_dynamics”]
+projects = ["mitochondrial_mutation_dynamics"]
 
 [[social]]
     icon = "envelope"

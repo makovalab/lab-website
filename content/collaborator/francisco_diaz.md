@@ -14,7 +14,7 @@ cv_link = ""
 personal_website = "https://animalscience.psu.edu/directory/fjd10"
 sort_position = 1
 is_former_collaborator = false
-projects = ["mitochondrial_mutation_dynamics”]
+projects = ["mitochondrial_mutation_dynamics"]
 
 [[education]]
   course = "Ph.D."
