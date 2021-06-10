@@ -16,7 +16,7 @@ cv_link = ""
 personal_website = "https://childrens.pennstatehealth.org/display-provider/-/provider/380/ian-m-paul-md-msc"
 sort_position = 1
 is_former_collaborator = false
-projects = []
+projects = ["childhood_obesity"]
 
 [[education]]
   course = "Residency, Pediatrics"
