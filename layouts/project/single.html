@@ -43,6 +43,15 @@
         {{ end }}
       {{ end }}
 
+      {{ $items := where (where (where .Site.RegularPages "Type" "collaborator") ".Params.is_former_collaborator" "=" false) ".Params.projects" "intersect" (slice $project) }}
+      {{ $collaborators_len := len $items }}
+      {{ if ge $collaborators_len 1 }}
+        <h2>Collaborators</h2>
+        {{ range (sort $items ".Params.sort_position") }}
+          {{ partial "collaborator_li" . }}
+        {{ end }}
+      {{ end }}
+
       {{ $items := where (where .Site.RegularPages "Type" "press_release") ".Params.projects" "intersect" (slice $project) }}
       {{ $count := len $items }}
       {{ if ge $count 1 }}
