@@ -10,7 +10,7 @@ cv_link = ""
 personal_website = ""
 sort_position = 380
 is_former_member = false
-projects = [""]
+projects = ["microsatellite_variation_and_evolution"]
 
 [[social]]
     icon = "envelope"
