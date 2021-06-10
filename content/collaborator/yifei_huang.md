@@ -9,7 +9,7 @@ cv_link = ""
 personal_website = "https://yifei-lab.github.io"
 sort_position = 1
 is_former_collaborator = false
-projects = []
+projects = ["microsatellite_variation_and_evolution"]
 
 
 
