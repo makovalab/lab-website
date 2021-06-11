@@ -8,7 +8,7 @@ portrait = "sarah.png"
 interests = ["", ""]
 cv_link = ""
 personal_website = ""
-sort_position = 80
+sort_position = 70
 is_former_member = false
 projects = ["childhood_obesity"]
 

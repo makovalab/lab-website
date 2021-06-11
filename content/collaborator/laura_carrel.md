@@ -7,7 +7,7 @@ portrait = "laura.png"
 interests = ["", ""]
 cv_link = ""
 personal_website = "https://www.huck.psu.edu/people/laura-carrel"
-sort_position = 1
+sort_position = 20
 is_former_collaborator = false
 projects = []
 

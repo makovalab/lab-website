@@ -8,7 +8,7 @@ portrait = "allison.png"
 interests = ["", ""]
 cv_link = ""
 personal_website = ""
-sort_position = 430
+sort_position = 420
 is_former_member = false
 projects = ["sex_chromosome_evolution"]
 [[social]]

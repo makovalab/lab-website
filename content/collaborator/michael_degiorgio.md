@@ -7,7 +7,7 @@ portrait = "michael.png"
 interests = ["", ""]
 cv_link = ""
 personal_website = "http://www.personal.psu.edu/mxd60"
-sort_position = 1
+sort_position = 50
 is_former_collaborator = false
 projects = []
 

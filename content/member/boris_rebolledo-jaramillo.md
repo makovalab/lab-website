@@ -8,7 +8,7 @@ portrait = "boris.png"
 interests = ["", ""]
 cv_link = ""
 personal_website = ""
-sort_position = 340
+sort_position = 330
 is_former_member = true
 +++
 

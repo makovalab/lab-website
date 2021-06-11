@@ -8,7 +8,7 @@ portrait = "barbara.png"
 interests = ["", ""]
 cv_link = ""
 personal_website = ""
-sort_position = 40
+sort_position = 10
 is_former_collaborator = false
 projects = ["mitochondrial_mutation_dynamics"]
 

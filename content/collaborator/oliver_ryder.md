@@ -7,7 +7,7 @@ portrait = "oliver.png"
 interests = ["", ""]
 cv_link = ""
 personal_website = "http://biology.ucsd.edu/research/faculty/oryder"
-sort_position = 1
+sort_position = 160
 is_former_collaborator = false
 projects = []
 

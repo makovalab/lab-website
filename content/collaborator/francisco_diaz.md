@@ -12,7 +12,7 @@ interests = [
 ]
 cv_link = ""
 personal_website = "https://animalscience.psu.edu/directory/fjd10"
-sort_position = 1
+sort_position = 60
 is_former_collaborator = false
 projects = ["mitochondrial_mutation_dynamics"]
 

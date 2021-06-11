@@ -8,7 +8,7 @@ portrait = "edmundo.png"
 interests = ["", ""]
 cv_link = ""
 personal_website = ""
-sort_position = 410
+sort_position = 400
 is_former_member = false
 projects = ["mitochondrial_mutation_dynamics"]
 

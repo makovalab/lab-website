@@ -7,7 +7,7 @@ portrait = "paul.png"
 interests = ["", ""]
 cv_link = ""
 personal_website = "http://medvedevgroup.com"
-sort_position = 1
+sort_position = 110
 is_former_collaborator = false
 projects = ["sex_chromosome_evolution"]
 

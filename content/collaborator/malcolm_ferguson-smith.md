@@ -7,7 +7,7 @@ portrait = "malcolm.png"
 interests = ["", ""]
 cv_link = ""
 personal_website = "https://www.research.vet.cam.ac.uk/research-staff-directory/principal-investigators/systems-pathology/malcom-ferguson-smith"
-sort_position = 1
+sort_position = 80
 is_former_collaborator = false
 projects = []
 

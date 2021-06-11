@@ -7,7 +7,7 @@ portrait = "kristin.png"
 interests = ["", ""]
 cv_link = ""
 personal_website = "https://www.huck.psu.edu/people/kristin-eckert"
-sort_position = 1
+sort_position = 70
 is_former_collaborator = false
 projects = []
 

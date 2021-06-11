@@ -14,7 +14,7 @@ interests = [
 ]
 cv_link = ""
 personal_website = "https://childrens.pennstatehealth.org/display-provider/-/provider/380/ian-m-paul-md-msc"
-sort_position = 1
+sort_position = 140
 is_former_collaborator = false
 projects = ["childhood_obesity"]
 
