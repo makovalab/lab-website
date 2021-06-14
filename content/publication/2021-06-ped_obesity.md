@@ -19,7 +19,7 @@ publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
 publication = "_Pediatric Obesity_IN-PRESS_"
-publication_short = "_PEDIATRIC OBESITY_"
+publication_short = "_PEDIATRIC OBESITY_IN-PRESS_"
 
 # Abstract and optional shortened version.
 abstract = "Background: Metabolomic analysis is commonly used to understand the biological underpinning of diseases such as obesity. However, our knowledge of gut metabolites related to weight outcomes in young children is currently limited. 
