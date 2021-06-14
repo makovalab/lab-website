@@ -18,7 +18,7 @@ authors = ["D Nandy", "SJ Craig", "J Cai", "Y Tian", "IM Paul", "JS Savage", ME 
 publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
-publication = "_Pediatric Obesity_IN-PRESS"
+publication = "_Pediatric Obesity_IN-PRESS_"
 publication_short = "_PEDIATRIC OBESITY_"
 
 # Abstract and optional shortened version.
