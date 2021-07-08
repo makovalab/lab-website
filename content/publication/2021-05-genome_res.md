@@ -65,7 +65,7 @@ url_source = ""
 url_custom = []
 
 # Digital Object Identifier (DOI)
-doi = "https://genome.cshlp.org/content/31/7/1136"
+doi = "https://doi.org/10.1101/gr.269589.120"
 
 
 # Featured image
