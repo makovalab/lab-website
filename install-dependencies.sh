@@ -33,7 +33,6 @@ rvm alias create default "ruby-${RUBY_RELEASE}"
 echo "INFO: finished setting rvm default alias to ruby-${RUBY_RELEASE}"
 
 rvm use default
-ruby -v
 
 set -o nounset
 set -o errexit
