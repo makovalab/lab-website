@@ -39,6 +39,9 @@ rvm list
 #echo "INFO: finished changing default ruby"
 echo "INFO: finished installing ruby-${RUBY_RELEASE}"
 
+echo "### BEGIN $HOME/.rvmrc"
+echo "### END $HOME/.rvmrc"
+
 set -o nounset
 set -o errexit
 
