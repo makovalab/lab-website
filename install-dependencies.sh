@@ -27,7 +27,7 @@ echo "INFO: finished setting up rvm environment"
 echo "INFO: installing ruby-${RUBY_RELEASE}"
 echo "## $HOME/.rvmrc"
 rvm install "${RUBY_RELEASE}"
-rvm alias default "ruby-${RUBY_RELEASE}"
+rvm alias create default "ruby-${RUBY_RELEASE}"
 echo "# rvm alias list"
 rvm alias list
 echo "# rvm list"
