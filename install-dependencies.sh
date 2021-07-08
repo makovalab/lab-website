@@ -11,8 +11,8 @@ apt-get -qq update || {
 }
 
 ## download hugo binary
-(cd /var/tmp && curl -LO https://github.com/gohugoio/hugo/releases/download/v${HUGO_RELEASE}/hugo_${HUGO_RELEASE}_Linux-64bit.deb)
-(dpkg -i /var/tmp/hugo_${HUGO_RELEASE}_Linux-64bit.deb && rm -f /var/tmp/hugo_${HUGO_RELEASE}_Linux-64bit.deb)
+(cd /var/tmp && curl -LO "https://github.com/gohugoio/hugo/releases/download/v${HUGO_RELEASE}/hugo_${HUGO_RELEASE}_Linux-64bit.deb")
+(dpkg -i "/var/tmp/hugo_${HUGO_RELEASE}_Linux-64bit.deb" && rm -f "/var/tmp/hugo_${HUGO_RELEASE}_Linux-64bit.deb")
 
 ## use rvm to setup a ruby environment: https://rvm.io/
 set +o nounset
@@ -24,9 +24,12 @@ source "$rvm_path/scripts/rvm"
 export PATH="${PATH:+${PATH}:}$rvm_bin_path"
 echo "INFO: finished setting up rvm environment"
 
-echo "INFO: changing to rvm default ruby"
-rvm use default
-echo "INFO: finished changing to rvm default ruby"
+echo "INFO: installing ruby-${RUBY_RELEASE}"
+rvm install "${RUBY_RELEASE}"
+echo "INFO: changing default ruby"
+rvm --default use "${RUBY_RELEASE}"
+echo "INFO: finished changing default ruby"
+echo "INFO: finished installing ruby-${RUBY_RELEASE}"
 
 set -o nounset
 set -o errexit
