@@ -62,8 +62,7 @@ url_source = ""
 
 # Custom links (optional).
 #   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.
-url_custom = [https://science.psu.edu/news/Makova6-2021]
-
+url_custom = []
 # Digital Object Identifier (DOI)
 doi = "https://genome.cshlp.org/content/31/7/1136"
 
