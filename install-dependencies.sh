@@ -19,6 +19,8 @@ set +o nounset
 set +o errexit
 
 echo "INFO: setting up rvm environment"
+echo "### BEGIN $HOME/.rvmrc"
+echo "### END $HOME/.rvmrc"
 source "$HOME/.rvmrc"
 source "$rvm_path/scripts/rvm"
 export PATH="${PATH:+${PATH}:}$rvm_bin_path"
