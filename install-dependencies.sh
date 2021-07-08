@@ -20,6 +20,7 @@ set +o errexit
 
 echo "INFO: setting up rvm environment"
 echo "### BEGIN $HOME/.rvmrc"
+cat "$HOME/.rvmrc"
 echo "### END $HOME/.rvmrc"
 source "$HOME/.rvmrc"
 source "$rvm_path/scripts/rvm"
@@ -40,6 +41,7 @@ rvm list
 echo "INFO: finished installing ruby-${RUBY_RELEASE}"
 
 echo "### BEGIN $HOME/.rvmrc"
+cat "$HOME/.rvmrc"
 echo "### END $HOME/.rvmrc"
 
 set -o nounset
