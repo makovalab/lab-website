@@ -8,6 +8,8 @@ install:
   - rm -rf public
 
 script:
+  - rvm use default
+  - ruby -v
   - hugo
   - pushd public && htmlproofer . --check-html --disable-external --allow-hash-href --empty-alt-ignore --file-ignore ./js/vendor/reveal.js/plugin/notes/notes.html --url-swap '\/makova_lab/:/' && popd
 
