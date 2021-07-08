@@ -20,33 +20,20 @@ set +o errexit
 
 echo "INFO: setting up rvm environment"
 source "$HOME/.rvmrc"
-echo "### BEGIN $rvm_path/scripts/rvm"
-ls -al "$rvm_path/scripts/rvm"
-md5sum "$rvm_path/scripts/rvm"
-cat "$rvm_path/scripts/rvm"
-echo "### END $rvm_path/scripts/rvm"
 source "$rvm_path/scripts/rvm"
 export PATH="${PATH:+${PATH}:}$rvm_bin_path"
 echo "INFO: finished setting up rvm environment"
 
 echo "INFO: installing ruby-${RUBY_RELEASE}"
-echo "## $HOME/.rvmrc"
 rvm install "${RUBY_RELEASE}"
-rvm alias create default "ruby-${RUBY_RELEASE}"
-echo "# rvm alias list"
-rvm alias list
-echo "# rvm list"
-rvm list
-#echo "INFO: changing default ruby"
-#rvm --default use "${RUBY_RELEASE}"
-#echo "INFO: finished changing default ruby"
 echo "INFO: finished installing ruby-${RUBY_RELEASE}"
 
-echo "### BEGIN $rvm_path/scripts/rvm"
-ls -al "$rvm_path/scripts/rvm"
-md5sum "$rvm_path/scripts/rvm"
-cat "$rvm_path/scripts/rvm"
-echo "### END $rvm_path/scripts/rvm"
+echo "INFO: setting rvm default alias to ruby-${RUBY_RELEASE}"
+rvm alias create default "ruby-${RUBY_RELEASE}"
+echo "INFO: finished setting rvm default alias to ruby-${RUBY_RELEASE}"
+
+rvm use default
+ruby -v
 
 set -o nounset
 set -o errexit
