@@ -25,10 +25,16 @@ export PATH="${PATH:+${PATH}:}$rvm_bin_path"
 echo "INFO: finished setting up rvm environment"
 
 echo "INFO: installing ruby-${RUBY_RELEASE}"
+echo "## $HOME/.rvmrc"
+cat "$HOME/.rvmrc"
 rvm install "${RUBY_RELEASE}"
-echo "INFO: changing default ruby"
-rvm --default use "${RUBY_RELEASE}"
-echo "INFO: finished changing default ruby"
+echo "# rvm alias list"
+rvm alias list
+echo "# rvm list"
+rvm list
+#echo "INFO: changing default ruby"
+#rvm --default use "${RUBY_RELEASE}"
+#echo "INFO: finished changing default ruby"
 echo "INFO: finished installing ruby-${RUBY_RELEASE}"
 
 set -o nounset
