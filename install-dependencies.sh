@@ -19,10 +19,12 @@ set +o nounset
 set +o errexit
 
 echo "INFO: setting up rvm environment"
-echo "### BEGIN $HOME/.rvmrc"
-cat "$HOME/.rvmrc"
-echo "### END $HOME/.rvmrc"
 source "$HOME/.rvmrc"
+echo "### BEGIN $rvm_path/scripts/rvm"
+ls -al "$rvm_path/scripts/rvm"
+md5sum "$rvm_path/scripts/rvm"
+cat "$rvm_path/scripts/rvm"
+echo "### END $rvm_path/scripts/rvm"
 source "$rvm_path/scripts/rvm"
 export PATH="${PATH:+${PATH}:}$rvm_bin_path"
 echo "INFO: finished setting up rvm environment"
@@ -40,9 +42,11 @@ rvm list
 #echo "INFO: finished changing default ruby"
 echo "INFO: finished installing ruby-${RUBY_RELEASE}"
 
-echo "### BEGIN $HOME/.rvmrc"
-cat "$HOME/.rvmrc"
-echo "### END $HOME/.rvmrc"
+echo "### BEGIN $rvm_path/scripts/rvm"
+ls -al "$rvm_path/scripts/rvm"
+md5sum "$rvm_path/scripts/rvm"
+cat "$rvm_path/scripts/rvm"
+echo "### END $rvm_path/scripts/rvm"
 
 set -o nounset
 set -o errexit
