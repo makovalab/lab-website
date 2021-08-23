@@ -15,6 +15,6 @@ projects = ["sex_chromosome_evolution", "microsatellite_variation_and_evolution"
 [[social]]
     icon = "envelope"
     icon_pack = "fas"
-    link = "mailto:bmw6360@psu.edu"
+    link = "mailto:be.weissensteiner@gmail.com"
 
 +++
