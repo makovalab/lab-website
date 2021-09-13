@@ -1,6 +1,5 @@
 +++
-title = "INSIGHT responsive parenting educational intervention for firstborns is associated with growth of secondborn siblings
-"
+title = "INSIGHT responsive parenting educational intervention for firstborns is associated with growth of secondborn siblings"
 date = 2021-09-02T00:00:00
 draft = false
 
