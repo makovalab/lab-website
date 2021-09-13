@@ -19,7 +19,7 @@ publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
 publication = "IN PRESS__Pediatric Obesity_"
-publication_short = "IN PRESS_PED OBESITY_"
+publication_short = "IN PRESS__PED OBESITY_"
 
 # Abstract and optional shortened version.
 abstract = ""
