@@ -35,4 +35,3 @@ The winners of the 2021 Student/New Investigator Presentation Awards have been a
 
 View the winners on the EMGS Website now: https://www.emgs-us.org/blog/2021-student/new-investigator-presentation-awards-winners-announcement
 
-To view the rest of our 2021 EMGS award winners, follow @EMGSUS on Twitter! https://twitter.com/EMGSUS
