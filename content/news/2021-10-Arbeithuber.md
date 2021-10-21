@@ -1,5 +1,5 @@
 +++
-title = "Congratulations to Barbara Arbeithuber on winning the 2021 EMGS New Investigator Presentation Award!
+title = "Congratulations to Barbara Arbeithuber on winning the 2021 EMGS New Investigator Presentation Award!"
 date = 2021-10-13T00:00:00
 draft = false
 
