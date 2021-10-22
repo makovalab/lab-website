@@ -1,5 +1,5 @@
 +++
-title = "Congratulations to Barbara Arbeithuber on winning the 2021 EMGS New Investigator Presentation Award!"
+title = "Congratulations to Barbara Arbeithuber, a former postdoc from the lab, on winning the 2021 EMGS New Investigator Presentation Award!"
 date = 2021-10-13T00:00:00
 draft = false
 
@@ -29,9 +29,5 @@ categories = []
   # Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
   focal_point = ""
 +++
-Congratulations to the Winners of the 2021 EMGS Student and New Investigator Presentation Awards!
-
-The winners of the 2021 Student/New Investigator Presentation Awards have been announced. Every year, The Education, Student and New Investigator Affairs Committee (ESNIA) invites students and new investigators to submit abstracts for either poster or oral presentations. Submissions are automatically entered in the Best Presentation/Poster Competition, which takes place at the EMGS Annual Meeting. To be considered for the award, the abstract must be submitted and presented by the student or new investigator. Each winner receives a monetary prize.
-
 View the winners on the EMGS Website now: https://www.emgs-us.org/blog/2021-student/new-investigator-presentation-awards-winners-announcement
 
