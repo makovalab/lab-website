@@ -1,4 +1,4 @@
-[www.bx.psu.edu/makova_lab](http://www.bx.psu.edu/makova_lab) [![Build Status](https://app.travis-ci.com/github/makovalab/lab-website.svg?branch=master)](https://app.travis-ci.com/github/makovalab/lab-website)
+[www.bx.psu.edu/makova_lab](http://www.bx.psu.edu/makova_lab) [![Build Status](https://travis-ci.com/makovalab/lab-website.svg?branch=master)](https://app.travis-ci.com/github/makovalab/lab-website)
 ===
 
 ### Hugo
