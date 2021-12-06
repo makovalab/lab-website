@@ -1,0 +1,45 @@
+name: Build and Deploy Site
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+        env:
+          BUNDLE_BUILD__NOKOGIRI: --use-system-libraries
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.50'
+
+      - name: Build Site
+        run: hugo
+
+      - name: Check Site
+        working-directory: ./public
+        run: bundle exec htmlproofer . --check-html --disable-external --allow-hash-href --empty-alt-ignore --file-ignore ./js/vendor/reveal.js/plugin/notes/notes.html --url-swap '\/makova_lab/:/'
+
+      - name: Deploy Site
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_KEY }}
+          ARGS: -rq
+          SOURCE: ./public/
+          REMOTE_HOST: ${{ secrets.DEPLOY_HOST }}
+          REMOTE_USER: ${{ secrets.DEPLOY_USER }}
+          TARGET: ${{ secrets.DEPLOY_DIRECTORY }}
+
