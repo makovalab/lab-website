@@ -19,7 +19,7 @@ publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
 publication = "_Econometrics Statistics_"
-publication_short = "_ECONO STAT_"
+publication_short = "_ECON STAT_"
 
 # Abstract and optional shortened version.
 abstract = ""
