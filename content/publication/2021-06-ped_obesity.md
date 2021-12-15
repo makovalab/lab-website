@@ -66,7 +66,7 @@ url_source = ""
 
 
 # Digital Object Identifier (DOI)
-doi = ""
+doi = "http://dx.doi.org/10.1111/ijpo.12833"
 
 
 # Featured image
