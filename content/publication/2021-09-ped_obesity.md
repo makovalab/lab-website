@@ -18,8 +18,8 @@ authors = ["JS Savage", "AK Hochgraf", "E Loken", "ME Marini", "SJ Craig", "KD M
 publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
-publication = "IN PRESS__Pediatric Obesity_"
-publication_short = "IN PRESS__PED OBESITY_"
+publication = "IN PRESS__Obesity_"
+publication_short = "IN PRESS__OBESITY_"
 
 # Abstract and optional shortened version.
 abstract = ""
