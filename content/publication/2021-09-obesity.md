@@ -18,8 +18,8 @@ authors = ["JS Savage", "AK Hochgraf", "E Loken", "ME Marini", "SJ Craig", "KD M
 publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
-publication = "IN PRESS__Obesity_"
-publication_short = "IN PRESS__OBESITY_"
+publication = "OBESITY"
+publication_short = "OBESITY_"
 
 # Abstract and optional shortened version.
 abstract = ""
@@ -66,7 +66,7 @@ url_source = ""
 
 
 # Digital Object Identifier (DOI)
-doi = ""
+doi = "http://dx.doi.org/10.1002/oby.23301"
 
 
 # Featured image
