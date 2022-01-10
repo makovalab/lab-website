@@ -18,8 +18,8 @@ authors = ["JS Savage", "AK Hochgraf", "E Loken", "ME Marini", "SJ Craig", "KD M
 publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
-publication = "OBESITY"
-publication_short = "OBESITY_"
+publication = "Obesity"
+publication_short = "_OBESITY_"
 
 # Abstract and optional shortened version.
 abstract = ""
