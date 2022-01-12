@@ -1,6 +1,6 @@
 +++
 title = "INSIGHT responsive parenting educational intervention for firstborns is associated with growth of secondborn siblings"
-date = 2021-09-02T00:00:00
+date = 2022-01-01T00:00:00
 draft = false
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
