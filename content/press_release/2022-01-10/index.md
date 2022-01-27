@@ -33,6 +33,6 @@ projects = ["childhood obesity"]
 
 
 [header]
-  image = ""
+  image = "New-Approach-ID-Obesity.png"
 
 +++
