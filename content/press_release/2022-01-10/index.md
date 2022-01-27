@@ -18,7 +18,7 @@ categories = []
 #   E.g. `projects = ["deep-learning"]` references 
 #   `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
-projects = ["childhood obesity"]
+projects = ["childhood_obesity"]
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
