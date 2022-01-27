@@ -1,4 +1,3 @@
-
 +++
 title = "New approach can help identify young children most at risk for obesity"
 subtitle = "A new study developed obesity risk scores using genetic information and novel statistical techniques"
@@ -33,6 +32,6 @@ projects = ["childhood obesity"]
 
 
 [header]
-  image = "New-Approach-ID-Obesity.png"
+  image = "New-Approach-ID-Obesity-hero.png"
 
 +++
