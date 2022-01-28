@@ -86,5 +86,10 @@ This work is supported by the National Institute of Diabetes and Digestive and K
 **Kateryna Makova**, <a href="mailto:kmakova@bx.psu.edu">kmakova@bx.psu.edu</a>\
 *Work Phone: 814-863-1619*\
 \
+**Francesca Chiaromonte**, <a href="mailto:chiaro@stat.psu.edu">chiaro@stat.psu.edu</a>\
+*Work Phone: 814-865-7075*\
+\
+**Gail McCormick**, <a href="gailmccormick@psu.edu">gailmccormick@psu.edu</a>\
+*Work Phone: 814-863-0901*\
 
 
