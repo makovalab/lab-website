@@ -31,7 +31,7 @@ jobs:
 
       - name: Check Site
         working-directory: ./public
-        run: bundle exec htmlproofer . --check-html --disable-external --allow-hash-href --empty-alt-ignore --file-ignore ./js/vendor/reveal.js/plugin/notes/notes.html --url-swap '\/makova_lab/:/'
+        run: bundle exec ../bx-htmlproofer
 
       - name: Deploy Site
         uses: easingthemes/ssh-deploy@main
