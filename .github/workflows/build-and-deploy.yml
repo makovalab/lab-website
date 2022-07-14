@@ -45,7 +45,7 @@ jobs:
           TARGET: ${{ secrets.DEPLOY_DIRECTORY }}
 
       - name: Update Site
-        uses: richard-burhans/github-action-ssh
+        uses: richard-burhans/github-action-ssh@release
         with:
           command: dummy
           host: ${{ secrets.DEPLOY_HOST }}
