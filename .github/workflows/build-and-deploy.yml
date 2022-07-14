@@ -44,3 +44,11 @@ jobs:
           REMOTE_USER: ${{ secrets.DEPLOY_USER }}
           TARGET: ${{ secrets.DEPLOY_DIRECTORY }}
 
+      - name: Update Site
+        uses: richard-burhans/github-action-ssh
+        with:
+          command: dummy
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          privateKey: ${{ secrets.UPDATE_KEY }}
+
