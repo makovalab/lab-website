@@ -1,6 +1,6 @@
 +++
 name = "Matthias Weissensteiner"
-author_names = ["M Weissensteiner"]
+author_names = ["M Weissensteiner", "MH Weissensteiner"]
 role = "Postdoctoral Scholar"
 short_bio = ""
 id = ""

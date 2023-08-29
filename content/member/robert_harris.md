@@ -1,6 +1,6 @@
 +++
 name = "Robert Harris"
-author_names = ["RS Harris"]
+author_names = ["RS Harris", "R Harris"]
 role = "Research Assistant Professor"
 short_bio = ""
 id = ""
