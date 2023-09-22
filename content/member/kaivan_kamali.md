@@ -1,6 +1,6 @@
 +++
 name = "Kaivan Kamali"
-author_names = [""]
+author_names = ["K Kamali"]
 role = "Computational Scientist"
 short_bio = ""
 id = ""

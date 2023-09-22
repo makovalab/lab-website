@@ -1,6 +1,6 @@
 +++
 name = "Xinru Zhang"
-author_names = [""]
+author_names = ["X Zhang"]
 role = "Ph.D. student"
 short_bio = ""
 id = ""

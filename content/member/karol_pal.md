@@ -1,6 +1,6 @@
 +++
 name = "Karol Pál"
-author_names = [""]
+author_names = ["K Pal"]
 role = "Postdoctoral Scholar"
 short_bio = ""
 id = ""
