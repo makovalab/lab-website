@@ -5,12 +5,20 @@ role = "Ph.D. student"
 short_bio = ""
 id = ""
 portrait = "edmundo.png"
-interests = ["", ""]
+interests = [
+  "Mitochondrial and nuclear genome coevolution",
+  "Mutagenesis in mitochondrial DNA",
+  "Mitochondrial DNA copy number in context of child weight gain",
+]
 cv_link = ""
 personal_website = ""
 sort_position = 400
 is_former_member = false
 projects = ["mitochondrial_mutation_dynamics"]
+
+[[education]]
+  course = "B.S. in Biology"
+  institution = "University of Puerto Rico at Mayagüez"
 
 [[social]]
     icon = "envelope"
