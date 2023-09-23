@@ -20,3 +20,8 @@ projects = ["mitochondrial_mutation_dynamics"]
 
 +++
 
+Before starting his PhD in the Makova lab, Edmundo worked on regional
+human variation in Puerto Rico as an undergraduate and translational
+cancer genomics as a postbac at the NIH.  As part of this thesis work,
+he focuses on mitochondrial genomics that cover its evolution, and
+relation to complex phenotypes.
