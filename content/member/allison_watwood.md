@@ -9,7 +9,7 @@ interests = ["", ""]
 cv_link = ""
 personal_website = ""
 sort_position = 420
-is_former_member = false
+is_former_member = true
 projects = ["sex_chromosome_evolution"]
 [[social]]
     icon = "envelope"
