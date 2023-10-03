@@ -36,6 +36,8 @@ projects = ["sex_chromosome_evolution"]
 
 +++
 
+Listen to the [Science Friday podcast](https://www.sciencefriday.com/segments/y-chromosome-fully-sequenced) where Adam Phillippy and [Kateryna Makova]({{< ref "/member/kateryna_makova.md" >}}) discuss the challenges of sequencing the Y chromosome, and what doing so might mean for medical research.
+
 {{< figure
       class="image-center"
       src="psn_y-chromosome.jpg"
