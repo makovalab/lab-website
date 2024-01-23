@@ -15,6 +15,14 @@ personal_website = ""
 sort_position = 0
 is_former_member = false
 
+[[education]]
+  course = "Ph.D. in Biology"
+  institution = "Texas Tech University"
+
+[[education]]
+  course = "M.S. in Biochemistry and Molecular Biology"
+  institution = "Kiev State University Kiev, Ukraine"
+
 [[social]]
     icon = "envelope"
     icon_pack = "fas"
