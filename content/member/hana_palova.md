@@ -7,7 +7,7 @@ id = ""
 portrait = "portrait.png"
 interests = [
   "Molecular biology and genetics of cancer and hereditary diseases",
-  "Molecular evolution",
+  "Cellular biology",
 ]
 cv_link = ""
 personal_website = ""
