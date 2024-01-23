@@ -27,3 +27,5 @@ projects = [""]
 
 
 +++
+
+Jacob's current research in the Dr. Makova's lab uses a combination of experimental and computational approaches to characterize the role of non-cannonical DNA secondary structures in primate genomes. Before joining the makova lab, Jacob studied RNA biochemistry. His Ph.D. thesis work with Dr. Philip Bevilacqua updated thermodynamic models that describe RNA secondary structures to better relect the cellular environment. His undergraduate thesis work focused on drug targeting RNA thermometers in bacteria.
