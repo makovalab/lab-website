@@ -5,7 +5,11 @@ role = "Postdoctoral Scholar"
 short_bio = ""
 id = ""
 portrait = "portrait.png"
-interests = ["", ""]
+interests = [
+  "Nucleic acids chemistry and biology",
+  "Molecular evolution",
+  "Non-cannonical DNA secondary structures",
+]
 cv_link = ""
 personal_website = ""
 sort_position = 295
