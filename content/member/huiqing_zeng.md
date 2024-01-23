@@ -1,7 +1,7 @@
 +++
 name = "Huiqing Zeng"
 author_names = ["H Zeng"]
-role = "Research Technologist 4"
+role = "Research Technologist"
 short_bio = ""
 id = ""
 portrait = "portrait.png"
