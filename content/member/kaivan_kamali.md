@@ -5,7 +5,11 @@ role = "Computational Scientist"
 short_bio = ""
 id = ""
 portrait = "portrait.png"
-interests = ["", ""]
+interests = [
+  "Artificial Intelligence and Machine Learning",
+  "Software engineering",
+  "Bioinformatics",
+]
 cv_link = ""
 personal_website = ""
 sort_position = 205
