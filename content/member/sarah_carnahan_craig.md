@@ -9,7 +9,7 @@ interests = ["", ""]
 cv_link = ""
 personal_website = ""
 sort_position = 70
-is_former_member = false
+is_former_member = true
 projects = ["childhood_obesity"]
 
 [[social]]
