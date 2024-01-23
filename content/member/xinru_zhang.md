@@ -5,7 +5,9 @@ role = "Ph.D. student"
 short_bio = ""
 id = ""
 portrait = "xinru_zhang.png"
-interests = ["", ""]
+interests = [
+  "Molecular evolution",
+]
 cv_link = ""
 personal_website = ""
 sort_position = 490
@@ -24,9 +26,4 @@ projects = ["microsatellite_variation_and_evolution"]
 
 +++
 
-I am a PhD student in the Bioinformatics and Genomics Program
-co-advised by Dr. Kateryna Makova and Dr. Yi-Fei Huang.  Currently
-I am studying the evolution of human genome, specifically
-G-quadruplexes and regulatory elements.  By
-integrating machine learning and phylogenetic inferences, I aim to
-explore the connection between evolutionary biology and human health.
+Xinru is a Ph.D. student in the Bioinformatics and Genomics Program co-advised by Dr. Kateryna Makova and Dr. Yi-Fei Huang. Currently, she's been studying the evolution of human genome, specifically G-quadruplexes and regulatory elements. By integrating machine learning and phylogenetic inferences, she aims to explore the connection between evolutionary biology and human health.
