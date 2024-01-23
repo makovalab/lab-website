@@ -4,7 +4,9 @@ author_names = ["L Carrel"]
 short_bio = ""
 id = ""
 portrait = "laura.png"
-interests = ["", ""]
+interests = [
+  "Genetic, epigenetic, and genomic regulation of expression on the mammalian X chromosome",
+]
 cv_link = ""
 personal_website = "https://www.huck.psu.edu/people/laura-carrel"
 sort_position = 20
