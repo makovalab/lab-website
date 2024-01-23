@@ -12,6 +12,14 @@ sort_position = 295
 is_former_member = false
 projects = [""]
 
+[[education]]
+  course = "Ph.D. in Chemistry"
+  institution = "Penn State University"
+
+[[education]]
+  course = "B.S. in Biochemistry"
+  institution = "Ohio Universisty Honors Tutorial College"
+
 [[social]]
     icon = "envelope"
     icon_pack = "fas"
