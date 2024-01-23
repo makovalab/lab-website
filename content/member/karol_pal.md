@@ -12,6 +12,14 @@ sort_position = 295
 is_former_member = false
 projects = ["sex_chromosome_evolution"]
 
+[[education]]
+  course = "Ph.D. in Oncology"
+  institution = "Masaryk University, Brno, Czechia"
+
+[[education]]
+  course = "M.S. in Bioinformatics"
+  institution = "Masaryk University, Brno, Czechia"
+
 [[social]]
     icon = "envelope"
     icon_pack = "fas"
