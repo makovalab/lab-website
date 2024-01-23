@@ -12,6 +12,10 @@ sort_position = 490
 is_former_member = false
 projects = ["microsatellite_variation_and_evolution"]
 
+[[education]]
+  course = "B.S. in Biology"
+  institution = "Wuhan University, China"
+
 [[social]]
     icon = "envelope"
     icon_pack = "fas"
