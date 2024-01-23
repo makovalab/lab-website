@@ -5,7 +5,11 @@ role = "Professor"
 short_bio = "Kateryna is interested in genomics, evolution, and human genetics."
 id = ""
 portrait = "kateryna.png"
-interests = ["", ""]
+interests = [
+  "Genomics, evolution, and human genetics",
+  "Sex chromosome evolution",
+  "Genomics of childhood obesity",
+]
 cv_link = ""
 personal_website = ""
 sort_position = 0
