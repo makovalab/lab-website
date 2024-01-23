@@ -19,6 +19,10 @@ projects = [""]
   course = "Ph.D. in Genomics and Proteomics"
   institution = "Masaryk University, Brno, Czechia"
 
+[[education]]
+  course = "M.S. in Molecular and Cellular Biology"
+  institution = "Palacky University, Olomouc, Czechia"
+
 [[social]]
     icon = "envelope"
     icon_pack = "fas"
