@@ -14,6 +14,10 @@ sort_position = 285
 is_former_member = false
 projects = ["microsatellite_variation_and_evolution"]
 
+[[education]]
+  course = "M.S. in Biological Sciences"
+  institution = "IISER Kolkata, India"
+  
 [[social]]
     icon = "envelope"
     icon_pack = "fas"
