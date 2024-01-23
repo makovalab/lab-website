@@ -5,9 +5,8 @@ role = "Research Technologist"
 short_bio = ""
 id = ""
 portrait = "portrait.png"
-interests =
-[
-"Molecular and cellular biology",
+interests = [
+  "Molecular and cellular biology",
 ]
 cv_link = ""
 personal_website = ""
