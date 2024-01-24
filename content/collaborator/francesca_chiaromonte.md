@@ -4,7 +4,12 @@ author_names = ["F Chiaromonte"]
 short_bio = ""
 id = ""
 portrait = "francesca.png"
-interests = ["", ""]
+interests = [
+  "Development of methods to analyze large, high-dimensional, and complex data and its application in "Omics" sciences and other scientific fields",
+  "Computational techniques for the empirical assessment of significance",
+  "Latent structure and Markov modeling approaches",
+  "Functional data analysis methods",
+]
 cv_link = ""
 personal_website = "https://sites.psu.edu/chiaromonte"
 sort_position = 30
