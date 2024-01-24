@@ -5,7 +5,7 @@ short_bio = ""
 id = ""
 portrait = "francesca.png"
 interests = [
-  "Development of methods to analyze large, high-dimensional, and complex data and its application in various scientific fields",
+  "Development of statistical methods to analyze large, high-dimensional, and complex data and its application in various scientific fields",
   "Computational techniques for the empirical assessment of significance",
   "Latent structure and Markov modeling approaches",
   "Functional data analysis methods",
