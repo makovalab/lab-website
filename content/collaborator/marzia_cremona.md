@@ -20,3 +20,4 @@ projects = ["regional_variation_in_mutation_rates", "microsatellite_variation_an
 
 +++
 
+Marzia develops statistical techniques for the analysis of large, high-dimensional and complex data – in particular functional data. An important aspect of her research is its collaborative and multidisciplinary nature. Indeed, much of her work is at the interface between statistics and computational biology, and her main application area is in the “Omics” sciences.
