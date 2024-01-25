@@ -28,4 +28,4 @@ projects = [""]
 
 +++
 
-Zachary's lab works at the interface of population genetics and evolutionary genomics. Their work has relevance to a number of fields including medical genetics, anthropology, and conservation genetics. Using mathematical modeling, simulations, and large-scale data analysis, Zachary and his colleagues seek to understand the relationship between recent demographic history, inbreeding, and natural selection on the distribution of genetic variation within and between populations. They aim to exploit their knowledge of these processes to develop methods to identify and characterize the genomic consequences of adaptation and to learn about the origin and genetic architecture of disease and other phenotypes.
+Zachary works at the interface of population genetics and evolutionary genomics. His work has relevance to a number of fields including medical genetics, anthropology, and conservation genetics.
