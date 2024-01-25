@@ -4,7 +4,9 @@ author_names = ["KA Eckert"]
 short_bio = ""
 id = ""
 portrait = "kristin.png"
-interests = ["", ""]
+interests = [
+  "Genome evolution",
+]
 cv_link = ""
 personal_website = "https://www.huck.psu.edu/people/kristin-eckert"
 sort_position = 70
