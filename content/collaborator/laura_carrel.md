@@ -8,14 +8,15 @@ interests = [
   "Genetic, epigenetic, and genomic regulation of expression on the mammalian X chromosome",
 ]
 cv_link = ""
-personal_website = "https://www.huck.psu.edu/people/laura-carrel"
+personal_website = "https://sites.psu.edu/carrel/"
 sort_position = 20
 is_former_collaborator = false
 projects = []
 
 [[organizations]]
-  name = "Penn State Medical School at Hershey"
-  role = "Department of Biochemistry and Molecular Biology"
+  name = "Department of Biochemistry and Molecular Biology, Huck Institutes of the Life Sciences, Penn State University"
+  role = "Professor of Biochemistry and Molecular Biology"
 
 +++
 
+Prof. Carrel focuses on genetic, epigenetic, and genomic regulation of expression on the mammalian X chromosome.
