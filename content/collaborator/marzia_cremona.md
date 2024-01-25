@@ -5,7 +5,9 @@ role = "Visiting Research Professor"
 short_bio = ""
 id = ""
 portrait = "marzia.png"
-interests = ["", ""]
+interests = [
+  "Development of statistical techniques of large, high-dimensional and complex data",
+]
 cv_link = ""
 personal_website = "https://marziacremona.com/"
 sort_position = 40
