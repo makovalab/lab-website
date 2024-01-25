@@ -5,9 +5,9 @@ short_bio = ""
 id = ""
 portrait = "rasmus.png"
 interests = [
-  "Genetics"
+  "Genetics",
   "Molecular evolution",
-  "Applied statistics,
+  "Applied statistics",
 ]
 cv_link = ""
 personal_website = "https://nielsen-lab.github.io/"
