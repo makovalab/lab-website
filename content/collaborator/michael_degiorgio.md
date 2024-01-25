@@ -32,3 +32,4 @@ projects = []
 
 +++
 
+Michael leads a data science research group focusing on the development and application of statistical and machine learning techniques in genomics.
