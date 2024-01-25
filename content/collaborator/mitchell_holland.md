@@ -4,7 +4,10 @@ author_names = ["MM Holland"]
 short_bio = ""
 id = ""
 portrait = "holland.png"
-interests = ["", ""]
+interests = [
+  "Forensic biology",
+  "Forensic mitochondrial (mt) DNA analysis"
+]
 cv_link = ""
 personal_website = "https://sites.psu.edu/hollandresearch/"
 sort_position = 90
