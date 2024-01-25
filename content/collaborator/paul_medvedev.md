@@ -4,9 +4,7 @@ author_names = ["P Medvedev"]
 short_bio = ""
 id = ""
 portrait = "paul.png"
-interests = [
-  "Development of computer science techniques for analysis of biological data,
-]
+interests = ["", ""]
 cv_link = ""
 personal_website = "http://medvedevgroup.com"
 sort_position = 110
@@ -22,11 +20,6 @@ projects = ["sex_chromosome_evolution"]
   course = "M.Sc. in Computer Science"
   year = 2004
   institution = "University of Southern Denmark at Odense"
-
-[[education]]
-  course = "B.S. in Computer Science"
-  year = 2002
-  institution = "University of California, Los Angeles"
 
 [[organizations]]
   name = "Pennsylvania State University"
