@@ -13,6 +13,11 @@ sort_position = 160
 is_former_collaborator = false
 projects = []
 
+[[social]]
+    icon = "envelope"
+    icon_pack = "fas"
+    link = "mailto:oryder@ucsd.edu"
+
 [[education]]
   course = "Ph.D. in Biology"
   institution = "University of California, San Diego"
