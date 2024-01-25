@@ -25,13 +25,15 @@ projects = ["childhood_obesity"]
 
 [[education]]
   course = "Residency, Pediatrics"
-  year = 2001
-  institution = "Duke University"
+  institution = "Duke University School of Medicine""
 
 [[education]]
   course = "M.D."
-  year = 1998
-  institution = "Penn State Hershey College of Medicine"
+  institution = "Pennsylvania State University College of Medicine"
+
+[[education]]
+  course = "M.S in Health Evaluation Sciences"
+  institution = "Pennsylvania State University College of Medicine"
 
 [[organizations]]
     name = "Penn State College of Medicine"
