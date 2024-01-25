@@ -25,7 +25,7 @@ projects = ["childhood_obesity"]
 
 [[education]]
   course = "Residency, Pediatrics"
-  institution = "Duke University School of Medicine""
+  institution = "Duke University School of Medicine"
 
 [[education]]
   course = "M.D."
