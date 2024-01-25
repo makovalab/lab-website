@@ -4,7 +4,7 @@ author_names = ["H Palova"]
 role = "Research Assistant"
 short_bio = ""
 id = ""
-portrait = "portrait.png"
+portrait = "hana_palova.png"
 interests = [
   "Molecular biology and genetics of cancer and hereditary diseases",
   "Cellular biology",

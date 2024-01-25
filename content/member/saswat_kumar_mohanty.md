@@ -4,7 +4,7 @@ author_names = ["SK Mohanty"]
 role = "Ph.D. student"
 short_bio = ""
 id = ""
-portrait = "portrait.png"
+portrait = "saswat_mohanty.png"
 interests = [
   "Primate genomics and bioinformatics",
 ]
