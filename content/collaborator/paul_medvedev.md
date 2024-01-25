@@ -4,7 +4,9 @@ author_names = ["P Medvedev"]
 short_bio = ""
 id = ""
 portrait = "paul.png"
-interests = ["", ""]
+interests = [
+  "Development of computer science techniques for analysis of biological data,
+]
 cv_link = ""
 personal_website = "http://medvedevgroup.com"
 sort_position = 110
