@@ -17,7 +17,7 @@ projects = ["mitochondrial_mutation_dynamics"]
 [[social]]
     icon = "envelope"
     icon_pack = "fas"
-    link = "mailto:bxa15@psu.edu"
+    link = "mailto:barbara.arbeithuber@jku.at"
 
 [[organizations]]
     name = "University Clinic of Gynaecology, Obstetrics and Gynaecological Endocrinology, Johannes Kepler University Linz, Austria"
