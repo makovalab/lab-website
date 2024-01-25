@@ -4,7 +4,9 @@ author_names = ["A Nekrutenko"]
 short_bio = ""
 id = ""
 portrait = "anton.png"
-interests = ["", ""]
+interests = [
+  "Computational genomics",
+]
 cv_link = ""
 personal_website = "http://nekrut.bx.psu.edu/"
 sort_position = 120
