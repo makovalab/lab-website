@@ -13,6 +13,11 @@ sort_position = 120
 is_former_collaborator = false
 projects = []
 
+[[social]]
+    icon = "envelope"
+    icon_pack = "fas"
+    link = "mailto:aun1@psu.edu"
+
 [[organizations]]
     name = "Pennsylvania State University"
     role = "Professor of Biochemistry and Molecular Biology"
