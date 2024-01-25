@@ -16,6 +16,10 @@ projects = ["regional_variation_in_mutation_rates", "microsatellite_variation_an
   course = "Ph.D. in Mathematical Models and Methods in Engineering"
   institution = "Politecnico di Milano, Italy"
 
+[[education]]
+  course = "M.S. in Mathematics"
+  institution = "Università degli Studi di Milano, Italy"
+
 [[social]]
     icon = "envelope"
     icon_pack = "fas"
