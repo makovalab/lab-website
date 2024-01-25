@@ -32,3 +32,4 @@ projects = ["sex_chromosome_evolution"]
 
 +++
 
+Paul Medvedev is a Professor in the Department of Computer Science and Engineering and the Department of Biochemistry and Molecular Biology and the Director of the Center for Computational Biology and Bioinformatics at the Pennsylvania State University. His research focus is on developing computer science techniques for analysis of biological data and on answering fundamental biological questions using such methods.
