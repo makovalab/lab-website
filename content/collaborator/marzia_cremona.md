@@ -6,7 +6,7 @@ short_bio = ""
 id = ""
 portrait = "marzia.png"
 interests = [
-  "Development of statistical techniques of large, high-dimensional and complex data",
+  "Development of statistical techniques for the analysis of large, high-dimensional and complex data",
 ]
 cv_link = ""
 personal_website = "https://marziacremona.com/"
