@@ -11,6 +11,11 @@ sort_position = 50
 is_former_collaborator = false
 projects = []
 
+[[social]]
+    icon = "envelope"
+    icon_pack = "fas"
+    link = "mailto:mdegiorg@fau.edu"
+
 [[education]]
   course = "Ph.D."
   year = 2011
@@ -27,8 +32,8 @@ projects = []
   institution = "University of Central Florida"
 
 [[organizations]]
-  name = "Pennsylvania State University"
-  role = "Assistant Professor of Biology"
+  name = "Department of Electrical Engineering and Computer Science, Florida Atlantic University"
+  role = "Associate Chair"
 
 +++
 
