@@ -18,3 +18,4 @@ projects = []
 
 +++
 
+Prof. Eckert is focused on mechanisms of human cell mutagenesis and repetitive DNA replication in relation to genome evolution.
