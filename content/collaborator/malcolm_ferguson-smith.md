@@ -15,6 +15,11 @@ sort_position = 80
 is_former_collaborator = false
 projects = []
 
+[[social]]
+    icon = "envelope"
+    icon_pack = "fas"
+    link = "mailto:maf12@cam.ac.uk"
+
 [[education]]
   course = "MBBS"
   institution = "University of Glasgow"
