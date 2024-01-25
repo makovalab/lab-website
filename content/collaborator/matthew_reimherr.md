@@ -18,6 +18,14 @@ sort_position = 150
 is_former_collaborator = false
 projects = ["childhood_obesity"]
 
+[[education]]
+  course = "Ph.D. in Statistics"
+  institution = "University of Chicago"
+
+[[education]]
+  course = "M.S. in Statistics"
+  institution = "University of Utah"
+
 [[organizations]]
     name = "Department of Statistics, Pennsylvania State University"
     role = "Affiliate Professor of Statistics"
