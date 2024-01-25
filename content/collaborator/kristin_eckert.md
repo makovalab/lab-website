@@ -15,6 +15,13 @@ projects = []
     name = "Penn State Medical School at Hershey"
     role = "Department of Pathology"
 
+[[education]]
+  course = "Ph.D. in Oncology"
+  institution = "University of Wisconsin-Madison"
+
+[[education]]
+  course = "B.S. in Microbiology"
+  institution = "Penn State University"
 
 +++
 
