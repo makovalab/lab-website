@@ -16,7 +16,6 @@ sort_position = 60
 is_former_collaborator = false
 projects = ["mitochondrial_mutation_dynamics"]
 
-
 [[social]]
     icon = "envelope"
     icon_pack = "fas"
@@ -32,17 +31,11 @@ projects = ["mitochondrial_mutation_dynamics"]
   year = 1999
   institution = "University of Wisconsin-Madison"
 
-[[education]]
-  course = "B.S."
-  year = 1994
-  institution = "University of Vermont"
-
 [[organizations]]
     name = "Pennsylvania State University"
     role = "Associate Professor of Reproductive Biology"
 
-
 +++
 
-
+Francisco's research focuses on understanding the molecular and functional interactions between oocytes and granulosa cells that promote production of a fertile oocyte. This knowledge can then be used to (1) develop better therapeutic interventions for infertility or species preservation and (2) develop better reproductive management tools for animal agriculture.
 
