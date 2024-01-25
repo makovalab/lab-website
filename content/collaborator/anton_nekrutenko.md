@@ -18,7 +18,7 @@ projects = []
     role = "Professor of Biochemistry and Molecular Biology"
 
 [[education]]
-  course = "Ph.D."
+  course = "Ph.D. in Biology"
   institution = "Texas Tech University"
 
 [[education]]
