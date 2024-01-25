@@ -6,6 +6,7 @@ id = ""
 portrait = "kristin.png"
 interests = [
   "Genome evolution",
+  "Molecular mechanisms of carcinogenesis",
 ]
 cv_link = ""
 personal_website = "https://www.huck.psu.edu/people/kristin-eckert"
@@ -14,8 +15,8 @@ is_former_collaborator = false
 projects = []
 
 [[organizations]]
-    name = "Penn State Medical School at Hershey"
-    role = "Department of Pathology"
+    name = "Department of Pathology and Laboratory Medicine and Department of Biochemistry and Molecular Biology"
+    role = "Professor"
 
 [[education]]
   course = "Ph.D. in Oncology"
