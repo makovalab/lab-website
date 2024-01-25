@@ -17,10 +17,14 @@ projects = ["mitochondrial_mutation_dynamics"]
     icon_pack = "fas"
     link = "mailto:bxa15@psu.edu"
 
+[[organizations]]
+    name = "University Clinic of Gynaecology, Obstetrics and Gynaecological Endocrinology, Johannes Kepler University Linz, Austria"
+    role = "Head of the Working Group"
+
+[[education]]
+  course = "Ph.D."
+  institution = "Johannes Kepler University Linz, Austria"
+
 +++
 
-
-I am interested in the accurate measurement of rare mutations.  My
-current project focuses on the inheritance of mitochondrial DNA;
-particularly, I want analyze de novo mutations in the germ line,
-as well as the inheritance of low-level variants.
+In Prof. Makova's lab Barbara was interested in the accurate measurement of rare mutations. Her project was focused on the inheritance of mitochondrial DNA; particularly, analysis of de novo mutations in the germ line, as well as the inheritance of low-level variants.
