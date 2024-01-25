@@ -16,6 +16,11 @@ sort_position = 30
 is_former_collaborator = false
 projects = ["childhood_obesity", "microsatellite_variation_and_evolution"]
 
+[[social]]
+    icon = "envelope"
+    icon_pack = "fas"
+    link = "mailto:fxc11@psu.edu"
+
 [[organizations]]
     name = "Pennsylvania State University"
     role = "Department of Statistics"
