@@ -4,7 +4,9 @@ author_names = ["M DeGiorgio"]
 short_bio = ""
 id = ""
 portrait = "michael.png"
-interests = ["", ""]
+interests = [
+  "Development and application of statistical and machine learning techniques in genomics",
+]
 cv_link = ""
 personal_website = "https://www.fau.edu/engineering/directory/faculty/degiorgio/"
 sort_position = 50
@@ -17,18 +19,15 @@ projects = []
     link = "mailto:mdegiorg@fau.edu"
 
 [[education]]
-  course = "Ph.D."
-  year = 2011
+  course = "Ph.D. in Bioinformatics"
   institution = "University of Michigan"
 
 [[education]]
-  course = "M.S."
-  year = 2008
-  institution = "University of Michigan"
+  course = "B.S. in Mathematics"
+  institution = "University of Central Florida"
 
-[[education]]
-  course = "B.S."
-  year = 2006
+  [[education]]
+  course = "B.S. in Computer Science"
   institution = "University of Central Florida"
 
 [[organizations]]
