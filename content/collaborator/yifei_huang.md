@@ -4,7 +4,9 @@ author_names = ["Y Huang"]
 short_bio = ""
 id = ""
 portrait = "yifei_huang.png"
-interests = ["", ""]
+interests = [
+  "Development of novel machine learning models to study how natural selection shapes the distribution of human genomic variation and the architectures of genetic diseases",
+]
 cv_link = ""
 personal_website = "https://yifei-lab.github.io"
 sort_position = 100
