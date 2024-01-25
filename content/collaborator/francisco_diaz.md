@@ -16,6 +16,12 @@ sort_position = 60
 is_former_collaborator = false
 projects = ["mitochondrial_mutation_dynamics"]
 
+
+[[social]]
+    icon = "envelope"
+    icon_pack = "fas"
+    link = "mailto:fjd10@psu.edu"
+
 [[education]]
   course = "Ph.D."
   year = 2003
