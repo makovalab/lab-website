@@ -12,6 +12,9 @@ sort_position = 40
 is_former_collaborator = false
 projects = ["regional_variation_in_mutation_rates", "microsatellite_variation_and_evolution", "mitochondrial_mutation_dynamics"]
 
+[[education]]
+  course = "Ph.D. in Mathematical Models and Methods in Engineering"
+  institution = "Politecnico di Milano, Italy"
 
 [[social]]
     icon = "envelope"
