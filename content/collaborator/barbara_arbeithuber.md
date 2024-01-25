@@ -5,7 +5,9 @@ role = "Postdoctoral Scholar"
 short_bio = ""
 id = ""
 portrait = "barbara.png"
-interests = ["", ""]
+interests = [
+  "Human molecular genetics",
+]
 cv_link = ""
 personal_website = ""
 sort_position = 10
