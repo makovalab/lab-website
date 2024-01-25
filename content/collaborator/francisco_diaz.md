@@ -5,10 +5,10 @@ short_bio = ""
 id = ""
 portrait = "francisco.png"
 interests = [
-  "Reproductive Biology",
-  "Nutrition and Reproduction",
-  "Ovarian Function",
-  "Oocyte Development"
+  "Reproductive biology",
+  "Nutrition and reproduction",
+  "Ovarian function",
+  "Oocyte development"
 ]
 cv_link = ""
 personal_website = "https://animalscience.psu.edu/directory/fjd10"
