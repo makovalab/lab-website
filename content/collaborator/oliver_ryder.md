@@ -4,7 +4,9 @@ author_names = ["OA Ryder"]
 short_bio = ""
 id = ""
 portrait = "oliver.png"
-interests = ["", ""]
+interests = [
+  "Conservation biology, genetics, advocacy, and education",
+]
 cv_link = ""
 personal_website = "https://science.sandiegozoo.org/oliver-ryder-phd"
 sort_position = 160
