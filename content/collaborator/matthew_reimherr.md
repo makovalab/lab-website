@@ -4,9 +4,16 @@ author_names = ["M Reimherr"]
 short_bio = ""
 id = ""
 portrait = "matthew_reimherr.png"
-interests = ["", ""]
+interests = [
+  "Functional data analysis",
+  "Longitudinal data analysis",
+  "Statistical genetics",
+  "High dimensional regression and screening",
+  "Data privacy",
+  "Shape analysis",
+]
 cv_link = ""
-personal_website = "[http://personal.psu.edu/mlr36](https://mreimherr.github.io/)"
+personal_website = "https://mreimherr.github.io/"
 sort_position = 150
 is_former_collaborator = false
 projects = ["childhood_obesity"]
