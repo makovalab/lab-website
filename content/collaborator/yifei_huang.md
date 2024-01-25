@@ -14,3 +14,5 @@ projects = ["microsatellite_variation_and_evolution"]
 
 
 +++
+
+Yifei is an Assistant Professor in the Biology Department and the Huck Institutes at the Pennsylvania State University. He is interested in developing novel machine learning models to study how natural selection shapes the distribution of human genomic variation and the architectures of genetic diseases.
