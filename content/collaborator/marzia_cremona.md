@@ -22,6 +22,10 @@ projects = ["regional_variation_in_mutation_rates", "microsatellite_variation_an
   course = "M.S. in Mathematics"
   institution = "Università degli Studi di Milano, Italy"
 
+[[organizations]]
+  name = "Université Laval, Canada"
+  role = "Associate Professor"
+
 [[social]]
     icon = "envelope"
     icon_pack = "fas"
