@@ -14,6 +14,11 @@ sort_position = 80
 is_former_collaborator = false
 projects = [""]
 
+[[social]]
+    icon = "envelope"
+    icon_pack = "fas"
+    link = "mailto:cdh5313@psu.edu"
+
 [[organizations]]
     name = "Biology department of The Pennsylvania State University"
     role = "Assistant Professor"
