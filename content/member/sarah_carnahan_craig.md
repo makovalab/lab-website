@@ -5,7 +5,10 @@ role = "Research Assistant Professor"
 short_bio = ""
 id = ""
 portrait = "sarah.png"
-interests = ["", ""]
+interests = [
+  "Human evolution",
+  "Childhood obesity",
+]
 cv_link = ""
 personal_website = ""
 sort_position = 70
