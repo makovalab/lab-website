@@ -24,10 +24,10 @@ projects = ["childhood_obesity"]
 
 +++
 
-I am generally interested in human evolution with a specific emphasis
+Sarah is interested in human evolution with a specific emphasis
 on genetic variation within and between species, gene duplication,
-and the evolution of regulatory elements.  I find that the application
+and the evolution of regulatory elements. She found that the application
 of knowledge from these genetic investigations to explain (or help
 explain) phenotypic observations in humans (especially related to
-reproduction and human health) to be particularly exciting.  My
-current project in the Makova Lab focuses on childhood obesity.
+reproduction and human health) to be particularly exciting. Her
+project in the Makova Lab was focused on childhood obesity.
