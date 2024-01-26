@@ -23,5 +23,8 @@ projects = ["sex_chromosome_evolution"]
     icon_pack = "fas"
     link = "mailto:huz4@psu.edu"
 
-
 +++
+
+
+
+Huiqing's current interest in Makova lab is using new technologies, such as ddPCR, next generation sequencing, etc. to study genomics and human genetics. Before joining Makova lab, She studied signaling pathway in mouse embryonic development.
