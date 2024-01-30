@@ -1,6 +1,6 @@
 +++
 name = "Evan E. Eichler"
-author_names = ["EE Eichler"]
+author_names = ["E Eichler"]
 short_bio = ""
 id = ""
 portrait = "portrait.png"
