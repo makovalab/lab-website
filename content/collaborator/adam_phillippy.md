@@ -1,6 +1,6 @@
 +++
-name = "Adam M. Phillipy"
-author_names = ["AM Phillipy"]
+name = "Adam M. Phillippy"
+author_names = ["AM Phillippy"]
 short_bio = ""
 id = ""
 portrait = "portrait.png"
