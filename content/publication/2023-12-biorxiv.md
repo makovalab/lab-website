@@ -1,1 +1,83 @@
++++
+title = "The Complete Sequence and Comparative Analysis of Ape Sex Chromosomes"
+date = 2023-11-28T00:00:00
+draft = false
 
+# Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
+authors = ["Makova KD", "Pickett BD", "Harris RS", "Hartley GA", "Cechova M", "Pal K", "Nurk S", "Yoo D", "Li Q", "Hebbar P", "McGrath BC", "Antonacci F", "Aubel M", "Biddanda A", "Borchers M", "Bomberg E", "Bouffard GG", "Brooks SY", "Carbone L", "Carrel L", "Carroll A", "Chang PCh", "Chin ChS", "Cook DE", "Craig SJC", "Gennaro L", "Diekhans M", "Dutra A", "Garcia GH", "Grady PGS", "Green RE", "Haddad D", "Hallast P", "Harvey WT", "Hickey G", "Hillis DA", "Hoyt SJ", "Jeong H", "Kamali K", "Kosakovsky Pond SL", "LaPolice TM", "Lee Ch", "Lewis AP", "Loh YHE", "Masterson P", "McCoy RC", "Medvedev P", "Miga KH", "Munson KM", "Pak E", "Paten B", "Pinto BJ", "Potapova T", "Rhie A", "Rocha JL", "Ryabov F", "Ryder OA", "Sacco S", "Shafin K", "Shepelev VA", "Slon V", "Solar SJ", "Storer JM", "Sudmant PH", "Sweetalana", "Sweeten A", "Tassia MG", "Thibaud-Nissen F", "Ventura M", "Wilson MA", "Young AC", "Zeng H", "Zhang X", "Szpiech ZA", "Huber ChD", "Gerton JL", "Yi SV", "Schatz MC", "Alexandrov IA", "Koren S", "O'Neill RJ", "Eichler E", "Phillippy AM"]
+
+
+# Publication type.
+# Legend:
+# 0 = Uncategorized
+# 1 = Conference paper
+# 2 = Journal article
+# 3 = Manuscript
+# 4 = Report
+# 5 = Book
+# 6 = Book section
+publication_types = ["2"]
+
+# Publication name and optional abbreviated version.
+publication = "_bioRxiv_"
+publication_short = "_BIORXIV_"
+
+# Abstract and optional shortened version.
+abstract = "Apes possess two sex chromosomes-the male-specific Y and the X shared by males and females. The Y chromosome is crucial for male reproduction, with deletions linked to infertility. The X chromosome carries genes vital for reproduction and cognition. Variation in mating patterns and brain function among great apes suggests corresponding differences in their sex chromosome structure and evolution. However, due to their highly repetitive nature and incomplete reference assemblies, ape sex chromosomes have been challenging to study. Here, using the state-of-the-art experimental and computational methods developed for the telomere-to-telomere (T2T) human genome, we produced gapless, complete assemblies of the X and Y chromosomes for five great apes (chimpanzee, bonobo, gorilla, Bornean and Sumatran orangutans) and a lesser ape, the siamang gibbon. These assemblies completely resolved ampliconic, palindromic, and satellite sequences, including the entire centromeres, allowing us to untangle the intricacies of ape sex chromosome evolution. We found that, compared to the X, ape Y chromosomes vary greatly in size and have low alignability and high levels of structural rearrangements. This divergence on the Y arises from the accumulation of lineage-specific ampliconic regions and palindromes (which are shared more broadly among species on the X) and from the abundance of transposable elements and satellites (which have a lower representation on the X). Our analysis of Y chromosome genes revealed lineage-specific expansions of multi-copy gene families and signatures of purifying selection. In summary, the Y exhibits dynamic evolution, while the X is more stable. Finally, mapping short-read sequencing data from >100 great ape individuals revealed the patterns of diversity and selection on their sex chromosomes, demonstrating the utility of these reference assemblies for studies of great ape evolution. These complete sex chromosome assemblies are expected to further inform conservation genetics of nonhuman apes, all of which are endangered species."
+abstract_short = ""
+
+# Is this a selected publication? (true/false)
+selected = false
+
+# Projects (optional).
+#   Associate this publication with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `projects = ["deep-learning"]` references 
+#   `content/project/deep-learning/index.md`.
+#   Otherwise, set `projects = []`.
+projects = ["sex_chromosome_evolution"]
+
+
+# Slides (optional).
+#   Associate this page with Markdown slides.
+#   Simply enter your slide deck's filename without extension.
+#   E.g. `slides = "example-slides"` references 
+#   `content/slides/example-slides.md`.
+#   Otherwise, set `slides = ""`.
+slides = ""
+
+# Tags (optional).
+#   Set `tags = []` for no tags, or use the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
+tags = []
+
+# Links (optional).
+url_pdf = ""
+url_preprint = ""
+url_code = ""
+url_dataset = ""
+url_project = ""
+url_slides = ""
+url_video = ""
+url_poster = ""
+url_source = ""
+
+# Custom links (optional).
+#   Uncomment line below to enable. For multiple links, use the form `[{...}, {...}, {...}]`.
+# url_custom = [{name = "Custom Link", url = "http://example.org"}]
+
+
+# Digital Object Identifier (DOI)
+doi = "10.1101/2023.11.30.569198"
+
+
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder. 
+[image]
+  # Caption (optional)
+  caption = ""
+
+  # Focal point (optional)
+  # Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
+  focal_point = ""
++++
