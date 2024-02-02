@@ -4,7 +4,7 @@ author_names = ["J Sieg"]
 role = "Postdoctoral Scholar"
 short_bio = ""
 id = ""
-portrait = "portrait.png"
+portrait = "jacob_sieg.png"
 interests = [
   "Nucleic acids chemistry and biology",
   "Molecular evolution",

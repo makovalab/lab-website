@@ -4,7 +4,7 @@ author_names = ["K Kamali"]
 role = "Computational Scientist"
 short_bio = ""
 id = ""
-portrait = "portrait.png"
+portrait = "kaivan_kamali.png"
 interests = [
   "Artificial Intelligence and Machine Learning",
   "Software engineering",
