@@ -12,7 +12,7 @@ interests = [
 ]
 cv_link = ""
 personal_website = ""
-sort_position = 285
+sort_position = 255
 is_former_member = false
 projects = [""]
 
