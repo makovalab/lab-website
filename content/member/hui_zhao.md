@@ -5,6 +5,9 @@ role = "Administration Assistant"
 short_bio = ""
 id = ""
 portrait = "hui_zhao.png"
+interests = [
+  "Biology",
+]
 cv_link = ""
 personal_website = ""
 sort_position = 550
