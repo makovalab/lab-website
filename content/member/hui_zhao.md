@@ -15,7 +15,7 @@ is_former_member = false
 projects = [""]
 
 [[education]]
-  course = "M.Sc. in Biology"
+  course = "M.S. in Biology"
   institution = "McMaster University, Canada"
 
 [[social]]
