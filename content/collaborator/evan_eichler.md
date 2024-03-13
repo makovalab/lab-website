@@ -3,7 +3,7 @@ name = "Evan E. Eichler"
 author_names = ["E Eichler"]
 short_bio = ""
 id = ""
-portrait = "portrait.png"
+portrait = "evan_eichler.png"
 interests = [
   "Evolution, pathology and mechanism(s) of recent gene duplication and DNA transposition within the human genome",
 ]

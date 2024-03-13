@@ -10,7 +10,7 @@ interests = [
 ]
 cv_link = ""
 personal_website = ""
-sort_position = 480
+sort_position = 530
 is_former_member = false
 projects = ["sex_chromosome_evolution"]
 

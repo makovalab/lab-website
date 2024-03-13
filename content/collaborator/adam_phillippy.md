@@ -3,7 +3,7 @@ name = "Adam M. Phillippy"
 author_names = ["AM Phillippy"]
 short_bio = ""
 id = ""
-portrait = "portrait.png"
+portrait = "adam_phillippy.png"
 interests = [
   "Development and application of computational methods for the analysis of massive genomics datasets",
   "Genome sequencing and comparative genomics",

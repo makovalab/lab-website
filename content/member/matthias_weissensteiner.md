@@ -8,7 +8,7 @@ portrait = "matthias.png"
 interests = ["", ""]
 cv_link = ""
 personal_website = ""
-sort_position = 440
+sort_position = 490
 is_former_member = true
 projects = ["microsatellite_variation_and_evolution"]
 

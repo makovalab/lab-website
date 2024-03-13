@@ -10,7 +10,7 @@ interests = [
 ]
 cv_link = ""
 personal_website = ""
-sort_position = 285
+sort_position = 540
 is_former_member = false
 projects = ["microsatellite_variation_and_evolution"]
 

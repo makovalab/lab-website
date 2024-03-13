@@ -4,14 +4,14 @@ author_names = ["H Zhao"]
 role = ""
 short_bio = ""
 id = ""
-portrait = "portrait.png"
+portrait = "hui_zhao.png"
 interests = [
   "",
   "",
 ]
 cv_link = ""
 personal_website = ""
-sort_position = 400
+sort_position = 550
 is_former_member = false
 projects = [""]
 

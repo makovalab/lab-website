@@ -3,7 +3,7 @@ name = "Christian Huber"
 author_names = ["Ch Huber"]
 short_bio = ""
 id = ""
-portrait = "portrait.png"
+portrait = "christian_huber.png"
 interests = [
   "Quantification of positive and negative natural selection in the genome",
   "Development of methods for inferring demographic history and genetic adaptation from ancient DNA",

@@ -3,7 +3,7 @@ name = "Zachary Szpiech"
 author_names = ["Z Szpiech"]
 short_bio = ""
 id = ""
-portrait = "portrait.png"
+portrait = "zachary_szpiech.png"
 interests = [
   "Evolutionary biology",
   "Population genetics",
