@@ -1,6 +1,6 @@
 +++
 title = "In vivo detection of DNA secondary structures using Permanganate/S1 Footprinting with Direct Adapter Ligation and Sequencing (PDAL-Seq)"
-date = 2024-01-00T00:00:00
+date = 2024-01-01T00:00:00
 draft = false
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
