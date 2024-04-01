@@ -1,6 +1,6 @@
 +++
 title = "In vivo detection of DNA secondary structures using Permanganate/S1 Footprinting with Direct Adapter Ligation and Sequencing (PDAL-Seq)"
-date = 2024-01-01T00:00:00
+date = 2024-01-23T00:00:00
 draft = false
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
@@ -67,7 +67,7 @@ url_source = ""
 
 
 # Digital Object Identifier (DOI)
-doi = "https://www.sciencedirect.com/science/article/pii/S0076687923003956?via%3Dihub"
+doi = "https://doi.org/10.1016/bs.mie.2023.12.003"
 
 
 
