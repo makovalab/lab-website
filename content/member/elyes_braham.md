@@ -10,4 +10,10 @@ cv_link = ""
 personal_website = ""
 sort_position = 45
 is_former_member = true
+
+[[social]]
+    icon = "envelope"
+    icon_pack = "fas"
+    link = "mailto:elyes.braham25@gmail.com"
+
 +++
