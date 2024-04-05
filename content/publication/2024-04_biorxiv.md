@@ -35,7 +35,7 @@ selected = false
 #   E.g. `projects = ["deep-learning"]` references 
 #   `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
-projects = ["sex chromosome evolution"]
+projects = ["Sex chromosome evolution"]
 
 
 # Slides (optional).
