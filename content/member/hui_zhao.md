@@ -6,7 +6,7 @@ short_bio = ""
 id = ""
 portrait = "hui_zhao.png"
 interests = [
-  "Biology",
+  "Biolody",
 ]
 cv_link = ""
 personal_website = ""
@@ -16,8 +16,8 @@ projects = [""]
 
 [[education]]
   course = "M.S. in Biology"
-  institution = "McMaster University, Canada"
-
+  institution = "McMaster University"
+  
 [[social]]
     icon = "envelope"
     icon_pack = "fas"
