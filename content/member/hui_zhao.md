@@ -24,4 +24,5 @@ projects = [""]
     link = "mailto:hpz5265@psu.edu"
 
 +++
+
 Hui obtained her M.S. in Biology from McMaster University, Canada, in the year of 2013. After living in Canada for 4 years, she moved to US and settled down in State College along with her family. She joined Makova Lab as an administrative assistant in 2024. Apart from her work, Hui likes cooking, karate, excercise, or watching animal documentaries.
