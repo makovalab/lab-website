@@ -1,5 +1,4 @@
 [www.bx.psu.edu/makova_lab](https://www.bx.psu.edu/makova_lab/) ![Build and Deploy](https://github.com/makovalab/lab-website/actions/workflows/build-and-deploy.yml/badge.svg?branch=master)
-?branch=master)
 ===
 
 ### Hugo
