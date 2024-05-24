@@ -26,4 +26,4 @@ projects = ["microsatellite_variation_and_evolution"]
 
 +++
 
-Xinru is a Ph.D. student in the Bioinformatics and Genomics Program co-advised by Dr. Kateryna Makova and Dr. Yi-Fei Huang. Currently, she's been studying the evolution of human genome, specifically G-quadruplexes and regulatory elements. By integrating machine learning and phylogenetic inferences, she aims to explore the connection between evolutionary biology and human health.
+Xinru is a Ph.D. student in the Bioinformatics and Genomics Program co-advised by Dr. Kateryna Makova and Dr. Yi-Fei Huang. Currently, she is studying the evolution of human genome, specifically G-quadruplexes and regulatory elements. By integrating machine learning and phylogenetic inferences, she aims to explore the connection between evolutionary biology and human health.
