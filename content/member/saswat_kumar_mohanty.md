@@ -26,4 +26,5 @@ projects = ["microsatellite_variation_and_evolution"]
 
 +++
 
-Saswat is interested in understanding the evolution of non-B-DNA structures in primates. Currently, he's been working mainly on a specific type of non-B-DNA structure called the G-quadruplex or G4. He' s been developing bioinformatic tools to analyse genome wide distribution of these structures.
+Saswat is interested in understanding the evolution of non-B-DNA structures in primates. Currently, he is working mainly on a specific type of non-B-DNA structure called the G-quadruplex or G4, for example, developing bioinformatic tools to analyze genome-wide distribution of these structures.
+
