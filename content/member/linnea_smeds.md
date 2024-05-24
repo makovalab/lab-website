@@ -4,7 +4,6 @@ author_names = ["L Smeds"]
 role = "Postdoctoral Scholar"
 short_bio = ""
 id = ""
-portrait = ""
 interests = [
   "Conservation genomics",
   "Molecular evolution",
