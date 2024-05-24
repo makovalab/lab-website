@@ -27,4 +27,4 @@ projects = ["sex_chromosome_evolution"]
 
 
 
-Huiqing's current interest in Makova lab is using new technologies, such as ddPCR, next generation sequencing, etc. to study genomics and human genetics. Before joining Makova lab, She studied signaling pathway in mouse embryonic development.
+Huiqing's current interest in Makova Lab is using new technologies, such as ddPCR, next generation sequencing, etc., to study genomics and human genetics. Before joining Makova Lab, she studied signaling pathway in mouse embryonic development.
