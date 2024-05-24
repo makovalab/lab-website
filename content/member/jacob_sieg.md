@@ -8,7 +8,7 @@ portrait = "jacob_sieg.png"
 interests = [
   "Nucleic acids chemistry and biology",
   "Molecular evolution",
-  "Non-cannonical DNA secondary structures",
+  "Non-canonical DNA secondary structures",
 ]
 cv_link = ""
 personal_website = ""
