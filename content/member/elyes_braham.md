@@ -8,7 +8,7 @@ portrait = "portrait.png"
 interests = ["", ""]
 cv_link = ""
 personal_website = ""
-sort_position = 45
+sort_position = 60
 is_former_member = true
 
 [[social]]

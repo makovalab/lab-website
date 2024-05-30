@@ -8,7 +8,7 @@ portrait = "rebeca.png"
 interests = ["", ""]
 cv_link = ""
 personal_website = ""
-sort_position = 60
+sort_position = 80
 is_former_member = true
 +++
 

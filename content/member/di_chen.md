@@ -8,7 +8,7 @@ portrait = "bruce.png"
 interests = ["", ""]
 cv_link = ""
 personal_website = ""
-sort_position = 90
+sort_position = 110
 is_former_member = true
 projects = ["regional_variation_in_mutation_rates"]
 

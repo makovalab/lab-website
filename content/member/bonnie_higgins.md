@@ -8,7 +8,7 @@ portrait = "bonnie.png"
 interests = ["", ""]
 cv_link = ""
 personal_website = ""
-sort_position = 190
+sort_position = 220
 is_former_member = true
 projects = []
 

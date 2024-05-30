@@ -12,7 +12,7 @@ interests = [
 ]
 cv_link = ""
 personal_website = ""
-sort_position = 450
+sort_position = 500
 is_former_member = false
 projects = ["mitochondrial_mutation_dynamics"]
 
