@@ -35,7 +35,6 @@ projects = ["sex_chromosome_evolution"]
   image = ""
 
 +++
-
 Newly generated, complete “end-to-end” reference genomes for the sex chromosomes of five great ape species and one lesser ape species — produced by an international collaborative team led by researchers at Penn State, the National Human Genome Research Institute and the University of Washington — highlight extremely rapid changes on the male-specific Y chromosome among ape species. These findings shed light on the evolution of sex chromosomes and inform understanding of diseases related to genes on these chromosomes in both apes and humans.
 
 “The Y chromosome is important for human fertility, and the X chromosome harbors genes critical for reproduction, cognition and immunity,” said Kateryna Makova, Verne M. Willaman Chair of Life Sciences, professor of biology at Penn State and leader of the research team. “Our study opens doors for many future investigations of sex chromosomes, how they evolved, and diseases associated with them. The living non-human great ape species we studied are all endangered. The availability of their complete sex chromosome sequences will facilitate studies of their sex-specific dispersal in the wild and of their genes important for reproduction and fertility.”
