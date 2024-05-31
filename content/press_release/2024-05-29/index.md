@@ -56,6 +56,7 @@ The team produced complete sex chromosome sequences for five species of great ap
 >}}
 
 **High variability on the Y chromosome**
+
 “Sex chromosomes started like any other chromosome pair, but the Y has been unique in accumulating many deletions, other mutations and repetitive elements because it does not exchange genetic information with other chromosomes over most of its length,” said Makova, who is also the director of the [Center for Medical Genomics](https://cmg.psu.edu/) at Penn State.
 
 As a result, across the six ape species, the research team found that the Y chromosome was much more variable than the X over a variety of characteristics, including size. Among the studied apes, the X chromosome ranges in size from 154 million letters of the ACTG alphabet — representing the nucleotides that make up DNA — in chimpanzee and human to 178 million letters in gorilla. In contrast, the Y chromosome ranges from 30 million DNA letters in siamang to 68 million letters in Sumatran orangutan.
@@ -65,6 +66,7 @@ The amount of DNA sequence shared between species was also more variable on the 
 Additionally, the percentage of the chromosome occupied by sequences that are repeated is highly variable on the Y. Whereas, depending on the species, 62% to 66% of the X chromosomes are occupied by repetitive elements, 71% to 85% of the Y chromosomes are occupied by them. These percentages are higher on both the X and the Y than in other chromosomes in the human genome.
 
 **How the Y has survived**
+
 “We found the ape Y to be shrinking, accumulating many mutations and repeats, and losing genes,” Makova said. “So why hasn’t the Y chromosome disappeared, as some previous hypotheses suggested? In collaboration with Sergei Kosakovsky Pond from Temple University and others, we found that the Y chromosome still has a number of genes evolving under purifying selection — a type of natural selection that keeps gene sequences intact. Many of these genes are important for spermatogenesis. This means that the Y chromosome is unlikely to disappear any time soon.”
 
 The researchers found that many genes on the Y chromosome seem to use two strategies to survive. The first takes advantage of genetic redundancy — the presence of multiple copies of the same gene on a chromosome — so that intact copies of the gene can compensate for copies that might acquire mutations. The team quantified this genetic redundancy by completing the landscape of multi-copy gene families on ape sex chromosomes for the first time.
