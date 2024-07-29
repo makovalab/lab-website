@@ -4,7 +4,7 @@ date = 2024-07-24T00:00:00
 draft = false
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
-authors = []
+authors = [KD Makova]
 
 
 # Publication type.
@@ -67,7 +67,7 @@ url_source = ""
 
 
 # Digital Object Identifier (DOI)
-doi = "www.nature.com/articles/d41586-024-02404-7"
+doi = "https://doi.org/10.1038/d41586-024-02404-7"
 
 
 
