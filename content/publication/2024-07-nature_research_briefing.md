@@ -67,7 +67,7 @@ url_source = ""
 
 
 # Digital Object Identifier (DOI)
-doi = "https://www.nature.com/articles/d41586-024-02404-7"
+doi = "www.nature.com/articles/d41586-024-02404-7"
 
 
 
