@@ -51,7 +51,7 @@ slides = ""
 tags = []
 
 # Links (optional).
-url_pdf = ""
+url_pdf = "https://rdcu.be/dPm13"
 url_preprint = ""
 url_code = ""
 url_dataset = ""
