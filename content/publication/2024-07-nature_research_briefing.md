@@ -57,7 +57,7 @@ url_code = ""
 url_dataset = ""
 url_project = ""
 url_slides = ""
-url_video = ""
+url_video = "https://youtu.be/hpxZwaQZqPc"
 url_poster = ""
 url_source = ""
 
