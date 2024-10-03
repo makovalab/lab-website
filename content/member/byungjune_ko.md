@@ -4,7 +4,7 @@ author_names = ["BJ Ko"]
 role = "Postdoctoral Scholar"
 short_bio = ""
 id = ""
-portrait = "byung_june.jpg"
+portrait = "byung_june.png"
 interests = [
   "Genome assembly of complex genomes",
   "Functionality of chromatin structure alteration",
