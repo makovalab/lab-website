@@ -4,7 +4,7 @@ author_names = ["LA Heverly"]
 role = "Undergraduate Student"
 short_bio = ""
 id = ""
-
+portrait = ""
 interests = [
   "",
   "",
