@@ -4,10 +4,11 @@ author_names = ["LA Heverly"]
 role = "Undergraduate Student"
 short_bio = ""
 id = ""
-portrait = ""
+portrait = "lauren_heverly.png"
 interests = [
-  "",
-  "",
+  "Genetic markers of disease",
+  "Cancer Biology",
+  "Non-canonical DNA structures"
 ]
 cv_link = ""
 personal_website = ""
@@ -16,12 +17,12 @@ is_former_member = false
 projects = [""]
 
 [[education]]
-  course = ""
-  institution = ""
+  course = "Pursuing a B.S. in Biology"
+  institution = "Penn State University"
 
 [[education]]
   course = ""
-  institution = "Penn State University"
+  institution = ""
 
 [[social]]
     icon = "envelope"
@@ -30,5 +31,6 @@ projects = [""]
 
 
 +++
+Lauren is broadly interested in studying the mechanisms and genetic markers of human disease. She is currently working on a project investigating non-canonical DNA structures, specifically, examining the conditions of G-quadraplex formation. She plans to pursue a Ph.D. in the Biomedical Sciences field after completing her undergraduate education.![image](https://github.com/user-attachments/assets/f2d84a5b-ee5a-4a53-8269-58c894652ff3)
 
 
