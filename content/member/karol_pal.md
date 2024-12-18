@@ -1,5 +1,5 @@
 +++
-name = "Karol Pál"
+name = "Karol Pal"
 author_names = ["K Pal"]
 role = "Postdoctoral Scholar"
 short_bio = ""
