@@ -11,7 +11,7 @@ interests = [
 cv_link = ""
 personal_website = ""
 sort_position = 590
-is_former_member = false
+is_former_member = true
 projects = ["microsatellite_variation_and_evolution"]
 
 [[education]]
