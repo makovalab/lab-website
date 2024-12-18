@@ -7,7 +7,7 @@ id = ""
 portrait = "hana_palova.png"
 interests = [
   "Molecular biology and genetics of cancer and hereditary diseases",
-  "Cellular biology",
+  "Molecular and cellular biology",
 ]
 cv_link = ""
 personal_website = ""
@@ -31,5 +31,5 @@ projects = [""]
 
 +++
 
-Before joining Makova Lab, Hana worked for six years in the field of molecular genetic characterization of pediatric solid tumors and hereditary diseases in Prof. Slaby’s research group at CEITEC, Masaryk University, Brno, Czechia. She got familiar with the interpretation of next generation sequencing data (mainly WES, RNA seq) and a spectrum of molecular genetic methods. She collaborated on several publications and grant projects. In Makova Lab she is responsible for cell cultivation, performing molecular biology methods, and has recently started her new project focusing on the study of telomeres in macaques. Apart from work, she enjoys spending time with her husband and 3 year-old son.
+Before joining Makova Lab, Hana worked for six years in the field of molecular genetic characterization of pediatric solid tumors and hereditary diseases in Prof. Slaby’s research group at CEITEC, Masaryk University, Brno, Czechia. She got familiar with the interpretation of next generation sequencing data (mainly WES, RNA seq) and a spectrum of molecular genetic methods. She collaborated on several publications and grant projects. In Makova Lab she is responsible for cell cultivation, performing molecular biology methods, and has recently started a new project focusing on the study of telomeres in macaques. Apart from work, she enjoys spending time with her husband and 3 year-old son.
 
