@@ -35,7 +35,7 @@ selected = false
 #   E.g. `projects = ["deep-learning"]` references 
 #   `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
-projects = ["Non-B_DNA_and_microsatellite_variation_and_evolution"]
+projects = ["microsatellite_variation_and_evolution"]
 
 
 # Slides (optional).
