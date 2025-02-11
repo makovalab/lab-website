@@ -15,7 +15,7 @@ cv_link = ""
 personal_website = ""
 sort_position = 460
 is_former_member = false
-projects = [""]
+projects = ["microsatellite_variation_and_evolution"]
 
 [[education]]
   course = "Ph.D. in Biology with specialization in Evolutionary Genetics"
