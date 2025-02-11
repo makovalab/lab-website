@@ -12,7 +12,7 @@ cv_link = ""
 personal_website = ""
 sort_position = 580
 is_former_member = false
-projects = ["sex_chromosome_evolution"]
+projects = ["sex_chromosome_evolution", "microsatellite_variation_and_evolution"]
 
 [[education]]
   course = "M.S. in Biological Sciences"
