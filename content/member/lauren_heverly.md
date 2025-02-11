@@ -14,7 +14,7 @@ cv_link = ""
 personal_website = ""
 sort_position = 263
 is_former_member = false
-projects = [""]
+projects = ["microsatellite_variation_and_evolution"]
 
 [[education]]
   course = "Pursuing a B.S. in Biology"
