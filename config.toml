@@ -341,19 +341,24 @@ enableGitInfo = false
   weight = 50
 
 [[menu.main]]
+  name = "Videos"
+  url = "#videos"
+  weight = 60
+
+[[menu.main]]
   name = "Members"
   url = "#members"
-  weight = 60
+  weight = 70
 
 [[menu.main]]
   name = "Collaborators"
   url = "#collaborators"
-  weight = 65
+  weight = 80
 
 [[menu.main]]
   name = "Contact"
   url = "#contact"
-  weight = 70
+  weight = 90
 
 # Link to a PDF of your resume/CV from the menu.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
