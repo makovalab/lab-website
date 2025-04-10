@@ -1,5 +1,5 @@
 +++
-title = "Replicative DNA Polymerase Epsilon and Delta Holoenzymes Show Wide Ranging Inhibition at G-Quadruplexes in the Human Genome"
+title = "Replicative DNA polymerase Epsilon and Delta holoenzymes show wide ranging inhibition at G-Quadruplexes in the human genome"
 date = 2025-04-10T00:00:00
 draft = false
 
@@ -20,7 +20,7 @@ publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
 publication = "_Nucleic Acids Research_"
-publication_short = "_Nucleic Acids Res, In Press_"
+publication_short = "_NUCLEIC ACIDS RES, In Press_"
 
 # Abstract and optional shortened version.
 abstract = ""
