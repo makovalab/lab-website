@@ -20,7 +20,7 @@ publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
 publication = "_Nucleic Acids Research_"
-publication_short = "_Accepted by Nucleic Acids Res_"
+publication_short = "_Nucleic Acids Res, In Press_"
 
 # Abstract and optional shortened version.
 abstract = ""
