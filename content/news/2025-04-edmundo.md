@@ -1,5 +1,5 @@
 +++
-title = "Congratulations to Edmundo Torres-Gonzalez on his successful PhD defense"
+title = "Congratulations to Edmundo Torres-González on his successful PhD defense"
 date = 2025-04-10T00:00:00
 draft = false
 
