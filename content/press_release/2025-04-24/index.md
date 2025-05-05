@@ -38,11 +38,6 @@ projects = ["microsatellite_variation_and_evolution"]
 
 
 <br>
-{{< figure
-      class="image-center"
-      src=""
-      caption=""
->}}
 UNIVERSITY PARK, Pa. — Certain DNA sequences can form structures other than the canonical double helix. These alternative DNA conformations — referred to as non-B DNA — have been implicated as regulators of cellular processes and of genome evolution, but their DNA tends to be repetitive, which until recently made reliably reading and assembling their sequences difficult. Now, a team of researchers, led by Penn State biologists, has comprehensively predicted the location of non-B DNA structures in great apes. It’s the first step in understanding functions and evolution of such structures, known to contribute to genetic diseases and cancer, the team said.
 
 The work depends on newly available telomere-to-telomere (T2T), or end-to-end, genomes of humans and other great apes that overcame sequencing and assembly difficulties associated with repetitive DNA to fill in any remaining gaps in the genomes. A paper describing the study, which shows that non-B DNA is enriched in the newly sequenced segments of the genomes and suggests potential new functions, appeared today (April 24) in the journal [Nucleic Acids Research](https://doi.org/10.1093/nar/gkaf298).
