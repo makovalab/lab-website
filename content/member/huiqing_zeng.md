@@ -4,7 +4,7 @@ author_names = ["H Zeng"]
 role = "Research Technologist"
 short_bio = ""
 id = ""
-portrait = "huiqing_zeng.png"
+portrait = "Zeng, Huiqing.jpg"
 interests = [
   "Molecular and cellular biology",
 ]
