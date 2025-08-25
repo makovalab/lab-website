@@ -67,7 +67,7 @@ url_source = ""
 
 
 # Digital Object Identifier (DOI)
-doi = "[https://www.biorxiv.org/content/biorxiv/early/2025/04/26/2025.04.24.650511.full.pdf?%3Fcollection=]"
+doi = "[https://doi.org/10.1101/2025.04.24.650511]"
 
 
 
