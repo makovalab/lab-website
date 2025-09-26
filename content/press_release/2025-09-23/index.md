@@ -18,7 +18,7 @@ categories = []
 #   E.g. `projects = ["deep-learning"]` references 
 #   `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
-projects = ["sex_chromosome_evolution"]
+projects = ["mitochondrial_mutation_dynamics"]
 
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder. 
