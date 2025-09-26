@@ -40,7 +40,7 @@ projects = ["mitochondrial_mutation_dynamics"]
 <br>
 {{< figure
       class="image-center"
-      src="egg.jpg"
+      src="egg.jpeg"
       caption="The human egg cell, illustrated here, contains specialized genetic instructions called mitochondrial DNA.  Credit: Jezperklauzen/Getty Images. All Rights Reserved."
 >}}
 UNIVERSITY PARK, Pa. — Unlike other tissues in the human body, human eggs don’t pick up as many mutations in some of their DNA as they age. The findings from a new study, published in [Science Advances](https://www.science.org/doi/10.1126/sciadv.adw4954) and led by researchers at Penn State, suggests that human eggs — the reproductive cells that, when fertilized with sperm, provide half of the genetic instructions for embryos — may have developed a protective mechanism to guard against a certain kind of age-related mutation. The researchers said this finding could provide insights to understand reproductive aging and health.
