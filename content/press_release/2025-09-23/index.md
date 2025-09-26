@@ -51,9 +51,9 @@ Mitochondria are cellular components that supply energy to the body’s cells an
 
 The international research team set out to examine DNA found in mitochondria and how it changes with age in human eggs compared to other tissues in the body. They collected blood and saliva samples and egg cells from 22 women between the ages of 22 and 42. Using a high-resolution sequencing method to analyze the samples for mutations in mitochondrial DNA, they found that:
 
-Across all age groups, there were 17-to-24-fold fewer mutations in the mitochondrial DNA in egg cells compared to blood or saliva samples
-The frequency of mutations in mitochondrial DNA doesn’t increase with age in human egg cells. In contrast, the frequency of mitochondrial mutations does increase with age in blood and salivary cells.
-The mitochondrial mutations that do occur in egg cells are less prevalent in functionally important portions of the DNA that carry instructions to build proteins, compared to regions that do not carry such instructions, suggesting that natural selection works to remove most of the functionally important mutations.
+**Across all age groups, there were 17-to-24-fold fewer mutations in the mitochondrial DNA in egg cells compared to blood or saliva samples**
+**The frequency of mutations in mitochondrial DNA doesn’t increase with age in human egg cells. In contrast, the frequency of mitochondrial mutations does increase with age in blood and salivary cells.**
+**The mitochondrial mutations that do occur in egg cells are less prevalent in functionally important portions of the DNA that carry instructions to build proteins, compared to regions that do not carry such instructions, suggesting that natural selection works to remove most of the functionally important mutations.**
 
 “Human egg cells seem to be protected against some age-related mutations,” Makova said. “This finding could have important implications for our understanding of how mutations accumulate in reproductive cells as humans tend to reproduce later in life, but more research is needed.”
 
