@@ -4,7 +4,7 @@ author_names = ["A Dey"]
 role = "Postdoctoral Scholar"
 short_bio = ""
 id = ""
-portrait = ""
+portrait = "arpita.png"
 interests = [
   "Cancer biology",
   "Molecular Biophysics",
