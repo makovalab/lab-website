@@ -32,7 +32,7 @@ categories = []
 <br>
 {{< figure
       class="image-center"
-      src="award1.jpg", "award2.jpg", "award3.jpg"
+      src="award1.jpg"
       caption=""
 >}}
 Congratulations to Huiqing Zeng for winning the Biology 2025 Research Staff Excellence Award! 
