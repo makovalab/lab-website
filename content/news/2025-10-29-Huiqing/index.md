@@ -29,4 +29,10 @@ categories = []
   # Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
   focal_point = ""
 +++
+<br>
+{{< figure
+      class="image-center"
+      src="award1.jpg"
+      caption=""
+>}}
 Congratulations to Huiqing Zeng for winning the Biology 2025 Research Staff Excellence Award! 
