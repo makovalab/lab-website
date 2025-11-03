@@ -6,9 +6,9 @@
 
 # The URL of your website.
 # End your URL with a `/` trailing slash, e.g. `https://example.com/`.
-#baseurl = "/"
+baseurl = "/"
 # dumb
-baseurl = "http://www.bx.psu.edu/makova_lab/"
+#baseurl = "http://www.bx.psu.edu/makova_lab/"
 
 # Title of your site
 title = "The Makova Lab at Penn State"
