@@ -1,10 +1,10 @@
 +++
-title = "Human L1 Transposition Dynamics Unraveled with Functional Data Analysis"
-date = 2020-07-28T00:00:00
+title = "Mammalian Mitochondrial DNA Accumulates Insertions and Deletions with Age in Energetically Demanding Tissues"
+date = 2026-01-29T00:00:00
 draft = false
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
-authors = ["D Chen", "MA Cremona", "Z Qi", "RD Mitra", "F Chiaromonte", "KD Makova"]
+authors = ["E Torres-Gonzalez", "KD Makova"]
 
 # Publication type.
 # Legend:
@@ -19,10 +19,10 @@ publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
 publication = "_Molecular Biology and Evolution_"
-publication_short = "_MOL BIOL EVOL_"
+publication_short = "_MOL BIOL EVOL, IN PRESS_"
 
 # Abstract and optional shortened version.
-abstract = ""
+abstract = "Mitochondrial function can be affected by mutations in mitochondrial DNA (mtDNA). However, detecting de novo mutations in mtDNA has been challenging due to its high copy number, particularly in germline cells, and the low accuracy of conventional next-generation sequencing technologies. Using highly accurate duplex sequencing, we study the frequency of de novo insertion and deletion (indel) mtDNA mutations across multiple age groups in somatic and germline tissues of three mammalian species—mouse, macaque, and human. We demonstrate that, similar to de novo nucleotide substitutions, indels accumulate rapidly with age in somatic tissues with high energetic demand (brain and skeletal muscle) or high proliferation (liver). However, in oocytes, indels accumulate slower with age than nucleotide substitutions (or do not accumulate at all). The increases in indel frequency with age are driven mostly by deletions. Short tandem repeats are highly enriched for indels, implicating DNA replication slippage as a major driver of indel formation in mtDNA. For some species and tissues, indels are depleted at protein-coding sequences, however, indels that are multiples of 3 bp are not overrepresented. Ours is the most detailed study of de novo small indels in mtDNA to date. It provides parameters for models of mtDNA evolution, informs molecular mechanisms for a multitude of human genetic diseases, and illuminates the accumulation of indel mutations with age. Such accumulation may have functional consequences, as it affects reproduction later in life and drives the decline of mitochondrial function during aging."
 abstract_short = ""
 
 # Is this a selected publication? (true/false)
@@ -66,7 +66,7 @@ url_source = ""
 
 
 # Digital Object Identifier (DOI)
-doi = "10.1093/molbev/msaa194"
+doi = ""
 
 
 
