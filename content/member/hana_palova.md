@@ -1,7 +1,7 @@
 +++
 name = "Hana Palova"
 author_names = ["H Palova"]
-role = "Adjunct Researcher"
+role = "Researcher"
 short_bio = ""
 id = ""
 portrait = "hana_palova.png"
