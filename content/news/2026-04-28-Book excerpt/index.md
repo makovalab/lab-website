@@ -1,5 +1,5 @@
 +++
-title = "Book Excerpt"
+title = "Excerpt in 'Beyond Inheritance'"
 date = 2026-04-28T00:00:00
 draft = false
 
