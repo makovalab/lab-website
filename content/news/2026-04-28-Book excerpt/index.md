@@ -30,6 +30,6 @@ categories = []
   # Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
   focal_point = ""
 +++
-Congratulations to Kateryna on her interview with Roxanne Khamsi in a new book Beyond Inheritance. You can read the interview here [Link here](https://drive.google.com/file/d/1rxiWtiupuZYZa3z620InvAGPQqrhZmpS/view?usp=sharing).
+Congratulations to Kateryna on her interview with Roxanne Khamsi in a new book Beyond Inheritance. You can read the interview [here](https://drive.google.com/file/d/1rxiWtiupuZYZa3z620InvAGPQqrhZmpS/view?usp=sharing).
 <br>
 
