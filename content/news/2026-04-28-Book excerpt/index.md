@@ -1,5 +1,5 @@
 +++
-title = "Excerpt in 'Beyond Inheritance'"
+title = "Congratulations to Kateryna on her interview with Roxanne Khamsi in a new book Beyond Inheritance"
 date = 2026-04-28T00:00:00
 draft = false
 
@@ -30,6 +30,7 @@ categories = []
   # Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
   focal_point = ""
 +++
+Congratulations to Kateryna on her interview with Roxanne Khamsi in a new book Beyond Inheritance. You can read the interview here.
 <br>
 {{< figure
       class="image-center"
@@ -71,4 +72,4 @@ categories = []
       src="Page_8.jpg"
       caption=""
 >}}
-Cited in Beyond Inheritance by Roxanne Khamsi.
+
