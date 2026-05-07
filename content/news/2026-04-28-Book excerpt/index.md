@@ -6,7 +6,6 @@ draft = false
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
 authors = ["Roxanne Khamsi"]
 
-As cited in Beyond Inheritance by Roxanne Khamsi.
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
@@ -37,4 +36,39 @@ categories = []
       src="Page_1.jpg"
       caption=""
 >}}
-
+{{< figure
+      class="image-center"
+      src="Page_2.jpg"
+      caption=""
+>}}
+{{< figure
+      class="image-center"
+      src="Page_3.jpg"
+      caption=""
+>}}
+{{< figure
+      class="image-center"
+      src="Page_4.jpg"
+      caption=""
+>}}
+{{< figure
+      class="image-center"
+      src="Page_5.jpg"
+      caption=""
+>}}
+{{< figure
+      class="image-center"
+      src="Page_6.jpg"
+      caption=""
+>}}
+{{< figure
+      class="image-center"
+      src="Page_7.jpg"
+      caption=""
+>}}
+{{< figure
+      class="image-center"
+      src="Page_8.jpg"
+      caption=""
+>}}
+Cited in Beyond Inheritance by Roxanne Khamsi.
