@@ -4,7 +4,9 @@ date = 2026-04-28T00:00:00
 draft = false
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
-authors = []
+authors = ["Roxanne Khamsi"]
+
+Excerpt from Page 164 to 170 in Beyond Inheritance by Roxanne Khamsi.
 
 # Tags and categories
 # For example, use `tags = []` for no tags, or the form `tags = ["A Tag", "Another Tag"]` for one or more tags.
@@ -35,4 +37,4 @@ categories = []
       src="Page_1.jpg"
       caption=""
 >}}
-Excerpt from Page 164 to 170 in Beyond Inheritance by Roxanne Khamsi.
+
