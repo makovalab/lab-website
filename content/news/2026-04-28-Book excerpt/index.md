@@ -32,7 +32,7 @@ categories = []
 <br>
 {{< figure
       class="image-center"
-      src="award3.jpg"
-      caption="Jacob Sieg announcing Huiqing's nomination in the staff award conference"
+      src="Page_1.jpg"
+      caption=""
 >}}
 Excerpt from Page 164 to 170 in Beyond Inheritance by Roxanne Khamsi.
