@@ -66,7 +66,7 @@ url_source = ""
 
 
 # Digital Object Identifier (DOI)
-doi = "https://www.biorxiv.org/content/10.64898/2026.06.03.729890v1"
+doi = "https://doi.org/10.64898/2026.06.03.729890"
 
 
 
