@@ -4,7 +4,7 @@ author_names = ["G Castillo"]
 role = "Undergraduate student"
 short_bio = ""
 id = ""
-portrait = "Genesis Castillo.JPG"
+portrait = "Genesis Castillo.png"
 interests = [
   "Computational Biology", "Genomics", "Gene Regulation"
 ]
