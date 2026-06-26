@@ -5,9 +5,7 @@ role = "Undergraduate student"
 short_bio = ""
 id = ""
 portrait = "Genesis Castillo.png"
-interests = [
-  "Computational Biology", "Genomics", "Gene Regulation"
-]
+interests = ["Computational Biology", "Genomics", "Gene Regulation"]
 cv_link = ""
 personal_website = ""
 sort_position = 240
