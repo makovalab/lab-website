@@ -1,6 +1,6 @@
 +++
 title = "A Complete Genome for the Common Marmoset"
-date = 2026-03-26T00:00:00
+date = 2026-06-26T00:00:00
 draft = false
 
 # Authors. Comma separated list, e.g. `["Bob Smith", "David Jones"]`.
@@ -18,8 +18,8 @@ authors = ["P Hebbar", "TA Potapova", "H Loucks", "K Ray", "MF Rodrigues", "F Ry
 publication_types = ["2"]
 
 # Publication name and optional abbreviated version.
-publication = "_bioRxiv_"
-publication_short = "_BIORXIV_"
+publication = "_Cell_"
+publication_short = "_CELL, ACCEPTED_"
 
 # Abstract and optional shortened version.
 abstract = "The common marmoset is a New World monkey (NWM) commonly used as a model organism to investigate questions in primate evolution and human disease, including Alzheimers and other neurodegenerative diseases, as well as neuropsychiatric disorders. Here we present the first telomere-to-telomere (T2T) reference genome for the common marmoset, adding over 88 Mb of sequence and resolving challenging genomic regions. An additional near-T2T assembly from a second unrelated individual yields a total of four high-quality haplotypes for analysis. The improved contiguity and accuracy of these assemblies enable unprecedented insights into complex and rapidly evolving genomic regions such as centromeres, sex chromosomes, ribosomal DNA (rDNA) structure, and the major histocompatibility complex (MHC). We fully resolved all marmoset centromeres, uncovering dimeric alpha satellites with chromosomal specificity and stratified inactive layers documenting ancestral centromere turnover. We assembled six acrocentric autosomes with gene-poor, satellite-rich short arms and provide evidence that most of them can harbor rDNA and all of them share large pseudo-homologous regions (PHRs). The Y chromosome, but not the X chromosome, carries active rDNA and PHRs, and the rDNA copy number is sexually dimorphic. Chromosomes that share PHRs also share closely related centromeric satellite DNA, supporting a model of ongoing recombinational exchange between heterologous chromosomes facilitated by rDNA. We discovered multiple novel, marmoset-specific MHC genes that are predicted to protect against pathogens encountered in its environment. Leveraging this complete reference, we further identified over 500 transcribed genes with transcript models or expansions specific to the marmoset lineage. Together with additional long-read marmoset assemblies, these genomes were used to construct a marmoset pangenome, providing a robust reference framework for short-read mapping across diverse individuals. This resource will improve the utility of the common marmoset as a biomedical model organism and fill key gaps in our understanding of primate evolution."
