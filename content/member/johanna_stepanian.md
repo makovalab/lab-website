@@ -1,7 +1,7 @@
 +++
 name = "Johanna Stepanian"
 author_names = ["J Stepanian"]
-role = "PhD Candidate"
+role = "PhD Student"
 short_bio = ""
 id = ""
 portrait = "johanna.png"
