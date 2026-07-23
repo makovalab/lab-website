@@ -6,7 +6,9 @@ short_bio = ""
 id = ""
 portrait = "johanna.png"
 interests = [
-  "Human genetics and diversity", "Evolution", "Bioinformatics"
+  "Human genetics and diversity", 
+  "Evolution", 
+  "Bioinformatics"
 ]
 cv_link = ""
 personal_website = ""
