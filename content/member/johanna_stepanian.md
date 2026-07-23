@@ -15,10 +15,7 @@ is_former_member = false
 projects = ["sex_chromosome_evolution"]
 
 [[education]]
-  course = "Ph.D. in Bioinformatics and population genomics"
-  institution = "Seoul National University, Seoul, South Korea"
 
-[[education]]
   course = "M.S. in Computational Biology"
   institution = "Universidad de los Andes"
 
