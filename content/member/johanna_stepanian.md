@@ -17,7 +17,8 @@ projects = ["sex_chromosome_evolution"]
 [[education]]
   course = "M.S. in Computational Biology"
   institution = "Universidad de los Andes"
-
+  
+[[education]]
   course = "B.S. in Industrial Microbiology"
   institution = "Pontificia Universidad Javeriana"
 
