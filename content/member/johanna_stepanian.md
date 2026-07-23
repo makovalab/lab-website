@@ -15,7 +15,6 @@ is_former_member = false
 projects = ["sex_chromosome_evolution"]
 
 [[education]]
-
   course = "M.S. in Computational Biology"
   institution = "Universidad de los Andes"
 
