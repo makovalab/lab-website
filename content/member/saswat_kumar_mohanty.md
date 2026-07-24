@@ -1,7 +1,7 @@
 +++
 name = "Saswat Kumar Mohanty"
 author_names = ["SK Mohanty"]
-role = "Ph.D. student"
+role = "Ph.D. Student"
 short_bio = ""
 id = ""
 portrait = "saswat_mohanty.png"
