@@ -7,7 +7,7 @@ short_bio = ""
 id = ""
 portrait = "hui_zhao.png"
 interests = [
-  "Biolody",
+  "Biology",
 ]
 cv_link = ""
 personal_website = ""
