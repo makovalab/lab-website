@@ -170,7 +170,10 @@ enableGitInfo = false
   # twitter:card ("summary_large_image"); the avatar branch downgrades it to a
   # small square card. Pages that define their own [header] image or have a
   # featured image still use those instead.
-  sharing_image = "Makova_BDNA_HERO_0.jpg"
+  # 1200x630 (the ratio every platform builds its link previews around). Made by
+  # padding Makova_BDNA_HERO_0.jpg, which is 2.55:1 and would have had 12% cut
+  # off each side -- clipping the "B-DNA" label to "B-DN".
+  sharing_image = "social-card.png"
 
   # Twitter username (without @). Used when a vistor shares your site on Twitter.
   twitter = ""
