@@ -101,7 +101,11 @@ enableGitInfo = false
   organizations = [ { name = "Penn State University", url = "" } ]
 
   gravatar = false  # Get your avatar from Gravatar.com? (true/false)
-  avatar = "portrait.jpg"  # Specify an avatar image (in `static/img/` folder) or delete value to disable avatar.
+  # Cleared: this was the Academic theme's example value, and no portrait.jpg
+  # exists in static/img/, so it resolved to the theme's bundled placeholder
+  # (a generic blue person icon). Set an image name here only if a real one is
+  # added to `static/img/`. Social sharing uses `sharing_image` below instead.
+  avatar = ""
 
   # Details for the Contact Widget
   #email = "kdm16@psu.edu"
@@ -162,7 +166,11 @@ enableGitInfo = false
   description = ""
 
   # Default image for social sharing and search engines. Place image in `static/img/` folder and specify image name here.
-  sharing_image = ""
+  # Takes precedence over `avatar` for og:image, and keeps the wide
+  # twitter:card ("summary_large_image"); the avatar branch downgrades it to a
+  # small square card. Pages that define their own [header] image or have a
+  # featured image still use those instead.
+  sharing_image = "Makova_BDNA_HERO_0.jpg"
 
   # Twitter username (without @). Used when a vistor shares your site on Twitter.
   twitter = ""
