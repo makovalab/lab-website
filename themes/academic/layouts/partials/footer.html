@@ -7,9 +7,9 @@
     {{ end }}
 
     {{/* Attempt to load local vendor JS, otherwise load from CDN. */}}
-    {{ $js := .Site.Data.assets.js }}
+    {{ $js := hugo.Data.assets.js }}
     {{ if not ($scr.Get "use_cdn") }}
-      <script src="{{ printf "/js/vendor/%s" ($scr.Get "vendor_js_filename") | relURL }}"></script>
+      <script src="{{ printf "js/vendor/%s" ($scr.Get "vendor_js_filename") | relURL }}"></script>
     {{ else }}
       {{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" (printf $js.jQuery.url $js.jQuery.version) $js.jQuery.sri | safeHTML }}
       {{ printf "<script src=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\"></script>" (printf $js.imagesLoaded.url $js.imagesLoaded.version) $js.imagesLoaded.sri | safeHTML }}
@@ -42,9 +42,9 @@
     {{ end }}
 
     {{/* Comments JS. */}}
-    {{ $comments_enabled := and $.Site.DisqusShortname (not (or $.Site.Params.disable_comments $.Params.disable_comments)) }}
+    {{ $comments_enabled := and $.Site.Config.Services.Disqus.Shortname (not (or $.Site.Params.disable_comments $.Params.disable_comments)) }}
     {{ if and $comments_enabled ($.Site.Params.comment_count | default true) }}
-    <script id="dsq-count-scr" src="//{{ .Site.DisqusShortname }}.disqus.com/count.js" async></script>
+    <script id="dsq-count-scr" src="//{{ .Site.Config.Services.Disqus.Shortname }}.disqus.com/count.js" async></script>
     {{ end }}
 
     {{/* Initialise code highlighting. */}}
@@ -55,7 +55,7 @@
     {{ if ne .Site.Params.search.engine 0 }}
     {{/* Configure search engine. */}}
     <script>
-      const search_index_filename = {{ "/index.json" | relLangURL }};
+      const search_index_filename = {{ "index.json" | relLangURL }};
       const i18n = {
         'placeholder': {{ i18n "search_placeholder" }},
         'results': {{ i18n "search_results" }},
@@ -127,7 +127,7 @@
     </script>
     {{ end }}
 
-    {{ $js_comment := printf "/* Source Themes Academic v%s | https://sourcethemes.com/academic/ */\n" .Site.Data.academic.version }}
+    {{ $js_comment := printf "/* Source Themes Academic v%s | https://sourcethemes.com/academic/ */\n" hugo.Data.academic.version }}
     {{ $js_bundle_head := $js_comment | resources.FromString "js/bundle-head.js" }}
     {{ $js_academic := resources.Get "js/academic.js" }}
     {{ $js_academic_search := resources.Get "js/academic-search.js" }}
@@ -138,7 +138,7 @@
     <script src="{{ $js_bundle.RelPermalink }}"></script>
 
     {{ range .Site.Params.custom_js }}
-    <script src="{{ "/js/" | relURL }}{{ . }}"></script>
+    <script src="{{ "js/" | relURL }}{{ . }}"></script>
     {{ end }}
 
   </body>

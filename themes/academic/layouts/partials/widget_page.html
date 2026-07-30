@@ -12,7 +12,7 @@
 {{ $section := .Scratch.Get "section" }}
 
 <!-- Widgets -->
-{{ range $index, $page := where (where .Data.Pages "Section" $section) ".Params.active" "!=" false }}
+{{/* Hugo 0.50's home .Data.Pages was Site.RegularPages; since 0.123 it holds only top-level sections, so filtering by Section == "home" would match nothing and every widget would silently disappear. */}}{{ range $index, $page := where (where .Site.RegularPages "Section" $section) ".Params.active" "!=" false }}
   {{ $params := dict "root" $ "page" $page }}
   {{ $widget := printf "widgets/%s.html" ( or $page.Params.widget "custom" ) }}
   {{ if in (slice "hero" "hero_carousel") $page.Params.widget }}

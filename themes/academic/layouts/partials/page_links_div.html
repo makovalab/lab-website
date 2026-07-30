@@ -5,8 +5,10 @@
 {{ $cite_link := false }}
 
 {{ $slug := "" }}
-{{ if eq $.File.TranslationBaseName "index" }}{{/* Check if using dir-based page bundles. */}}
-  {{ $slug = delimit (last 1 (split (substr $.Dir 0 -1) "/")) "" }}
+{{ with $.File }}{{/* .File is nil for generated pages (e.g. sections without an _index.md). */}}
+  {{ if eq .TranslationBaseName "index" }}{{/* Check if using dir-based page bundles. */}}
+    {{ $slug = delimit (last 1 (split (substr .Dir 0 -1) "/")) "" }}
+  {{ end }}
 {{ end }}
 {{ $resource := $.Resources.GetMatch (printf "%s.pdf" $slug) }}
 {{ with $resource }}

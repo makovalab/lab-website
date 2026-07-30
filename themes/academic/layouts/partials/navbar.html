@@ -2,9 +2,9 @@
   <div class="container">
 
     <!-- Brand and toggle get grouped for better mobile display -->
-      <a class="navbar-brand" href="{{ "/" | relLangURL }}">
+      <a class="navbar-brand" href="{{ site.Home.RelPermalink }}">
         {{- if .Site.Params.logo -}}
-        <img src="{{ printf "/img/%s" .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}">
+        <img src="{{ printf "img/%s" .Site.Params.logo | relURL }}" alt="{{ .Site.Title }}">
         {{- else -}}
         {{- .Site.Title -}}
         {{- end -}}
@@ -101,13 +101,13 @@
         <li class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true">
             <i class="fas fa-globe" aria-hidden="true"></i>
-            <span>{{ index .Site.Data.i18n.languages .Lang }}</span>
+            <span>{{ index hugo.Data.i18n.languages .Lang }}</span>
           </a>
           <ul class="dropdown-menu">
             {{ range .Translations }}
             <li class="dropdown-item my-0 py-0 mx-0 px-0">
               <a href="{{ .Permalink }}"{{ if $.IsHome }} data-target="{{ .URL }}"{{ end }}>
-                <span>{{ index .Site.Data.i18n.languages .Lang }}</span>
+                <span>{{ index hugo.Data.i18n.languages .Lang }}</span>
               </a>
             </li>
             {{ end }}

@@ -20,9 +20,11 @@
     {{- end -}}
 
     {{- /* Add page to index. */ -}}
-    {{- $index = $index | append (dict "objectID" .UniqueID "date" .Date.UTC.Unix "publishdate" .PublishDate "lastmod" .Lastmod.UTC.Unix "expirydate" .ExpiryDate.UTC.Unix "lang" .Lang "permalink" .Permalink "relpermalink" .RelPermalink "title" .Title "summary" (plainify $desc) "content" .Plain "authors" .Params.Authors "kind" .Kind "type" .Type "section" .Section "tags" .Params.Tags "categories" .Params.Categories) -}}
+    {{- $objectID := "" -}}
+    {{- with .File -}}{{- $objectID = .UniqueID -}}{{- end -}}
+    {{- $index = $index | append (dict "objectID" $objectID "date" .Date.UTC.Unix "publishdate" .PublishDate "lastmod" .Lastmod.UTC.Unix "expirydate" .ExpiryDate.UTC.Unix "lang" .Lang "permalink" .Permalink "relpermalink" .RelPermalink "title" .Title "summary" (plainify $desc) "content" .Plain "authors" .Params.Authors "kind" .Kind "type" .Type "section" .Section "tags" .Params.Tags "categories" .Params.Categories) -}}
 
   {{- end -}}
 {{- end -}}
 
-{{- $index | jsonify -}}
+{{- jsonify (dict "indent" "  ") $index -}}

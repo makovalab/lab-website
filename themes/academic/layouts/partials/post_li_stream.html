@@ -11,7 +11,7 @@
     {{ if $post.Params.summary }}
       {{ $summary = $post.Params.summary | markdownify }}
     {{ else if $post.Truncated }}
-      {{ $summary = $post.Summary }}
+      {{ $summary = ($post.Summary | plainify | strings.TrimSpace) }}
     {{ end }}
     {{ with $summary }}
     <div class="article-style" itemprop="articleBody">

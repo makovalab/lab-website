@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+<html lang="{{ .Site.Language.Locale | default "en-us" }}">
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Source Themes Academic {{ .Site.Data.academic.version }}">
-  {{ .Hugo.Generator }}
+  <meta name="generator" content="Source Themes Academic {{ hugo.Data.academic.version }}">
+  {{ hugo.Generator }}
   {{ with .Site.Params.name }}<meta name="author" content="{{ . }}">{{ end }}
 
   {{ $scr := .Scratch }}
@@ -17,7 +17,7 @@
   {{ else if .Params.abstract }}
     {{ $desc = .Params.abstract }}
   {{ else if .IsPage }}
-    {{ $desc = .Summary }}
+    {{ $desc = (.Summary | plainify | strings.TrimSpace) }}
   {{ else if .Site.Params.description }}
     {{ $desc = .Site.Params.description }}
   {{ else }}
@@ -28,11 +28,11 @@
   {{ range .Translations }}
   <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
   {{ end }}
-  <link rel="alternate" hreflang="{{ .Site.LanguageCode | default "en-us" }}" href="{{ .Permalink }}">
+  <link rel="alternate" hreflang="{{ .Site.Language.Locale | default "en-us" }}" href="{{ .Permalink }}">
 
   {{ partial "css/parse_theme.css" . }}
-  {{ $css := .Site.Data.assets.css }}
-  {{ $js := .Site.Data.assets.js }}
+  {{ $css := hugo.Data.assets.css }}
+  {{ $js := hugo.Data.assets.js }}
   {{ if ne ($scr.Get "primary") "#fff" }}
   <meta name="theme-color" content="{{ $scr.Get "primary" }}">
   {{ end }}
@@ -42,7 +42,7 @@
   {{ $scr.Set "vendor_js_filename" "main.min.js" }}
   {{ if and (fileExists (printf "static/css/vendor/%s" ($scr.Get "vendor_css_filename"))) (fileExists (printf "static/js/vendor/%s" ($scr.Get "vendor_js_filename"))) }}
     {{ $scr.Set "use_cdn" 0 }}
-    <link rel="stylesheet" href="{{ printf "/css/vendor/%s" ($scr.Get "vendor_css_filename") | relURL }}">
+    <link rel="stylesheet" href="{{ printf "css/vendor/%s" ($scr.Get "vendor_css_filename") | relURL }}">
   {{ else }}
     {{ $scr.Set "use_cdn" 1 }}
     {{ printf "<link rel=\"stylesheet\" href=\"%s\" integrity=\"%s\" crossorigin=\"anonymous\">" (printf $css.bootstrap.url $css.bootstrap.version) $css.bootstrap.sri | safeHTML }}
@@ -89,14 +89,14 @@
 
   <link rel="stylesheet" href="{{ "styles.css" | relLangURL }}">
   {{ range .Site.Params.custom_css }}
-  <link rel="stylesheet" href="{{ "/css/" | relURL }}{{ . }}">
+  <link rel="stylesheet" href="{{ "css/" | relURL }}{{ . }}">
   {{ end }}
 
-  {{ if not .Site.IsServer }}
-  {{ if .Site.GoogleAnalytics }}
+  {{ if not hugo.IsServer }}
+  {{ with .Site.Config.Services.GoogleAnalytics.ID }}
     <script>
       window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', '{{ .Site.GoogleAnalytics }}', 'auto');
+      ga('create', '{{ . }}', 'auto');
       {{ if .Site.Params.privacy_pack }}ga('set', 'anonymizeIp', true);{{ end }}
       ga('require', 'eventTracker');
       ga('require', 'outboundLinkTracker');
@@ -110,14 +110,14 @@
   {{ end }}
   {{ end }}
 
-  {{ if or .Site.RSSLink .RSSLink }}
-  <link rel="alternate" href="{{ .RSSLink | default .Site.RSSLink  }}" type="application/rss+xml" title="{{ .Site.Title }}">
-  <link rel="feed" href="{{ .RSSLink | default .Site.RSSLink }}" type="application/rss+xml" title="{{ .Site.Title }}">
+  {{/* Hugo 0.50's .RSSLink / .Site.RSSLink: this page's RSS permalink, else the home page's. */}}{{ $rss := "" }}{{ with .OutputFormats.Get "rss" }}{{ $rss = .Permalink }}{{ end }}{{ if not $rss }}{{ with site.Home.OutputFormats.Get "rss" }}{{ $rss = .Permalink }}{{ end }}{{ end }}{{ with $rss }}
+  <link rel="alternate" href="{{ . }}" type="application/rss+xml" title="{{ $.Site.Title }}">
+  <link rel="feed" href="{{ . }}" type="application/rss+xml" title="{{ $.Site.Title }}">
   {{ end }}
 
   <link rel="manifest" href="{{ "site.webmanifest" | relURL }}">
-  <link rel="icon" type="image/png" href="{{ "/img/icon.png" | relURL }}">
-  <link rel="apple-touch-icon" type="image/png" href="{{ "/img/icon-192.png" | relURL }}">
+  <link rel="icon" type="image/png" href="{{ "img/icon.png" | relURL }}">
+  <link rel="apple-touch-icon" type="image/png" href="{{ "img/icon-192.png" | relURL }}">
 
   <link rel="canonical" href="{{ .Permalink }}">
 
@@ -147,7 +147,7 @@
   <meta property="og:title" content="{{ if not .IsHome }}{{ .Title }} | {{ end }}{{ .Site.Title }}">
   <meta property="og:description" content="{{ $desc }}">
   {{- with $og_image }}<meta property="og:image" content="{{ . }}">{{end}}
-  <meta property="og:locale" content="{{ .Site.LanguageCode | default "en-us" }}">
+  <meta property="og:locale" content="{{ .Site.Language.Locale | default "en-us" }}">
   {{ if .IsPage }}
   {{ if not .PublishDate.IsZero }}<meta property="article:published_time" content="{{ .PublishDate.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">
   {{ else if not .Date.IsZero }}<meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05-07:00" | safeHTML }}">{{ end }}

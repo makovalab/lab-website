@@ -3,8 +3,8 @@
 
 {{/* Attempt to load font style specified by user. */}}
 {{- $font_index := .Site.Params.font | default "default" -}}
-{{ if isset .Site.Data.fonts $font_index }}
-  {{- $font := index .Site.Data.fonts $font_index -}}
+{{ if isset hugo.Data.fonts $font_index }}
+  {{- $font := index hugo.Data.fonts $font_index -}}
   {{- $scr.Set "google_fonts" $font.google_fonts -}}
   {{- $scr.Set "body_font" $font.body_font -}}
   {{- $scr.Set "heading_font" $font.heading_font -}}
@@ -16,8 +16,8 @@
 
 {{/* Attempt to load color theme specified by user. */}}
 {{- $theme_index := .Site.Params.color_theme | default "default" -}}
-{{ if isset .Site.Data.themes $theme_index }}
-  {{ $theme := index .Site.Data.themes $theme_index }}
+{{ if isset hugo.Data.themes $theme_index }}
+  {{ $theme := index hugo.Data.themes $theme_index }}
 
   {{- $scr.Set "light" $theme.light -}}
 

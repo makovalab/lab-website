@@ -15,7 +15,8 @@
     {{ partial "page_author.html" . }}
 
     {{ $page := . }}
-    {{ $project := .File.ContentBaseName }}
+    {{ $project := "" }}
+    {{ with .File }}{{ $project = .ContentBaseName }}{{ end }}
 
     {{ if (.Site.Params.projects.list_children | default true) }}
 

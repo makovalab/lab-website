@@ -14,7 +14,7 @@
   <img class="portrait mr-3" src="{{ (printf "img/%s" $.Site.Params.avatar) | relURL }}" itemprop="image" alt="Avatar">
   {{ end }}
   <div class="media-body">
-    <h5 class="card-title" itemprop="name"><a href="{{ "/" | relLangURL }}">{{ $.Site.Params.name }}</a></h5>
+    <h5 class="card-title" itemprop="name"><a href="{{ site.Home.RelPermalink }}">{{ $.Site.Params.name }}</a></h5>
     {{ with $.Site.Params.role }}<h6 class="card-subtitle">{{.}}</h6>{{end}}
     {{ with $.Site.Params.bio }}<p class="card-text" itemprop="description">{{. | markdownify | emojify}}</p>{{end}}
     <ul class="network-icon" aria-hidden="true">

@@ -18,7 +18,7 @@
     {{ if $post.Params.summary }}
     <p>{{ printf "%s" $post.Params.summary | markdownify }}</p>
     {{ else if $post.Truncated }}
-    {{ $post.Summary }}
+    {{ $post.Summary | plainify | strings.TrimSpace }}
     {{ else }}
     {{ $post.Content }}
     {{ end }}
