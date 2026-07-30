@@ -7,19 +7,21 @@
   {{ if $resource }}
     {{ $link = $resource.RelPermalink }}
   {{ else }}
-    {{ $link = . | relURL }}
+    {{ $link = partial "site_url.html" . }}
   {{ end }}
 <a class="btn btn-outline-primary my-1 mr-1{{ if $is_list }} btn-sm{{end}}" href="{{ $link }}" target="_blank" rel="noopener">
   {{ i18n "btn_preprint" }}
 </a>
 {{ end }}
 {{ $pdf := "" }}
-{{ $resource := $.Resources.GetMatch (printf "%s.pdf" $.File.ContentBaseName) }}
+{{ $content_base_name := "" }}
+{{ with $.File }}{{ $content_base_name = .ContentBaseName }}{{ end }}
+{{ $resource := $.Resources.GetMatch (printf "%s.pdf" $content_base_name) }}
 {{ with $resource }}
   {{ $pdf = .RelPermalink }}
 {{ else }}
   {{ if $.Params.url_pdf }}
-    {{ $pdf = $.Params.url_pdf | relURL }}
+    {{ $pdf = partial "site_url.html" $.Params.url_pdf }}
   {{ end }}
 {{ end }}
 {{ with $pdf }}
@@ -39,7 +41,7 @@
   {{ if $resource }}
     {{ $link = $resource.RelPermalink }}
   {{ else }}
-    {{ $link = . | relURL }}
+    {{ $link = partial "site_url.html" . }}
   {{ end }}
 <a class="btn btn-outline-primary my-1 mr-1{{ if $is_list }} btn-sm{{end}}" href="{{ $link }}" target="_blank" rel="noopener">
   {{ i18n "btn_code" }}
@@ -50,7 +52,7 @@
   {{ if $resource }}
     {{ $link = $resource.RelPermalink }}
   {{ else }}
-    {{ $link = . | relURL }}
+    {{ $link = partial "site_url.html" . }}
   {{ end }}
 <a class="btn btn-outline-primary my-1 mr-1{{ if $is_list }} btn-sm{{end}}" href="{{ $link }}" target="_blank" rel="noopener">
   {{ i18n "btn_dataset" }}
@@ -78,7 +80,7 @@
   {{ if $resource }}
     {{ $link = $resource.RelPermalink }}
   {{ else }}
-    {{ $link = . | relURL }}
+    {{ $link = partial "site_url.html" . }}
   {{ end }}
 <a class="btn btn-outline-primary my-1 mr-1{{ if $is_list }} btn-sm{{end}}" href="{{ $link }}" target="_blank" rel="noopener">
   {{ i18n "btn_poster" }}
@@ -96,7 +98,7 @@
   {{ if $resource }}
     {{ $link = $resource.RelPermalink }}
   {{ else }}
-    {{ $link = . | relURL }}
+    {{ $link = partial "site_url.html" . }}
   {{ end }}
 <a class="btn btn-outline-primary my-1 mr-1{{ if $is_list }} btn-sm{{end}}" href="{{ $link }}" target="_blank" rel="noopener">
   {{ i18n "btn_slides" }}
@@ -108,7 +110,7 @@
   {{ if $resource }}
     {{ $link = $resource.RelPermalink }}
   {{ else }}
-    {{ $link = . | relURL }}
+    {{ $link = partial "site_url.html" . }}
   {{ end }}
 <a class="btn btn-outline-primary my-1 mr-1{{ if $is_list }} btn-sm{{end}}" href="{{ $link }}" target="_blank" rel="noopener">
   {{ i18n "btn_video" }}
@@ -119,7 +121,7 @@
   {{ if $resource }}
     {{ $link = $resource.RelPermalink }}
   {{ else }}
-    {{ $link = . | relURL }}
+    {{ $link = partial "site_url.html" . }}
   {{ end }}
 <a class="btn btn-outline-primary my-1 mr-1{{ if $is_list }} btn-sm{{end}}" href="{{ $link }}" target="_blank" rel="noopener">
   {{ i18n "btn_source" }}
@@ -144,7 +146,7 @@
     {{ if $resource }}
       {{ $link = $resource.RelPermalink }}
     {{ else }}
-      {{ $link = .url | relURL }}
+      {{ $link = partial "site_url.html" .url }}
     {{ end }}
   {{ else if in (slice "http" "https") $scheme }}
     {{ $target = "target=\"_blank\" rel=\"noopener\"" }}

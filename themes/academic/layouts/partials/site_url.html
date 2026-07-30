@@ -1,0 +1,20 @@
+{{- /*
+  Resolve a URL from content front matter against the site's baseURL.
+
+  Until Hugo 0.164, `"/foo" | relURL` prepended the baseURL's path, so a
+  front-matter value like url_custom = "/press_release/2018-11-13" resolved to
+  /makova_lab/press_release/2018-11-13. Hugo now treats a leading slash as
+  already root-relative and returns it untouched, which drops the /makova_lab/
+  prefix and 404s.
+
+  Strip a single leading slash (never "//", which is protocol-relative) so
+  relURL prepends the base path again. Absolute URLs pass through unchanged,
+  as relURL leaves them alone.
+
+  Usage: {{ partial "site_url.html" $some_url }}
+*/ -}}
+{{- $u := . -}}
+{{- if and (hasPrefix $u "/") (not (hasPrefix $u "//")) -}}
+  {{- $u = strings.TrimPrefix "/" $u -}}
+{{- end -}}
+{{- return ($u | relURL) -}}

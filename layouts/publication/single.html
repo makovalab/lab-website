@@ -11,7 +11,7 @@
     <p class="pub-abstract" itemprop="text">{{ .Params.abstract | markdownify }}</p>
     {{ end }}
 
-    {{ if (.Params.publication_types) and (ne (index .Params.publication_types 0) "0") }}
+    {{ if .Params.publication_types }}{{/* NB: Go 1.11 silently discarded the trailing `and (ne ... "0")` here, so this matches Hugo 0.50 output. */}}
     <div class="row">
       <div class="col-md-1"></div>
       <div class="col-md-10">

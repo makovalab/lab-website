@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+#
+# Turn photos in photos/inbox/ into the round portraits used on the site.
+#
+#   1. copy a photo into  photos/inbox/  named after the member,
+#      e.g. photos/inbox/linnea_smeds.jpg
+#   2. run  ./scripts/make-portraits
+#   3. commit the result
+#
+# The first run builds a private Python environment under scripts/.venv and
+# downloads the background-removal model. That takes a few minutes and needs an
+# internet connection. Later runs start immediately.
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+here="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+venv="${here}/.venv"
+stamp="${venv}/.requirements-installed"
+
+if ! command -v python3 >/dev/null 2>&1; then
+    echo "error: python3 is not installed." >&2
+    echo "  macOS:  brew install python" >&2
+    echo "  Ubuntu: sudo apt install python3 python3-venv" >&2
+    exit 2
+fi
+
+# Check pip actually runs, not merely that the directory exists: a failed
+# `python3 -m venv` leaves behind a directory with an interpreter but no pip,
+# and we would otherwise sail past setup and fail confusingly later.
+if ! "${venv}/bin/python" -m pip --version >/dev/null 2>&1; then
+    echo "First run: setting up. This takes a few minutes and needs internet."
+    rm -rf "${venv}"
+    if ! python3 -m venv "${venv}"; then
+        rm -rf "${venv}"
+        echo "error: could not create a Python environment at ${venv}" >&2
+        echo "  On Ubuntu/Debian you may need: sudo apt install python3-venv" >&2
+        echo "  (the message just above names the exact package)" >&2
+        exit 2
+    fi
+fi
+
+# Reinstall whenever requirements.txt changes, not just when the venv is new.
+if [[ ! -f "${stamp}" || "${here}/requirements.txt" -nt "${stamp}" ]]; then
+    echo "Installing dependencies..."
+    "${venv}/bin/python" -m pip install --quiet --upgrade pip
+    if ! "${venv}/bin/python" -m pip install --quiet -r "${here}/requirements.txt"; then
+        echo "error: could not install dependencies. Are you online?" >&2
+        exit 2
+    fi
+    touch "${stamp}"
+fi
+
+exec "${venv}/bin/python" "${here}/portraits.py" "$@"

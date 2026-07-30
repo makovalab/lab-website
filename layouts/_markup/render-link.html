@@ -1,0 +1,24 @@
+{{- /*
+  Replaces blackfriday.hrefTargetBlank = true, which this site relied on until the
+  Hugo 0.164 upgrade (Blackfriday was removed from Hugo in 0.100).
+
+  Blackfriday v1 opened a link in a new tab whenever isRelativeLink() was false.
+  That returned true only for "#...", "./...", "../..." and "/..." (but NOT
+  "//..."), so mailto: links and the absolute URLs emitted by {{< ref >}} were
+  treated as external and did get target="_blank".
+
+  Deliberately no rel="noopener": Blackfriday did not add it, and doing so here
+  would change every external link in the rendered output.
+
+  .Destination is not passed through safeURL on purpose — html/template applies
+  its urlFilter and htmlEscaper in an href context, which is what Blackfriday's
+  attrEscape did.
+*/ -}}
+{{- $d := .Destination -}}
+{{- $internal := or
+      (hasPrefix $d "#")
+      (hasPrefix $d "./")
+      (hasPrefix $d "../")
+      (and (hasPrefix $d "/") (not (hasPrefix $d "//"))) -}}
+<a href="{{ $d }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if not $internal }} target="_blank"{{ end }}>{{ .Text }}</a>
+{{- /* */ -}}
