@@ -12,7 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          submodules: true
           fetch-depth: 0
 
       - name: Setup Ruby
@@ -25,10 +24,32 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.50'
+          # Pin an exact version. The theme is patched for this release, and Hugo
+          # escalates deprecation warnings to hard errors ~15 minor versions after
+          # they are announced, so 'latest' would break the build unattended.
+          hugo-version: '0.164.0'
+          extended: true
 
       - name: Build Site
-        run: hugo
+        # --panicOnWarning turns the next deprecation cycle into a loud failure
+        # instead of a silently wrong page. The build is warning-free today.
+        run: hugo --panicOnWarning --printPathWarnings
+
+      - name: Check Build Output
+        run: |
+          # Goldmark drops raw HTML unless markup.goldmark.renderer.unsafe is set;
+          # content here depends on it (e.g. the iframe in content/video/2022-10.md).
+          if grep -rq 'raw HTML omitted' public/; then
+            echo "::error::Raw HTML was dropped -- check markup.goldmark.renderer.unsafe"
+            exit 1
+          fi
+          # The home page is built entirely from content/home/*.md widgets. A
+          # .Data.Pages semantics change once made all of them vanish silently.
+          count=$(grep -c 'class="home-section"' public/index.html || true)
+          if [ "$count" -lt 8 ]; then
+            echo "::error::Home page has $count widget sections, expected at least 8"
+            exit 1
+          fi
 
       - name: Check Site
         working-directory: ./public
