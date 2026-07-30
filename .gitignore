@@ -1,3 +1,14 @@
 public/
 resources/
 .hugo_build.lock
+
+# Local photo-processing workspace: source photos, virtualenvs and intermediate
+# crops. Large (>1GB) and not part of the site. Only the finished 200x200
+# portraits belong in the repo, under static/img/member/.
+images/
+.venv/
+
+# Source photos dropped in for scripts/make-portraits. The finished portrait it
+# writes to static/img/member/ is what gets committed, not the original.
+photos/inbox/*
+!photos/inbox/.gitkeep

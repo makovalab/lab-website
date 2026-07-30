@@ -1,0 +1,20 @@
+# Dependencies for scripts/portraits.py.
+#
+# Bounds rather than exact pins: this has to install on whatever Python a lab
+# member happens to have, and exact pins fail when no matching wheel exists.
+# The upper bounds are the ones that matter -- each marks a release that
+# removed something we depend on.
+
+click>=8,<9
+pillow>=10,<13
+
+# MUST stay below 5. OpenCV 5.0 removed cv2.CascadeClassifier and stopped
+# shipping the haarcascade XML files, which is how the face is located.
+# Moving to 5 means switching to cv2.FaceDetectorYN and vendoring its model.
+opencv-python-headless>=4.8,<5
+
+numpy>=1.24,<3
+
+# Background removal. Downloads a ~176MB model to ~/.u2net on first use.
+rembg>=2.0,<3
+onnxruntime>=1.16,<2
