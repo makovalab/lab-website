@@ -12,3 +12,7 @@ images/
 # writes to static/img/member/ is what gets committed, not the original.
 photos/inbox/*
 !photos/inbox/.gitkeep
+
+# Python bytecode from scripts/portraits.py
+__pycache__/
+*.py[cod]
