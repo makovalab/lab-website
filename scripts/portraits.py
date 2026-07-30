@@ -30,7 +30,10 @@ from PIL import Image, ImageDraw, ImageFilter, ImageOps
 # --- Look of the finished portrait -------------------------------------------
 
 SIZE = 200
-BACKGROUND = (245, 245, 245)  # flat colour placed behind the cut-out person
+# Flat colour behind the cut-out person. #d3d3d3, matching the backdrop the
+# earlier pipeline produced -- huiqing_zeng, hana_palova, karol_pal, jacob_sieg,
+# saswat_mohanty, byung_june, edmundo and lauren_heverly all store exactly this.
+BACKGROUND = (211, 211, 211)
 CROP_SCALE = 2.0  # square crop side, as a multiple of the detected face width
 CROP_DROP = 0.05  # nudge the crop down slightly, so hair is not clipped
 ALPHA_FLOOR = 26  # below this, rembg alpha is background haze rather than a real edge
@@ -322,10 +325,10 @@ def describe(path: Path) -> str:
 )
 @click.option(
     "--background",
-    default="#f5f5f5",
+    default="#d3d3d3",
     callback=parse_colour,
     metavar="#RRGGBB",
-    help="Flat colour placed behind the person.",
+    help="Flat colour placed behind the person  [default: #d3d3d3]",
 )
 @click.option("--force", is_flag=True, help="Replace portraits that already exist.")
 def main(
