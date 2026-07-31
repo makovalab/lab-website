@@ -1,0 +1,33 @@
+schema: hugoblox/author/v1
+slug: fj-diaz
+name:
+  display: Francisco J. Diaz
+  family: Diaz
+user_groups:
+- Collaborators
+weight: 60
+bio: Francisco's research focuses on understanding the molecular and functional interactions between oocytes
+  and granulosa cells that promote production of a fertile oocyte. This knowledge can then be used to
+  (1) develop better therapeutic interventions for infertility or species preservation and (2) develop
+  better reproductive management tools for animal agriculture.
+interests:
+- Reproductive biology
+- Nutrition and reproduction
+- Ovarian function
+- Oocyte development
+affiliations:
+- name: Pennsylvania State University
+  role: Associate Professor of Reproductive Biology
+education:
+- degree: Ph.D.
+  institution: University of Wisconsin-Madison
+  end: '2003-01-01'
+- degree: M.S.
+  institution: University of Wisconsin-Madison
+  end: '1999-01-01'
+links:
+- icon: at-symbol
+  url: mailto:fjd10@psu.edu
+- icon: hero/globe-alt
+  url: https://animalscience.psu.edu/directory/fjd10
+  label: Website

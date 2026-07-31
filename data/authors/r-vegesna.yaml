@@ -1,0 +1,22 @@
+schema: hugoblox/author/v1
+slug: r-vegesna
+name:
+  display: Rahulsimham Vegesna
+  family: Vegesna
+user_groups:
+- Former Members
+weight: 510
+role: Ph.D. student
+bio: 'I am interested in understanding the mechanism that give rise to
+
+  complex genomic structural variants in cancer.  I am studying the
+
+  role of different DNA polymerases in the formation of different
+
+  structural variations.'
+interests:
+- ''
+- ''
+links:
+- icon: at-symbol
+  url: mailto:rxv923@psu.edu

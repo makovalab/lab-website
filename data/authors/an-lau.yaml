@@ -1,0 +1,12 @@
+schema: hugoblox/author/v1
+slug: an-lau
+name:
+  display: Allison Lau
+  family: Lau
+user_groups:
+- Former Members
+weight: 300
+role: Undergraduate student
+interests:
+- ''
+- ''

@@ -1,0 +1,12 @@
+schema: hugoblox/author/v1
+slug: m-ghent
+name:
+  display: Matthew Ghent
+  family: Ghent
+user_groups:
+- Former Members
+weight: 150
+role: Undergraduate student
+interests:
+- ''
+- ''

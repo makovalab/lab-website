@@ -30,6 +30,6 @@ categories = []
   focal_point = ""
 +++
 
-Congratulations to [Monika Cechova (Michalovova)]({{< ref "/member/monika_cechova.md" >}}) on winning the 2016 Dr. John Randall Shuman Troxell Memorial Scholarship in Biology!
+Congratulations to [Monika Cechova (Michalovova)]({{< ref "/authors/m-cechova" >}}) on winning the 2016 Dr. John Randall Shuman Troxell Memorial Scholarship in Biology!
 
 

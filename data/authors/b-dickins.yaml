@@ -1,0 +1,12 @@
+schema: hugoblox/author/v1
+slug: b-dickins
+name:
+  display: Benjamin Dickins
+  family: Dickins
+user_groups:
+- Former Members
+weight: 120
+role: Postdoctoral Scholar
+interests:
+- ''
+- ''

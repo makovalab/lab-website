@@ -1,0 +1,12 @@
+schema: hugoblox/author/v1
+slug: a-goel
+name:
+  display: Aparna Goel
+  family: Goel
+user_groups:
+- Former Members
+weight: 160
+role: Undergraduate student
+interests:
+- ''
+- ''

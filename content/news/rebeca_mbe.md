@@ -30,5 +30,5 @@ categories = []
   focal_point = ""
 +++
 
-Read [Rebeca]({{< ref "/member/rebeca_campos-sanchez.md" >}})'s latest article in Molecular Biology and Evolution : [Genomic Landscape of Human, Bat and Ex Vivo DNA Transposon Integrations]({{< ref "/publication/2014-07-mol_biol_evol.md" >}})
+Read [Rebeca]({{< ref "/authors/r-campos-sánchez" >}})'s latest article in Molecular Biology and Evolution : [Genomic Landscape of Human, Bat and Ex Vivo DNA Transposon Integrations]({{< ref "/publication/2014-07-mol_biol_evol.md" >}})
 

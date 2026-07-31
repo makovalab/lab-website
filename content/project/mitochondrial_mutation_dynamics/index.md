@@ -28,7 +28,11 @@ url_pdf = ""
 url_code = ""
 url_dataset = ""
 url_slides = ""
-url_video = "https://live.libraries.psu.edu/Mediasite/Play/a842a2ef6e6644aca8af918188154a1c1d"
+
+[[links]]
+  type = "video"
+  url = "https://live.libraries.psu.edu/Mediasite/Play/a842a2ef6e6644aca8af918188154a1c1d"
+
 url_poster = ""
 
 # Custom links (optional).

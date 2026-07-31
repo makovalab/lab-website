@@ -1,0 +1,24 @@
+schema: hugoblox/author/v1
+slug: d-chen
+name:
+  display: Di (Bruce) Chen
+  family: Chen
+user_groups:
+- Former Members
+weight: 110
+role: Ph.D. student
+bio: 'Born and raised up in Nanjing, China. Trained as a computational
+
+  biologist and amateur violinist. Big fan of backpacking, sci-fi,
+
+  and research. Current work leverages bioinformatics tools and
+
+  statistics in comparative genomics, with special interest in the
+
+  regional variation of mutation rate in human genome.'
+interests:
+- ''
+- ''
+links:
+- icon: at-symbol
+  url: mailto:di.bruce.chen@gmail.com

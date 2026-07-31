@@ -56,7 +56,7 @@ An interdisciplinary group of researchers at Penn State has been pioneering the 
 
 ### Flagging obesity risk
 
-“If we can identify early indicators of obesity in young children, we can help parents and clinicians take preventative measures,” said [Kateryna Makova]({{< ref "/member/kateryna_makova.md" >}}), Pentz Professor of Biology at Penn State, who leads the biological side of the collaboration at University Park. “Our ultimate goal is to give clinical practitioners the tools to identify children most at risk of obesity so they can reduce that risk by implementing intervention strategies, such as educating parents about nutrition or recognizing an infant’s discontent (crying) as being related versus unrelated to hunger.”
+“If we can identify early indicators of obesity in young children, we can help parents and clinicians take preventative measures,” said [Kateryna Makova]({{< ref "/authors/kd-makova" >}}), Pentz Professor of Biology at Penn State, who leads the biological side of the collaboration at University Park. “Our ultimate goal is to give clinical practitioners the tools to identify children most at risk of obesity so they can reduce that risk by implementing intervention strategies, such as educating parents about nutrition or recognizing an infant’s discontent (crying) as being related versus unrelated to hunger.”
 
 > **THE ULTIMATE GOAL:** TO IDENTIFY A SET OF EASY-TO-MEASURE BIOLOGICAL INDICATORS THAT MAY FLAG AN INCREASED RISK OF OBESITY IN CHILDREN.
 
@@ -64,11 +64,11 @@ The INSIGHT study--Intervention Nurses Start Infants Growing on Healthy Trajecto
 
 Paul reached out to Makova, who agreed to collaborate on the study so that they could also investigate a wide range of potential biological indicators for obesity risk. To do so, samples collected from INSIGHT and SIBSIGHT children and parents were used to generate multiple “omics” datasets on genomes and how they vary; epigenomes (chemical modifications of DNA that can influence how DNA is read); metabolomes (smallmolecules that are the product of cellular processes); and gut and oral microbiome (bacteria and other microorganisms living within the gut and the mouth).
 
-“A lot of childhood obesity interventions are focused on school-aged children,” said [Sarah Craig]({{< ref "/member/sarah_carnahan_craig.md" >}}), assistant research professor of biology, who coordinates much of the study. “These interventions do help some children, but by this age many children are already overweight or obese, so intervention really becomes more about treatment. If we can identify kids who are most at risk of developing obesity much earlier, we may be able to prevent obesity from developing in the first place.”
+“A lot of childhood obesity interventions are focused on school-aged children,” said [Sarah Craig]({{< ref "/authors/sjc-craig" >}}), assistant research professor of biology, who coordinates much of the study. “These interventions do help some children, but by this age many children are already overweight or obese, so intervention really becomes more about treatment. If we can identify kids who are most at risk of developing obesity much earlier, we may be able to prevent obesity from developing in the first place.”
 
 ### Mountains of data
 
-As the study expanded from clinical variables and a questionnaire to include ever-growing omics datasets, Makova turned to longtime collaborator [Francesca Chiaromonte]({{< ref "/collaborator/francesca_chiaromonte.md" >}}), Dorothy Foehr Huck and J. Lloyd Huck Chair in Statistics for the Life Sciences, who quickly brought into the team functional data analysis expert **Matthew Reimherr**, associate professor of statistics.
+As the study expanded from clinical variables and a questionnaire to include ever-growing omics datasets, Makova turned to longtime collaborator [Francesca Chiaromonte]({{< ref "/authors/f-chiaromonte" >}}), Dorothy Foehr Huck and J. Lloyd Huck Chair in Statistics for the Life Sciences, who quickly brought into the team functional data analysis expert **Matthew Reimherr**, associate professor of statistics.
 
 “This study measures a massive amount of information on a relatively small number of subjects,” said Chiaromonte. “In order to analyze these data properly, we had to combine a number of existing statistical methods very creatively and to develop some entirely new ones.”
 

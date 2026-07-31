@@ -30,5 +30,5 @@ categories = []
   focal_point = ""
 +++
 
-Makova Lab graduate students [Rebeca]({{< ref "/member/rebeca_campos-sanchez.md" >}}) and [Samarth]({{< ref "/member/samarth_rangavittal.md" >}}) awarded the Jeanette Ritter Mohnkern Graduate Student Scholarship in Biology and Huck Dissertation Research Award respectively
+Makova Lab graduate students [Rebeca]({{< ref "/authors/r-campos-sánchez" >}}) and [Samarth]({{< ref "/authors/s-rangavittal" >}}) awarded the Jeanette Ritter Mohnkern Graduate Student Scholarship in Biology and Huck Dissertation Research Award respectively
 

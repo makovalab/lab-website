@@ -1,0 +1,31 @@
+schema: hugoblox/author/v1
+slug: f-chiaromonte
+name:
+  display: Francesca Chiaromonte
+  family: Chiaromonte
+user_groups:
+- Collaborators
+weight: 30
+bio: Francesca is a statistician developing methods for the analysis of large, high-dimensional and complex
+  data, and applying such methods in contemporary “Omics” sciences and other scientific fields – including
+  Meteorology and Economics.
+interests:
+- Development of statistical methods to analyze large, high-dimensional, and complex data and its application
+  in various scientific fields
+- Computational techniques for the empirical assessment of significance
+- Latent structure and Markov modeling approaches
+- Functional data analysis methods
+affiliations:
+- name: Pennsylvania State University
+  role: Department of Statistics
+education:
+- degree: Laurea (cum laude) in Statistic and Economic Sciences
+  institution: University of Rome La Sapienza, Italy
+- degree: Ph.D. in Statistics
+  institution: University of Minnesota
+links:
+- icon: at-symbol
+  url: mailto:fxc11@psu.edu
+- icon: hero/globe-alt
+  url: https://sites.psu.edu/chiaromonte
+  label: Website

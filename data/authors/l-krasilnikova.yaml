@@ -1,0 +1,12 @@
+schema: hugoblox/author/v1
+slug: l-krasilnikova
+name:
+  display: Lydia Krasilnikova
+  family: Krasilnikova
+user_groups:
+- Former Members
+weight: 260
+role: Undergraduate student
+interests:
+- ''
+- ''

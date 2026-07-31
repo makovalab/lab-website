@@ -1,0 +1,29 @@
+schema: hugoblox/author/v1
+slug: m-reimherr
+name:
+  display: Matthew Reimherr
+  family: Reimherr
+user_groups:
+- Collaborators
+weight: 150
+bio: Matthew's research interests include functional data analysis, longitudinal data analysis, and data
+  privacy with applications to Omics data.
+interests:
+- Functional data analysis
+- Longitudinal data analysis
+- Statistical genetics
+- High dimensional regression and screening
+- Data privacy
+- Shape analysis
+affiliations:
+- name: Department of Statistics, Pennsylvania State University
+  role: Affiliate Professor of Statistics
+education:
+- degree: Ph.D. in Statistics
+  institution: University of Chicago
+- degree: M.S. in Statistics
+  institution: University of Utah
+links:
+- icon: hero/globe-alt
+  url: https://mreimherr.github.io/
+  label: Website

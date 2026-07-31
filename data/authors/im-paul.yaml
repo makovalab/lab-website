@@ -1,0 +1,36 @@
+schema: hugoblox/author/v1
+slug: im-paul
+name:
+  display: Ian Paul
+  family: Paul
+user_groups:
+- Collaborators
+weight: 140
+bio: Ian Paul, MD, MSc, graduated from Penn State College of Medicine and completed his residency training
+  at Duke University Medical Center in Durham, N.C. In addition to his responsibilities as a general pediatrician
+  at Penn State Pediatrics and in the newborn nursery, Dr. Paul spends much of his time working on a variety
+  of research projects and clinical trials that seek to improve health care for children and their families.
+  His current research includes studies to prevent obesity and help breastfeeding newborns.
+interests:
+- Asthma
+- Cough
+- Maternal-child health
+- Obesity prevention
+- Pediatric clinical pharmacology
+- Pediatric clinical trials
+affiliations:
+- name: Penn State College of Medicine
+  role: Professor of Pediatrics and Public Health Sciences
+education:
+- degree: Residency, Pediatrics
+  institution: Duke University School of Medicine
+- degree: M.D.
+  institution: Pennsylvania State University College of Medicine
+- degree: M.S in Health Evaluation Sciences
+  institution: Pennsylvania State University College of Medicine
+links:
+- icon: at-symbol
+  url: mailto:imp101@psu.edu
+- icon: hero/globe-alt
+  url: https://pure.psu.edu/en/persons/ian-paul
+  label: Website

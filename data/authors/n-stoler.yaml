@@ -1,0 +1,27 @@
+schema: hugoblox/author/v1
+slug: n-stoler
+name:
+  display: Nick Stoler
+  family: Stoler
+user_groups:
+- Former Members
+weight: 470
+role: Ph.D. student
+bio: 'My focus is on variation in mitochondrial DNA.  I develop methods
+
+  and software tools to analyze mitochondrial sequencing data, as
+
+  well as data from other non-diploid systems like viral populations,
+
+  cancer, and somatic variation.'
+interests:
+- ''
+- ''
+links:
+- icon: at-symbol
+  url: mailto:nicholas.stoler@gmail.com
+- icon: brands/github
+  url: https://github.com/NickSto
+- icon: hero/globe-alt
+  url: https://nstoler.com
+  label: Website

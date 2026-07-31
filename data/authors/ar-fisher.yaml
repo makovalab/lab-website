@@ -1,0 +1,12 @@
+schema: hugoblox/author/v1
+slug: ar-fisher
+name:
+  display: Allison Fisher
+  family: Fisher
+user_groups:
+- Former Members
+weight: 130
+role: Undergraduate student
+interests:
+- ''
+- ''

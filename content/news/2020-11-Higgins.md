@@ -29,4 +29,4 @@ categories = []
   # Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
   focal_point = ""
 +++
-Congratulations to [Bonnie Higgins]({{< ref "/member/bonnie_higgins.md" >}}) on winning the 2020 Biology Research Staff Award!
+Congratulations to [Bonnie Higgins]({{< ref "/authors/bk-higgins" >}}) on winning the 2020 Biology Research Staff Award!

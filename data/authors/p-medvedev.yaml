@@ -1,0 +1,28 @@
+schema: hugoblox/author/v1
+slug: p-medvedev
+name:
+  display: Paul Medvedev
+  family: Medvedev
+user_groups:
+- Collaborators
+weight: 110
+bio: Paul Medvedev is a Professor in the Department of Computer Science and Engineering and the Department
+  of Biochemistry and Molecular Biology and the Director of the Center for Computational Biology and Bioinformatics
+  at the Pennsylvania State University. His research is focused on developing computer science techniques
+  for analysis of biological data and on answering fundamental biological questions using such methods.
+interests:
+- Development of computer science techniques for analysis of biological data
+affiliations:
+- name: Pennsylvania State University
+  role: Computer Science and Engineering - Biochemistry and Molecular Biology
+education:
+- degree: Ph.D. in Computer Science
+  institution: University of Toronto
+  end: '2010-01-01'
+- degree: M.Sc. in Computer Science
+  institution: University of Southern Denmark at Odense
+  end: '2004-01-01'
+links:
+- icon: hero/globe-alt
+  url: http://medvedevgroup.com
+  label: Website

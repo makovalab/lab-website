@@ -1,0 +1,15 @@
+schema: hugoblox/author/v1
+slug: a-barrett
+name:
+  display: Alison Barrett
+  family: Barrett
+user_groups:
+- Former Members
+weight: 50
+role: Undergraduate student
+interests:
+- ''
+- ''
+links:
+- icon: at-symbol
+  url: mailto:ajb6548@psu.edu

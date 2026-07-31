@@ -1,0 +1,15 @@
+schema: hugoblox/author/v1
+slug: a-greshnova
+name:
+  display: Alexandra Greshnova
+  family: Greshnova
+user_groups:
+- Former Members
+weight: 190
+role: Research intern
+interests:
+- ''
+- ''
+links:
+- icon: at-symbol
+  url: mailto:a.greshnova@student.rug.nl

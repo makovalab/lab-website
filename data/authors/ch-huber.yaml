@@ -1,0 +1,28 @@
+schema: hugoblox/author/v1
+slug: ch-huber
+name:
+  display: Christian Huber
+  family: Huber
+user_groups:
+- Collaborators
+weight: 80
+bio: Christian is an Assistant Professor in the Biology department of The Pennsylvania State University.
+  He is interested in quantifying positive and negative natural selection in the genome. Currently he's
+  been working on methods for inferring demographic history and genetic adaptation from ancient DNA.
+interests:
+- Quantification of positive and negative natural selection in the genome
+- Development of methods for inferring demographic history and genetic adaptation from ancient DNA
+affiliations:
+- name: Biology department of The Pennsylvania State University
+  role: Assistant Professor
+education:
+- degree: Ph.D.
+  institution: University of Vienna, Austria
+- degree: M.S.
+  institution: University of Vienna, Austria
+links:
+- icon: at-symbol
+  url: mailto:cdh5313@psu.edu
+- icon: hero/globe-alt
+  url: https://sites.google.com/view/christian-d-huber/about
+  label: Website

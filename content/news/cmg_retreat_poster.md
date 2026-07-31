@@ -31,4 +31,4 @@ categories = []
 +++
 
 
-Congratulations to [Sarah Craig]({{< ref "/member/sarah_carnahan_craig.md" >}}) and [Marta Tomaszkiewicz]({{< ref "/member/marta_tomaszkiewicz.md" >}}) for winning the 1st and 2nd poster awards at the Center for Medical Genomics Retreat!
+Congratulations to [Sarah Craig]({{< ref "/authors/sjc-craig" >}}) and [Marta Tomaszkiewicz]({{< ref "/authors/m-tomaszkiewicz" >}}) for winning the 1st and 2nd poster awards at the Center for Medical Genomics Retreat!

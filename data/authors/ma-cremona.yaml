@@ -1,0 +1,29 @@
+schema: hugoblox/author/v1
+slug: ma-cremona
+name:
+  display: Marzia Cremona
+  family: Cremona
+user_groups:
+- Collaborators
+weight: 40
+role: Visiting Research Professor
+bio: Marzia develops statistical techniques for the analysis of large, high-dimensional and complex data
+  – in particular functional data. An important aspect of her research is its collaborative and multidisciplinary
+  nature. Indeed, much of her work is at the interface between statistics and computational biology, and
+  her main application area is in the “Omics” sciences.
+interests:
+- Development of statistical techniques for the analysis of large, high-dimensional and complex data
+affiliations:
+- name: Université Laval, Canada
+  role: Associate Professor
+education:
+- degree: Ph.D. in Mathematical Models and Methods in Engineering
+  institution: Politecnico di Milano, Italy
+- degree: M.S. in Mathematics
+  institution: Università degli Studi di Milano, Italy
+links:
+- icon: at-symbol
+  url: mailto:mac78@psu.edu
+- icon: hero/globe-alt
+  url: https://marziacremona.com/
+  label: Website

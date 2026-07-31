@@ -1,0 +1,29 @@
+schema: hugoblox/author/v1
+slug: r-nielsen
+name:
+  display: Rasmus Nielsen
+  family: Nielsen
+user_groups:
+- Collaborators
+weight: 130
+bio: Rasmus focuses on the development and application of statistical and computational methods for analyzing
+  genomic data in the context of evolutionary genetics, population genetics, and medical genetics.
+interests:
+- Genetics
+- Molecular evolution
+- Applied statistics
+affiliations:
+- name: Department of Integrative Biology and the Department of Statistics, University of California at
+    Berkeley
+  role: Professor of Computational Biology
+education:
+- degree: Ph.D.
+  institution: University of California at Berkeley
+- degree: M.S.
+  institution: University of Copenhagen, Denmark
+links:
+- icon: at-symbol
+  url: mailto:rasmus_nielsen@berkeley.edu
+- icon: hero/globe-alt
+  url: https://nielsen-lab.github.io/
+  label: Website

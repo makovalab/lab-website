@@ -1,0 +1,12 @@
+schema: hugoblox/author/v1
+slug: m-nielsen
+name:
+  display: Matthew Nielsen
+  family: Nielsen
+user_groups:
+- Former Members
+weight: 350
+role: Undergraduate student
+interests:
+- ''
+- ''

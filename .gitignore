@@ -22,3 +22,9 @@ __pycache__/
 /hugo
 /hugo_*.tar.gz
 /LICENSE
+
+# Node toolchain for the Tailwind engine (HugoBlox). Installed with `npm install`.
+node_modules/
+
+# Throwaway virtualenv for scripts/migrate/*.py (PyYAML only).
+.venv-migrate/

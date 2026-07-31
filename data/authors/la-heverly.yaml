@@ -1,0 +1,25 @@
+schema: hugoblox/author/v1
+slug: la-heverly
+name:
+  display: Lauren Anna Heverly
+  family: Heverly
+user_groups:
+- Former Members
+weight: 263
+role: Undergraduate Student
+bio: Lauren is broadly interested in studying the mechanisms and genetic markers of human disease. She
+  is currently working on a project investigating non-canonical DNA structures, specifically, examining
+  the conditions of G-quadraplex formation. She plans to pursue a Ph.D. in the Biomedical Sciences field
+  after completing her undergraduate education.
+interests:
+- Genetic markers of disease
+- Cancer Biology
+- Non-canonical DNA structures
+education:
+- degree: Pursuing a B.S. in Biology
+  institution: Penn State University
+- degree: ''
+  institution: ''
+links:
+- icon: at-symbol
+  url: mailto:lah5997@psu.edu

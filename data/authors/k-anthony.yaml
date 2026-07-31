@@ -1,0 +1,15 @@
+schema: hugoblox/author/v1
+slug: k-anthony
+name:
+  display: Kate Anthony
+  family: Anthony
+user_groups:
+- Former Members
+weight: 30
+role: Research Technician
+interests:
+- ''
+- ''
+links:
+- icon: at-symbol
+  url: mailto:kxa1@psu.edu

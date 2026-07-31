@@ -1,0 +1,15 @@
+schema: hugoblox/author/v1
+slug: b-weissensteiner
+name:
+  display: Bernadette Weissensteiner
+  family: Weissensteiner
+user_groups:
+- Former Members
+weight: 530
+role: Lab Technician
+interests:
+- ''
+- ''
+links:
+- icon: at-symbol
+  url: mailto:be.weissensteiner@gmail.com

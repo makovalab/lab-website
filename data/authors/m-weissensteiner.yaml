@@ -1,0 +1,17 @@
+schema: hugoblox/author/v1
+slug: m-weissensteiner
+name:
+  display: Matthias Weissensteiner
+  family: Weissensteiner
+user_groups:
+- Former Members
+weight: 540
+role: Postdoctoral Scholar
+interests:
+- ''
+- ''
+links:
+- icon: at-symbol
+  url: mailto:mxw1081@psu.edu
+_alternate_slugs:
+- mh-weissensteiner

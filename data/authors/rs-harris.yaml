@@ -1,0 +1,17 @@
+schema: hugoblox/author/v1
+slug: rs-harris
+name:
+  display: Robert Harris
+  family: Harris
+user_groups:
+- Former Members
+weight: 210
+role: Research Assistant Professor
+interests:
+- ''
+- ''
+links:
+- icon: at-symbol
+  url: mailto:rsharris@bx.psu.edu
+_alternate_slugs:
+- r-harris

@@ -1,0 +1,26 @@
+schema: hugoblox/author/v1
+slug: a-dey
+name:
+  display: Arpita Dey
+  family: Dey
+user_groups:
+- Former Members
+weight: 263
+role: Postdoctoral Scholar
+bio: Arpita has a background in studying the molecular biophysical interactions of G-quadruplex and other
+  quadruplex DNA structures involved in anticancer mechanisms. With a strong interest in cancer biology,
+  she is now exploring the molecular evolutionary medicine of non-B-DNA structures in primates, focusing
+  on G-quadruplexes (G4). Outside the lab, Arpita enjoys singing, cooking, and traveling to explore new
+  places.
+interests:
+- Cancer biology
+- Molecular Biophysics
+- Evolutionary medicine
+education:
+- degree: Ph.D. in Molecular Biophysics
+  institution: IIT Roorkee, India
+- degree: M.S. in Molecular Biology and Bioinformatics
+  institution: Tripura University, India
+links:
+- icon: at-symbol
+  url: mailto:apd6269@psu.edu

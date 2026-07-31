@@ -1,0 +1,12 @@
+schema: hugoblox/author/v1
+slug: a-sarwar
+name:
+  display: Adil Sarwar
+  family: Sarwar
+user_groups:
+- Former Members
+weight: 430
+role: Ph.D. student
+interests:
+- ''
+- ''

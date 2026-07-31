@@ -1,0 +1,12 @@
+schema: hugoblox/author/v1
+slug: c-park
+name:
+  display: Chungoo Park
+  family: Park
+user_groups:
+- Former Members
+weight: 380
+role: Ph.D. student
+interests:
+- ''
+- ''

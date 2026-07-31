@@ -30,6 +30,6 @@ categories = []
   focal_point = ""
 +++
 
-Congratulations to [Malika Laurence]({{< ref "/member/malika_laurence.md" >}}) for her grant awarded by the Undergraduate Research Fund!
+Congratulations to [Malika Laurence]({{< ref "/authors/m-laurence" >}}) for her grant awarded by the Undergraduate Research Fund!
 
 

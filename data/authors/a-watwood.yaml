@@ -1,0 +1,17 @@
+schema: hugoblox/author/v1
+slug: a-watwood
+name:
+  display: Allison Watwood
+  family: Watwood
+user_groups:
+- Former Members
+weight: 520
+role: Ph.D. student
+interests:
+- ''
+- ''
+links:
+- icon: at-symbol
+  url: mailto:acw286@psu.edu
+_alternate_slugs:
+- ac-watwood
