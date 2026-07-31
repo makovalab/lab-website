@@ -1,0 +1,42 @@
+# Per-person settings for scripts/make-portraits.
+#
+# Most photos need nothing here -- the defaults handle them. This file records
+# the exceptions, so that regenerating a portrait years from now reproduces what
+# was actually approved, rather than needing the same problems rediscovered.
+#
+# The key is the photo's filename without its extension, which is also the
+# member id. Any option below overrides the default; anything given explicitly
+# on the command line still wins over this file.
+#
+#   model            rembg model: u2net_human_seg (default, 168MB)
+#                    or birefnet-portrait (928MB, cleaner on stray fragments)
+#   union_model      a second model; small pieces it keeps and the first drops
+#                    are added back. For recovering a body part one model loses
+#                    without also recovering whatever else it keeps.
+#   lighting         true to even out exposure and contrast
+#   lighting_strength  0-1, how much of that correction to apply (default 0.7)
+#   defringe         false to keep colour picked up at the cut-out edge
+#   keep_background  true to leave the photo's own background alone
+#   detect           false to centre-crop instead of finding the face
+#   note             why -- for whoever reads this next
+
+[byung_june]
+model = "birefnet-portrait"
+union_model = "u2net_human_seg"
+lighting = true
+lighting_strength = 1.0
+note = """There is a second person behind him, backpack strap and all. birefnet-portrait
+excludes them but also mattes his ear away; u2net_human_seg keeps the ear but
+keeps the stranger too. So both are run and the small pieces only birefnet
+missed -- his ear at ~2000px -- are added back, while the stranger at ~98000px
+is not. His photo is also underexposed enough that the usual partial correction
+leaves him darker than everyone else, so correct him fully."""
+
+[johanna]
+lighting = true
+note = "sunlit street background; her source is itself a circular crop, so the matte is harder than most"
+
+[kateryna]
+note = """no usable source. Her committed portrait is a 200x200 from 2020 with a real
+photo background, and her shoulders run to the edge of the old circular crop, so
+reprocessing it leaves a visible ring and cuts her off. Left as it is."""
