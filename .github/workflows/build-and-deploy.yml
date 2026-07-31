@@ -80,7 +80,9 @@ jobs:
           TARGET: ${{ secrets.DEPLOY_DIRECTORY }}
 
       - name: Update Site
-        uses: richard-burhans/github-action-ssh@release
+        # Back on upstream: the fork existed only because upstream was stale at
+        # Node 20, which 0.9.0 fixed. Inputs are unchanged.
+        uses: garygrossgarten/github-action-ssh@0.9.0
         with:
           command: dummy
           host: ${{ secrets.DEPLOY_HOST }}
