@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Turn ordinary photos into the round 200x200 member portraits the site uses.
+"""Turn ordinary photos into the round member portraits the site uses.
 
 Run this through ``./scripts/make-portraits``, which creates the virtualenv and
 installs the dependencies first.
@@ -10,13 +10,19 @@ Pipeline, per photo::
       -> honour EXIF rotation (phone photos are usually stored sideways)
       -> rembg: cut the person out of the background
       -> composite onto one flat colour, so every portrait matches
-      -> find the face, take a square crop around it
-      -> scale to 200x200
+      -> find the face and measure the head
+      -> scale to the largest of 200/400/600 the photo fills unenlarged
       -> apply a soft-edged circular alpha mask
     static/img/member/linnea_smeds.png
 
 The output name comes from the input filename, so name the photo after the
-member id used in ``content/member/<id>.md``.
+member id used in ``content/member/<id>.md``. Photos listed in
+``portraits.toml`` are the exception: they keep their own names and are matched
+to a member by the ``source`` recorded there.
+
+Every measurement below is a fraction of ``SIZE`` rather than a pixel count, so
+one photo yields the same framing at any size. ``test_portraits.py`` guards
+that; ``./scripts/make-portraits --test`` runs it.
 """
 
 import math
@@ -31,6 +37,12 @@ from PIL import Image, ImageDraw, ImageFilter, ImageOps
 
 # --- Look of the finished portrait -------------------------------------------
 
+# Edge length of the finished portrait. Overridable with --size, because the
+# usable resolution varies per person: most sources only support 200, while the
+# handful with an original photo still on hand support 400 or 600. Everything
+# below is expressed as a fraction of SIZE, so the framing is identical at any
+# size. A source cannot be enlarged past its own detail -- see --size for the
+# head-height each value needs.
 SIZE = 200
 # Flat colour behind the cut-out person. #d3d3d3, matching the backdrop the
 # earlier pipeline produced -- huiqing_zeng, hana_palova, karol_pal, jacob_sieg,
@@ -52,8 +64,11 @@ ALPHA_FLOOR = 26  # below this, rembg alpha is background haze rather than a rea
 
 # The existing portraits have a circle that fades out over roughly six pixels
 # rather than a hard edge. Reproduced by insetting the circle and blurring it.
-FEATHER = 1.8
-INSET = 2.0
+# Both are fractions of SIZE -- 1.8px and 2.0px at the original 200 -- so that a
+# 600px portrait scaled down into the same slot on the page shows the same soft
+# edge as its 200px neighbours rather than a harder, more aliased one.
+FEATHER = 0.009
+INSET = 0.010
 SUPERSAMPLE = 4  # mask is drawn this much larger, then shrunk, to anti-alias it
 
 # Ordered least to most permissive. alt_tree yields the fewest false positives
@@ -85,6 +100,15 @@ EYE_HEIGHT = 0.46     # how far down the frame the eyes sit
 # of the output. Passport standards put the head at 70-80% of the frame; a
 # little less suits a round crop, which trims the corners anyway.
 HEAD_HEIGHT = 0.62
+
+# Sizes a finished portrait may be made at. Which one a person gets is a fact
+# about their photo rather than about them: the head is drawn at HEAD_HEIGHT of
+# the frame, so 600 needs about 372px of crown-to-chin in the original, 400
+# needs 248 and 200 needs 124. The script measures the head and picks the
+# largest size the photo can fill, because enlarging past that invents detail
+# rather than showing more. The site is served by a framework that resizes
+# down, so one file per person at its best size is enough.
+SIZE_LADDER = (200, 400, 600)
 HEAD_CENTRE_HEIGHT = 0.48  # where the middle of the head sits, when eyes are unknown
 HEAD_CENTRE_BLEND = 0.5    # 0 = centre on the eyes, 1 = centre on the head silhouette
 
@@ -127,6 +151,30 @@ def load_registry() -> dict[str, dict]:
 
 def repo_root() -> Path:
     return Path(__file__).resolve().parent.parent
+
+
+def registry_sources(registry: dict[str, dict]) -> tuple[list[tuple[str, Path]], list[tuple[str, str]]]:
+    """The (member, photo) pairs recorded in portraits.toml, and the missing ones.
+
+    Source photos live in images/, which is a local workspace rather than part
+    of the repository -- it is far too big to commit. So the path recorded here
+    may well not resolve on someone else's machine, and a missing one is
+    reported rather than treated as an error.
+    """
+    found: list[tuple[str, Path]] = []
+    missing: list[tuple[str, str]] = []
+    for member, entry in sorted(registry.items()):
+        source = entry.get("source")
+        if not source:
+            continue
+        path = Path(source)
+        if not path.is_absolute():
+            path = repo_root() / path
+        if path.is_file():
+            found.append((member, path))
+        else:
+            missing.append((member, source))
+    return found, missing
 
 
 def load_photo(path: Path) -> Image.Image:
@@ -461,14 +509,20 @@ def normalise_lighting(
     return result
 
 
+def size_for_head(head_px: float) -> int:
+    """The largest ladder size this head fills without being enlarged."""
+    fits = [edge for edge in SIZE_LADDER if HEAD_HEIGHT * edge <= head_px]
+    return max(fits) if fits else min(SIZE_LADDER)
+
+
 def circular_mask(size: int) -> Image.Image:
     """A circle with a soft edge, matching the site's existing portraits."""
     big = size * SUPERSAMPLE
-    inset = INSET * SUPERSAMPLE
+    inset = INSET * size * SUPERSAMPLE
     mask = Image.new("L", (big, big), 0)
     ImageDraw.Draw(mask).ellipse((inset, inset, big - 1 - inset, big - 1 - inset), fill=255)
     return mask.resize((size, size), Image.LANCZOS).filter(
-        ImageFilter.GaussianBlur(radius=FEATHER)
+        ImageFilter.GaussianBlur(radius=FEATHER * size)
     )
 
 
@@ -644,7 +698,15 @@ def make_portrait(
     lighting: bool,
     lighting_strength: float,
     background: tuple[int, int, int],
+    size: int | None = None,
 ) -> tuple[Image.Image, str]:
+    # None means "as large as this photo supports", decided once the head has
+    # been measured below. Every geometry constant is a fraction of SIZE, so
+    # setting it is enough to rescale the whole pipeline.
+    global SIZE
+    if size is not None:
+        SIZE = size
+
     image = load_photo(path)
     cut_out = cut_out_person(image, model, union_model) if remove_background else image
     if remove_background and defringe_edges:
@@ -668,6 +730,12 @@ def make_portrait(
     else:
         face, eyes = find_face(view), None
         route = "face box"
+
+    if size is None:
+        # The alpha matte gives the true crown, which the face box does not, so
+        # the size is chosen from the head the portrait will actually show.
+        crown, chin, _ = head_extent(cut_out, face)
+        SIZE = size_for_head(chin - crown)
 
     if lighting:
         cut_out = normalise_lighting(cut_out, face, lighting_strength)
@@ -763,6 +831,25 @@ def describe(path: Path) -> str:
     is_flag=True,
     help="Keep colour the cut-out edge picked up from the old background.",
 )
+@click.option(
+    "--size",
+    type=click.IntRange(min=64),
+    default=SIZE,
+    show_default="measured from the photo",
+    metavar="PIXELS",
+    help="Force the edge length of every portrait in this run. By default each "
+         "is made at the largest of "
+         f"{', '.join(str(edge) for edge in SIZE_LADDER)} its photo can fill: "
+         f"the head is drawn at {HEAD_HEIGHT:.0%} of the frame, so that needs "
+         "roughly 124px of crown-to-chin for 200, 248px for 400 and 372px for "
+         "600.",
+)
+@click.option(
+    "--from-registry",
+    is_flag=True,
+    help="Rebuild every portrait whose source photo is recorded in "
+         "portraits.toml, each at its recorded size. Implies --force.",
+)
 @click.option("--force", is_flag=True, help="Replace portraits that already exist.")
 @click.pass_context
 def main(
@@ -770,6 +857,8 @@ def main(
     photos: tuple[Path, ...],
     inbox: Path | None,
     out: Path | None,
+    size: int,
+    from_registry: bool,
     keep_background: bool,
     no_detect: bool,
     no_eye_frame: bool,
@@ -787,7 +876,24 @@ def main(
     inbox = inbox or repo_root() / "photos" / "inbox"
     out = out or repo_root() / "static" / "img" / "member"
 
-    selected = sorted(photos) if photos else collect_photos(inbox)
+    registry = load_registry()
+
+    # A photo named on the command line, or dropped in the inbox, is already
+    # named after the member. One named in portraits.toml is not -- it is
+    # whatever the original file happened to be called -- so it is carried
+    # alongside the id rather than having the id read back off the filename.
+    if from_registry:
+        selected, missing = registry_sources(registry)
+        for member, source in missing:
+            click.echo(
+                f"  {click.style('SKIPPED', fg='yellow')} {member}\n"
+                f"            recorded source is not there: {source}"
+            )
+        force = True
+    else:
+        chosen = sorted(photos) if photos else collect_photos(inbox)
+        selected = [(path.stem, path) for path in chosen]
+
     if not selected:
         click.echo(f"Nothing to do: no photos found in {describe(inbox)}/")
         click.echo(
@@ -800,18 +906,29 @@ def main(
     processed: list[str] = []
     skipped: list[tuple[str, str]] = []
 
-    registry = load_registry()
+    size_given = ctx.get_parameter_source("size") is ParameterSource.COMMANDLINE
 
-    for path in selected:
+    for member, path in selected:
         # content/member/<id>.md expects the portrait to be <id>.png
-        destination = out / f"{path.stem}.png"
+        destination = out / f"{member}.png"
         if destination.exists() and not force:
             reason = f"{destination.name} already exists. Re-run with --force to replace it."
             skipped.append((path.name, reason))
             continue
 
         # Per-person settings, overridden by anything given on the command line.
-        entry = registry.get(path.stem, {})
+        entry = registry.get(member, {})
+
+        # How big a portrait can usefully be is a property of the photo, so it
+        # is normally measured from it. A recorded size overrides that for the
+        # photos where the measurement reads better than the detail justifies;
+        # --size overrides everything, for trying a run out.
+        if size_given:
+            chosen_size = size
+        elif "size" in entry:
+            chosen_size = int(entry["size"])
+        else:
+            chosen_size = None
         settings = {
             "remove_background": not entry.get("keep_background", keep_background),
             "detect_face": entry.get("detect", not no_detect),
@@ -827,7 +944,9 @@ def main(
                 settings[name] = value
 
         try:
-            portrait, route = make_portrait(path, background=background, **settings)
+            portrait, route = make_portrait(
+                path, background=background, size=chosen_size, **settings
+            )
         except SkipPhoto as exc:
             skipped.append((path.name, str(exc)))
             continue
@@ -837,8 +956,10 @@ def main(
                 "--keep-background to skip background removal."
             ) from None
         portrait.save(destination, "PNG", optimize=True)
-        tag = route if path.stem not in registry else f"{route}, registry"
-        processed.append(f"{path.name} -> {describe(destination)}  [{tag}]")
+        tag = route if member not in registry else f"{route}, registry"
+        processed.append(
+            f"{path.name} -> {describe(destination)}  [{SIZE}px, {tag}]"
+        )
 
     for line in processed:
         click.echo(f"  {click.style('OK', fg='green')}      {line}")

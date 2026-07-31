@@ -52,4 +52,11 @@ if [[ ! -f "${stamp}" || "${here}/requirements.txt" -nt "${stamp}" ]]; then
     touch "${stamp}"
 fi
 
+# --test runs the checks on the framing maths, in this same environment, so
+# that a change to the constants is caught before any portrait is regenerated.
+if [[ "${1:-}" == "--test" ]]; then
+    shift
+    exec "${venv}/bin/python" -m pytest "${here}/test_portraits.py" "$@"
+fi
+
 exec "${venv}/bin/python" "${here}/portraits.py" "$@"
