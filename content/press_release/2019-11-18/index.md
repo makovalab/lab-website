@@ -1,4 +1,5 @@
 +++
+summary = "Mother’s age, a bottleneck, and selection affect how disease-causing mutations persist UNIVERSITY PARK, Pa. — New insight into how genetic information stored in human mitochondria is passed from one generation to the next could have important implications for genetic counseling of women planning…"
 title = "Tracking inheritance of human mitochondrial DNA"
 date = 2019-11-18T00:00:00
 draft = false

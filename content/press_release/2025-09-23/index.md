@@ -1,4 +1,5 @@
 +++
+summary = "UNIVERSITY PARK, Pa. — Unlike other tissues in the human body, human eggs don’t pick up as many mutations in some of their DNA as they age. The findings from a new study, published in Science Advances and led by researchers at Penn State, suggests that human eggs — the reproductive cells that, when…"
 title = "In brief: Certain age-related DNA mutations are less common in human eggs"
 subtitle = ""
 date = 2025-09-23T00:00:00

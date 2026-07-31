@@ -1,4 +1,5 @@
 +++
+summary = "Congratulations to Kateryna on her interview with Roxanne Khamsi in a new book Beyond Inheritance. You can read the interview here."
 title = "Congratulations to Kateryna on her interview with Roxanne Khamsi in a new book Beyond Inheritance"
 date = 2026-04-28T00:00:00
 draft = false

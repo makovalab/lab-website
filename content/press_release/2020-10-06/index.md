@@ -1,4 +1,5 @@
 +++
+summary = "UNIVERSITY PARK, Pa. — New analysis of the DNA sequence of the male-specific Y chromosomes from all living species of the great ape family helps to clarify our understanding of how this enigmatic chromosome evolved. A clearer picture of the evolution of the Y chromosome is important for studying…"
 title = "Evolution of the Y chromosome in great apes deciphered"
 subtitle = "Researchers reconstruct the ancestral great ape Y and show its rapid evolution in bonobo and chimpanzee"
 date = 2020-10-06T00:00:00

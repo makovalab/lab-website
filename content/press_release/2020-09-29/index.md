@@ -1,4 +1,5 @@
 +++
+summary = "UNIVERSITY PARK, Pa. -- Using state-of-the-art statistical methods, a team of researchers said they may have taken a leap closer to understanding a class of jumping genes, sequences that move to different locations in the human genome, which is the body's complete set of DNA. They added that the…"
 title = "Scientists take a step toward understanding 'jumping genes' effect on the genome"
 subtitle = ""
 date = 2020-09-29T00:00:00

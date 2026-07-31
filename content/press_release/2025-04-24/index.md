@@ -1,4 +1,5 @@
 +++
+summary = "UNIVERSITY PARK, Pa. — Certain DNA sequences can form structures other than the canonical double helix. These alternative DNA conformations — referred to as non-B DNA — have been implicated as regulators of cellular processes and of genome evolution, but their DNA tends to be repetitive, which…"
 title = "Beyond the double helix: Alternative DNA conformations in ape genomes"
 subtitle = "Researchers used recently published telomere-to-telomere genomes of humans, chimpanzee, bonobo, gorilla and two orangutans to predict locations of DNA sequences that can form other structures besides the double helix"
 date = 2025-04-24T00:00:00

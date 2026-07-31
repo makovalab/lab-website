@@ -1,4 +1,5 @@
 +++
+summary = "Listen to the Science Friday podcast where Adam Phillippy and Kateryna Makova discuss the challenges of sequencing the Y chromosome, and what doing so might mean for medical research. UNIVERSITY PARK, Pa. — The first full sequence of the last human chromosome — the Y chromosome — to be assembled is…"
 title = "DNA sequence of the human Y chromosome fully determined for first time"
 subtitle = "Published today in Nature, the international efforts revealed the first full sequencing of the human sex chromosome"
 date = 2023-08-23T00:00:00

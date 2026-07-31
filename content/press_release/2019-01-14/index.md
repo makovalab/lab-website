@@ -1,4 +1,5 @@
 +++
+summary = "Differences in the geographic origin of genes may affect the function of human mitochondria—energy-generating organelles inside of cells—according to a new study. Mitochondria have their own genome, separate from the nuclear genome contained in the nucleus of the cell, and both genomes harbor genes…"
 title = "Differences in genes’ geographic origin influence mitochondrial function"
 date = 2019-01-14T00:00:00
 draft = false
