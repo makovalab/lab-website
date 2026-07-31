@@ -1,0 +1,58 @@
+/* Figure classes carried over from the old site's content.
+ *
+ * 18 pages use `class="image-center"` or `class="image-right"` in a figure
+ * shortcode. `image-center` was never defined in any stylesheet -- not here and
+ * not on the old site either -- so it has always been inert; the old academic
+ * theme simply constrained figures by default and made that hard to notice.
+ * This theme does not, so those figures render at the full column width. On a
+ * portrait-orientation photo that is much worse than it sounds: award3.jpg is
+ * 775x1008, so at column width it stands several screens tall and pushes the
+ * text off the page.
+ *
+ * So both classes are given the behaviour their names have always promised.
+ * Capping the height matters more than capping the width here, because it is
+ * the tall ones that break the page, and a width cap does nothing for them.
+ */
+
+figure.image-center {
+  margin: 1.5rem auto;
+  text-align: center;
+}
+
+figure.image-center img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 32rem;
+  width: auto;
+  height: auto;
+}
+
+figure.image-right {
+  float: right;
+  width: 47%;
+  padding: 0 0 0 1em;
+  margin: 0.5em 0 0.25em 1em;
+  clear: right;
+}
+
+figure.image-right img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Floating a figure alongside text stops making sense once the column is
+ * narrow enough that 47% of it cannot hold a picture. */
+@media (max-width: 640px) {
+  figure.image-right {
+    float: none;
+    width: auto;
+    padding: 0;
+    margin: 1.5rem auto;
+  }
+}
+
+figure.image-center figcaption,
+figure.image-right figcaption {
+  font-size: smaller;
+}
