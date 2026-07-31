@@ -4,10 +4,28 @@
 # the exceptions, so that regenerating a portrait years from now reproduces what
 # was actually approved, rather than needing the same problems rediscovered.
 #
-# The key is the photo's filename without its extension, which is also the
-# member id. Any option below overrides the default; anything given explicitly
-# on the command line still wins over this file.
+# The key is the member id, which is also what the finished portrait is named:
+# id linnea_smeds means content/member/linnea_smeds.md and
+# static/img/member/linnea_smeds.png. Any option below overrides the default;
+# anything given explicitly on the command line still wins over this file.
 #
+#   source           the photo this portrait is made from, relative to the top
+#                    of the repository. These live in photos/originals/, named
+#                    after the member, and are committed: the portraits are
+#                    worth nothing without the ability to remake them, and the
+#                    workspace they were recovered from is not in the repo and
+#                    has been partly lost once already.
+#                    ./scripts/make-portraits --from-registry rebuilds every
+#                    portrait recorded here from its own source.
+#   origin           where that photo was originally found, for provenance.
+#                    Nothing reads this; it is here because the trail back to
+#                    an old site backup or a deleted branch is not recoverable
+#                    once forgotten.
+#   size             edge length in pixels, when the measured one is wrong.
+#                    Normally omitted: the script measures the head and picks
+#                    the largest of 200/400/600 the photo fills without being
+#                    enlarged. Set this to hold a photo down to a smaller size
+#                    when it is nominally large but soft or noisy.
 #   model            rembg model: u2net_human_seg (default, 168MB)
 #                    or birefnet-portrait (928MB, cleaner on stray fragments)
 #   union_model      a second model; small pieces it keeps and the first drops
@@ -19,8 +37,32 @@
 #   keep_background  true to leave the photo's own background alone
 #   detect           false to centre-crop instead of finding the face
 #   note             why -- for whoever reads this next
+#
+# The originals were matched to the published portraits by comparing faces
+# rather than filenames, which is what scripts/verify_portrait_sources.py does.
+# Filenames proved actively misleading: they paired a portrait with an
+# illustration of that person, with a different person sharing a name, and with
+# a much older photo of the right one.
+
+[arpita]
+source = "photos/originals/arpita.png"
+origin = "images/from-git-history/arpita.png"
+
+[bruce]
+source = "photos/originals/bruce.png"
+origin = "images/from-old/img/bruce.png"
+model = "birefnet-portrait"
+note = """u2net_human_seg fails on this photo outright -- it keeps the wall behind his
+head, so the orange room survives into the portrait. The version on the site
+before this had the same problem. Worth knowing that this is not visible in the
+usual summary statistics: its matte covers 67% of the frame, the same as photos
+that worked, because what it gets wrong is local to the head. birefnet-portrait
+cuts him out cleanly. The parrot on his shoulder is kept: it is his, and it was
+in the published portrait too."""
 
 [byung_june]
+source = "photos/originals/byung_june.jpg"
+origin = "images/original/current/byung_june.jpg"
 model = "birefnet-portrait"
 union_model = "u2net_human_seg"
 lighting = true
@@ -32,11 +74,64 @@ missed -- his ear at ~2000px -- are added back, while the stranger at ~98000px
 is not. His photo is also underexposed enough that the usual partial correction
 leaves him darker than everyone else, so correct him fully."""
 
+[edmundo]
+source = "photos/originals/edmundo.jpg"
+origin = "images/original/current/edmundo.jpg"
+
+[hana_palova]
+source = "photos/originals/hana_palova.png"
+origin = "images/original/hana_palova.png"
+
+[huiqing_zeng]
+source = "photos/originals/huiqing_zeng.jpg"
+origin = "images/from-git-history/Zeng_Huiqing.jpg"
+
+[jacob_sieg]
+source = "photos/originals/jacob_sieg.png"
+origin = "images/original/jacob_sieg.png"
+
 [johanna]
+source = "photos/originals/johanna.png"
+origin = "images/from-workspace/johanna-1027px-original.png"
 lighting = true
 note = "sunlit street background; her source is itself a circular crop, so the matte is harder than most"
+
+[kaivan_kamali]
+source = "photos/originals/kaivan_kamali.png"
+origin = "images/original/cropped-kaivan_kamali.png"
+
+[karol_pal]
+source = "photos/originals/karol_pal.png"
+origin = "images/original/cropped-karol_pal.png"
 
 [kateryna]
 note = """no usable source. Her committed portrait is a 200x200 from 2020 with a real
 photo background, and her shoulders run to the edge of the old circular crop, so
 reprocessing it leaves a visible ring and cuts her off. Left as it is."""
+
+[lauren_heverly]
+source = "photos/originals/lauren_heverly.jpg"
+origin = "images/original/current/lauren_heverly.jpg"
+
+[linnea_smeds]
+note = """no usable source, despite appearances. Linnea_Smeds_new_photo.png in the git
+history matches her face almost exactly -- it is a 4032x3024 canvas with an
+already-circular, already-cut-out avatar sitting in the middle of it. Face
+matching ranks it first precisely because it is descended from the same sitting,
+not because it is the original. Running it through again crops a circle inside
+that circle: it clips her hair, drops her shoulders and leaves the old crop's
+rectangle showing. Her committed 200x200 is better than anything that file can
+produce, so it is left alone. Recorded here so the next person does not
+rediscover this by regenerating it."""
+
+[rebeca]
+source = "photos/originals/rebeca.jpg"
+origin = "images/from-old/backup_sept_2015/people/rebeca1.jpg"
+
+[samarth]
+source = "photos/originals/samarth.jpg"
+origin = "images/from-old/backup_sept_2015/people/samarth.jpg"
+
+[saswat_mohanty]
+source = "photos/originals/saswat_mohanty.png"
+origin = "images/original/saswat_mohanty.png"
