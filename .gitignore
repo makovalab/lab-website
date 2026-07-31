@@ -16,3 +16,9 @@ photos/inbox/*
 # Python bytecode from scripts/portraits.py
 __pycache__/
 *.py[cod]
+
+# Local Hugo install, if the release tarball is unpacked here for previewing.
+# Note it also contains README.md and LICENSE, which will overwrite this repo's.
+/hugo
+/hugo_*.tar.gz
+/LICENSE
