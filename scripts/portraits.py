@@ -126,6 +126,16 @@ LIGHTING_STRENGTH = 0.7   # apply only part of the correction
 
 MAX_ALIGN_ANGLE = 35.0  # beyond this the eye detection is more likely wrong than the head
 
+# Continuing a subject the photo cuts off at the bottom. The first is how much
+# of the bottom row the subject must occupy before it counts as cut off rather
+# than as a person who simply ends inside the frame; the second is how far the
+# shirt is carried on, as a fraction of the photo's height. Six tenths is well
+# past the bottom of the disc at any framing, so the join never shows.
+TORSO_EDGE_FRACTION = 0.2
+TORSO_EXTEND = 0.6
+TORSO_BLUR = 0.06        # sideways blur at the far end, as a fraction of the width
+TORSO_BLUR_START = 0.55  # how much of that blur is already applied at the seam
+
 # macOS resource forks and other dotfiles that are not really photos.
 IGNORED_PREFIXES = ("._", ".")
 PHOTO_SUFFIXES = frozenset({".jpg", ".jpeg", ".png", ".tif", ".tiff", ".webp", ".bmp"})
@@ -537,6 +547,50 @@ def detection_view(cut_out: Image.Image) -> Image.Image:
     return canvas.convert("RGB")
 
 
+def extend_below(cut_out: Image.Image) -> Image.Image:
+    """Carry the subject on downward when the photo cuts them off at the bottom.
+
+    A tight crop often ends part-way down the shirt. Framing then scales that
+    edge into the middle of the disc, and because the eyes are levelled by
+    rotating, the straight bottom of the photo lands as a diagonal slice across
+    the shoulders -- or, when the crop stops higher, as a band of empty
+    backdrop under the person. Replicating the last row downward carries the
+    shirt on instead.
+
+    Only the bottom is extended. A torso really does continue out of frame,
+    whereas replicating the top would smear hair upward into the headroom the
+    framing is trying to leave, and replicating the sides would stretch a
+    shoulder sideways.
+    """
+    alpha = np.array(cut_out.split()[-1])
+    if (alpha[-1, :] > 128).mean() < TORSO_EDGE_FRACTION:
+        return cut_out  # the photo already contains where the subject ends
+
+    pad = max(1, round(cut_out.height * TORSO_EXTEND))
+    # Padding only at the bottom leaves the origin alone, so the face box, eye
+    # positions and crown measured above stay valid.
+    extended = cv2.copyMakeBorder(np.array(cut_out), 0, pad, 0, 0, cv2.BORDER_REPLICATE)
+
+    # Replication alone draws every column straight down, which on a plain
+    # shirt passes for fabric but on a collar turns the V of skin into a stripe.
+    # Blurring it sideways, by more the further it goes, reads as cloth falling
+    # out of focus instead.
+    #
+    # The ramp starts well above zero on purpose. Only the first inch or so of
+    # the extension is ever inside the disc -- the rest is cropped away -- so a
+    # ramp starting at zero blurs nothing anyone sees. Beginning part-blurred
+    # costs no visible seam, because the row being blurred is a copy of the row
+    # above it rather than a new edge.
+    height = cut_out.height
+    band = extended[height:]
+    kernel = max(3, int(cut_out.width * TORSO_BLUR) | 1)
+    blurred = cv2.blur(band, (kernel, 1))
+    ramp = np.linspace(TORSO_BLUR_START, 1.0, pad, dtype=np.float32)[:, None, None]
+    extended[height:] = (band * (1 - ramp) + blurred * ramp).astype(np.uint8)
+
+    return Image.fromarray(extended, "RGBA")
+
+
 def similarity_warp(
     cut_out: Image.Image, centre: tuple[float, float], angle: float, scale: float,
     target: tuple[float, float],
@@ -745,6 +799,9 @@ def make_portrait(
         eyes = eye_positions(view, face)
         if eyes is not None:
             route = "eyes (haar)"
+
+    # After the head has been measured and before anything scales it.
+    cut_out = extend_below(cut_out)
 
     framed = frame_with_eyes(cut_out, face, eyes) if eyes else frame_on_face(cut_out, face)
     return lay_on_disc(framed, background), route

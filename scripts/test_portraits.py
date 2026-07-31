@@ -159,6 +159,49 @@ def test_circular_mask_is_opaque_in_the_middle_and_clear_in_the_corner(size):
     assert mask[0, 0] == 0
 
 
+# --- continuing a subject the photo cuts off ---------------------------------
+
+def torso(size: int, reaches_bottom: bool) -> Image.Image:
+    """A shirt-shaped block that either runs off the bottom edge or stops short."""
+    image = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    bottom = size if reaches_bottom else int(size * 0.7)
+    ImageDraw.Draw(image).rectangle(
+        (int(size * 0.2), int(size * 0.3), int(size * 0.8), bottom - 1),
+        fill=(120, 40, 60, 255),
+    )
+    return image
+
+
+def test_subject_running_off_the_bottom_is_carried_on():
+    cut_out = torso(200, reaches_bottom=True)
+
+    extended = portraits.extend_below(cut_out)
+
+    assert extended.height > cut_out.height
+    # the shirt continues rather than stopping at the old edge
+    alpha = np.asarray(extended)[:, :, 3]
+    assert (alpha[cut_out.height + 10] > 128).any()
+
+
+def test_subject_that_ends_inside_the_frame_is_left_alone():
+    """Nothing to continue: the photo already shows where the person stops."""
+    cut_out = torso(200, reaches_bottom=False)
+
+    assert portraits.extend_below(cut_out).size == cut_out.size
+
+
+def test_extending_does_not_move_anything_already_measured():
+    """Padding only the bottom keeps the origin, so face and eye coords hold."""
+    cut_out = torso(200, reaches_bottom=True)
+
+    extended = portraits.extend_below(cut_out)
+
+    assert extended.width == cut_out.width
+    original = np.asarray(cut_out)[: cut_out.height]
+    kept = np.asarray(extended)[: cut_out.height]
+    assert np.array_equal(original, kept)
+
+
 # --- what the config records -------------------------------------------------
 
 def test_registry_sources_are_reported_rather_than_failing_when_absent():
