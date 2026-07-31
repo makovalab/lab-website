@@ -44,6 +44,15 @@
 # illustration of that person, with a different person sharing a name, and with
 # a much older photo of the right one.
 
+[adam_phillippy]
+source = "photos/originals/adam_phillippy.png"
+origin = "images/original/current/cmg/Phillippy_Adam.png"
+collection = "collaborator"
+note = """a collaborator, so the portrait belongs in static/img/collaborator/ rather than
+static/img/member/. Nothing larger than 200x200 survives anywhere in the
+archive, so unlike the others he cannot gain any resolution; this is only to
+stop his suit being cut off at the bottom of the disc."""
+
 [arpita]
 source = "photos/originals/arpita.png"
 origin = "images/from-git-history/arpita.png"
@@ -98,11 +107,17 @@ note = "sunlit street background; her source is itself a circular crop, so the m
 
 [kaivan_kamali]
 source = "photos/originals/kaivan_kamali.png"
-origin = "images/original/cropped-kaivan_kamali.png"
+origin = "images/original/kaivan_kamali.png"
+note = """the uncropped original, not cropped-kaivan_kamali.png, which face matching
+ranked first. That file is the same photo cut down to the head, and the ranking
+went by how many pixels wide the face was -- which a tight crop wins by
+definition, while being the worse source. It ends just below the collar, so
+there was no shirt left to fill the bottom of the disc."""
 
 [karol_pal]
 source = "photos/originals/karol_pal.png"
-origin = "images/original/cropped-karol_pal.png"
+origin = "images/original/karol_pal.png"
+note = "the uncropped original, for the same reason as kaivan_kamali"
 
 [kateryna]
 note = """no usable source. Her committed portrait is a 200x200 from 2020 with a real

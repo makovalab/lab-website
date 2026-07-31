@@ -931,7 +931,10 @@ def main(
     after the member, e.g. linnea_smeds.jpg for content/member/linnea_smeds.md.
     """
     inbox = inbox or repo_root() / "photos" / "inbox"
-    out = out or repo_root() / "static" / "img" / "member"
+    # Where a portrait lands depends on whether the person is a lab member or a
+    # collaborator, which is recorded per person. An explicit --out overrides
+    # that for the whole run.
+    out_given = out is not None
 
     registry = load_registry()
 
@@ -959,22 +962,26 @@ def main(
         )
         return
 
-    out.mkdir(parents=True, exist_ok=True)
     processed: list[str] = []
     skipped: list[tuple[str, str]] = []
 
     size_given = ctx.get_parameter_source("size") is ParameterSource.COMMANDLINE
 
     for member, path in selected:
-        # content/member/<id>.md expects the portrait to be <id>.png
-        destination = out / f"{member}.png"
+        # Per-person settings, overridden by anything given on the command line.
+        entry = registry.get(member, {})
+
+        # content/<collection>/<id>.md expects the portrait to be <id>.png in the
+        # matching image folder.
+        folder = out if out_given else (
+            repo_root() / "static" / "img" / entry.get("collection", "member")
+        )
+        folder.mkdir(parents=True, exist_ok=True)
+        destination = folder / f"{member}.png"
         if destination.exists() and not force:
             reason = f"{destination.name} already exists. Re-run with --force to replace it."
             skipped.append((path.name, reason))
             continue
-
-        # Per-person settings, overridden by anything given on the command line.
-        entry = registry.get(member, {})
 
         # How big a portrait can usefully be is a property of the photo, so it
         # is normally measured from it. A recorded size overrides that for the
