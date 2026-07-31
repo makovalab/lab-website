@@ -144,7 +144,13 @@ def convert_person(path: Path, kind: str) -> tuple[str, dict, str]:
         "user_groups": [group],
         # `sort_position` was the old manual ordering key; team-showcase sorts
         # `weight` numerically (block.html special-cases it).
-        "weight": fm.get("sort_position", 0),
+        #
+        # Shifted by one so no weight is ever 0. team-showcase resolves the sort
+        # key with `$primary | default $missingSentinel` (block.html:186,403),
+        # and Go templates treat 0 as empty — so `weight: 0` is read as "no
+        # weight" and sorts *last* under the 999999 sentinel. Kateryna had
+        # sort_position 0 and landed at the end of the members list.
+        "weight": fm.get("sort_position", 0) + 1,
     }
 
     if fm.get("role"):

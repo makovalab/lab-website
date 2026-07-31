@@ -5,7 +5,7 @@ name:
   family: Phillippy
 user_groups:
 - Collaborators
-weight: 80
+weight: 81
 bio: Dr. Adam Phillippy is a Senior Investigator and head of the Genome Informatics Section at the National
   Human Genome Research Institute. His lab develops and applies computational methods for the analysis
   of massive genomics datasets, focusing on the challenges of genome sequencing and comparative genomics.

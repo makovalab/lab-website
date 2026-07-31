@@ -5,7 +5,7 @@ name:
   family: Makova
 user_groups:
 - Members
-weight: 0
+weight: 1
 role: Professor
 bio: 'Kateryna is interested in genomics, evolution, and human genetics.
 
