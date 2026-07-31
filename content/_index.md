@@ -72,15 +72,20 @@ sections:
     design:
       view: card
 
+  # Current people only, matching the pre-migration homepage widgets, which
+  # skipped anyone flagged `is_former_member` / `is_former_collaborator`.
+  # Alumni live on /people/, linked from the CTA below.
   - block: team-showcase
     id: members
     content:
       title: Members
       user_groups:
         - Members
-        - Former Members
       sort_by: weight
       sort_ascending: true
+      cta:
+        text: All members
+        url: /people/
     design:
       show_role: true
       show_organizations: true
@@ -93,9 +98,11 @@ sections:
       title: Collaborators
       user_groups:
         - Collaborators
-        - Former Collaborators
       sort_by: weight
       sort_ascending: true
+      cta:
+        text: All collaborators
+        url: /people/
     design:
       show_role: true
       show_organizations: true
