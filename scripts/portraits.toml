@@ -159,3 +159,11 @@ origin = "images/from-old/backup_sept_2015/people/samarth.jpg"
 [saswat_mohanty]
 source = "photos/originals/saswat_mohanty.png"
 origin = "images/original/saswat_mohanty.png"
+
+[genesis_castillo]
+source = "photos/originals/genesis_castillo.jpg"
+origin = "images/from-git-history/Genesis_Castillo.JPG"
+note = """a studio headshot, so nothing had to be salvaged. Her hair falls in front of
+her shoulders, which is why the finished portrait shows no clothing where most of
+the others do -- the framing is the usual one, there is simply hair where a
+collar would be."""

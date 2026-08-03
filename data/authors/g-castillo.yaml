@@ -1,0 +1,11 @@
+schema: hugoblox/author/v1
+slug: g-castillo
+name:
+  display: Genesis Castillo
+  family: Castillo
+user_groups:
+- Members
+# Members sort by weight, which runs alphabetically by surname with the PI
+# pinned at 1: Ko 265, Mohanty 271, Pal 361, Palova 371, Sieg 451, Stepanian
+# 501, Zeng 581, Zhao 601. Castillo comes before Ko.
+weight: 131
