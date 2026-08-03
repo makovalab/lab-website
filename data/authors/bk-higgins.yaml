@@ -8,9 +8,6 @@ user_groups:
 weight: 221
 role: Research Technician
 bio: Mitochondrial change and inheritance patterns
-interests:
-- ''
-- ''
 links:
 - icon: at-symbol
   url: mailto:bkg102@psu.edu

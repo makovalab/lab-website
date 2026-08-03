@@ -1,0 +1,167 @@
+{{/*
+  A person's page: who they are, then everything they have published with the
+  lab.
+
+  Overrides the theme's term template. The header is the theme's own -- portrait,
+  name, role, affiliations, bio, links -- with the two sections the old site had
+  and this did not, Interests and Education, added under it. Each is skipped when
+  the person has no data for it, which is most of them: of 84 people, 35 have
+  interests, 34 have education, 20 have affiliations.
+
+  Publications are citations rather than cards. Cards gave every paper a large
+  placeholder image and paginated them ten at a time; the old site listed them
+  all as citations, which is both what people expect of a publication list and
+  far shorter per paper. Using the same view as the front page also means a paper
+  arrives with its Paper Link, project, video and press-release buttons already
+  on it, and the person's own name in bold.
+
+  A copy of the upstream template with those changes. If it moves upstream,
+  re-copy and re-apply.
+*/}}
+{{ define "main" }}
+
+{{ $slug := .Data.Term | urlize }}
+{{ $profile := partial "functions/get_author_profile" (dict "slug" $slug) }}
+{{ $avatar := $profile.avatar }}
+{{ $avatar_shape := site.Params.hugoblox.layout.avatar_shape | default "circle" }}
+
+<section class="max-w-5xl mx-auto px-6 py-10">
+  <div class="flex flex-col sm:flex-row sm:items-center gap-6">
+    <div class="flex-shrink-0">
+      {{ if $avatar }}
+        {{ if not (reflect.IsImageResourceProcessable $avatar) }}
+        <img
+          class="h-32 w-32 sm:h-40 sm:w-40 {{ if ne $avatar_shape "square" }}rounded-full{{ end }}"
+          src="{{ $avatar.RelPermalink }}"
+          width="160"
+          height="160"
+          alt="{{ $profile.title }}"
+          loading="lazy"
+        />
+        {{ else }}
+        {{ $responsive := partial "functions/process_responsive_image.html" (dict
+          "image" $avatar
+          "mode" "fill"
+          "aspect_ratio" "1:1"
+          "anchor" "Center"
+          "sizes" (slice 160 240 320 480)
+        ) }}
+        <img
+          class="h-32 w-32 sm:h-40 sm:w-40 {{ if ne $avatar_shape "square" }}rounded-full{{ end }}"
+          srcset="{{ $responsive.srcset }}"
+          sizes="160px"
+          src="{{ $responsive.fallback.RelPermalink }}"
+          width="160"
+          height="160"
+          alt="{{ $profile.title }}"
+          loading="lazy"
+        />
+        {{ end }}
+      {{ else }}
+        <div class="h-32 w-32 sm:h-40 sm:w-40 bg-gray-100 dark:bg-gray-800 rounded-full flex items-center justify-center">
+          {{ partial "functions/get_icon" (dict "name" "hero/user" "attributes" "class=\"h-12 w-12 text-gray-400\"") }}
+        </div>
+      {{ end }}
+    </div>
+
+    <div class="space-y-2">
+      <div class="flex items-center gap-2">
+        <h1 class="text-3xl sm:text-4xl font-bold">{{ $profile.title }}</h1>
+        {{ with $profile.status }}
+          {{ with .icon }}
+            <span class="text-2xl" aria-hidden="true">{{ . }}</span>
+          {{ end }}
+        {{ end }}
+      </div>
+
+      {{ with $profile.role }}
+        <div class="text-lg font-semibold text-neutral-700 dark:text-neutral-200">{{ . | markdownify | emojify }}</div>
+      {{ end }}
+
+      {{ with $profile.affiliations }}
+        <div class="text-neutral-600 dark:text-neutral-300">
+          {{ range $index, $org := . }}
+            {{ if gt $index 0 }} · {{ end }}
+            {{ if $org.url }}<a href="{{ $org.url }}" class="underline">{{ $org.name }}</a>{{ else }}{{ $org.name }}{{ end }}
+          {{ end }}
+        </div>
+      {{ end }}
+
+      {{ with $profile.bio }}
+        <div class="prose prose-slate dark:prose-invert max-w-none">
+          {{ . | markdownify | emojify }}
+        </div>
+      {{ end }}
+
+      {{ if $profile.links }}
+        <div class="pt-2">
+          {{ partial "social_links" (dict "Params" (dict "profiles" $profile.links)) }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+{{/* --- added: interests and education, as the old site had them --- */}}
+{{ $interests := $profile.interests }}
+{{ $education := $profile.education }}
+{{ if or $interests $education }}
+<section class="max-w-5xl mx-auto px-6 pb-4">
+  <div class="grid gap-8 sm:grid-cols-2">
+    {{ with $interests }}
+      <div>
+        <h2 class="text-xl font-bold mb-3">Interests</h2>
+        <ul class="list-disc pl-5 space-y-1 text-neutral-700 dark:text-neutral-300">
+          {{ range . }}{{ with . }}<li>{{ . | markdownify | emojify }}</li>{{ end }}{{ end }}
+        </ul>
+      </div>
+    {{ end }}
+    {{ with $education }}
+      <div>
+        <h2 class="text-xl font-bold mb-3">Education</h2>
+        <ul class="space-y-2">
+          {{ range . }}
+            <li>
+              <div class="text-neutral-800 dark:text-neutral-100">
+                {{ .degree }}{{ with .year }}, {{ . }}{{ end }}
+              </div>
+              {{ with .institution }}
+                <div class="text-sm text-neutral-600 dark:text-neutral-400">{{ . }}</div>
+              {{ end }}
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+{{/* --- added: every paper, as a citation --- */}}
+
+{{/* Gather by every spelling of this person's name, not just the taxonomy term.
+     A term collects one exact string, so "K Makova" and "KD Makova" are two
+     terms and two of her papers would be missing from her own page -- and the
+     "K Makova" term is not built at all, so they would be unreachable. The map
+     in data/author_links.yaml already knows which spellings are the same person,
+     so use it. */}}
+{{ $slug := path.Base .RelPermalink }}
+{{ $names := slice }}
+{{ range $raw, $s := site.Data.author_links }}
+  {{ if eq $s $slug }}{{ $names = $names | append $raw }}{{ end }}
+{{ end }}
+{{ $papers := .Pages }}
+{{ with $names }}
+  {{ $papers = where (where site.RegularPages "Type" "publication") "Params.authors" "intersect" $names }}
+{{ end }}
+{{ $papers = $papers.ByDate.Reverse }}
+{{ with $papers }}
+<section class="max-w-5xl mx-auto px-6 pb-12">
+  <h2 class="text-xl font-bold mb-4">Publications</h2>
+  {{ range $index, $item := . }}
+    {{ partial "views/citation.html" (dict "item" $item "index" $index "config" (dict)) }}
+  {{ end }}
+</section>
+{{ end }}
+
+{{ end }}
