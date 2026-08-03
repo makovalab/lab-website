@@ -30,3 +30,12 @@ node_modules/
 
 # Throwaway virtualenv for scripts/migrate/*.py (PyYAML only).
 .venv-migrate/
+
+# Bundler lockfile. Deliberately not committed: `bundler-cache: true` in the
+# deploy workflow installs frozen, so a lockfile has to match the runner's
+# bundler exactly. The one that was here came from a sandbox running Bundler 4 --
+# it carried a CHECKSUMS section and spelled the platform x86_64-linux-gnu --
+# and the runner's Bundler 2 rejected it with exit 16 before the build even
+# started. Master never had a lockfile; CI resolves html-proofer fresh, which is
+# what has always worked.
+Gemfile.lock
