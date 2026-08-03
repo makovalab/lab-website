@@ -1,0 +1,44 @@
+{{/*
+  Make the contact form open the visitor's own mail client instead of posting
+  anywhere.
+
+  The block renders `<form action="..." method="POST">` with no enctype, and a
+  mailto: action submitted that way arrives mangled or empty in most clients. So
+  the submit is intercepted and a mailto: URL is built by hand, with the subject
+  and a body that keeps the sender's name and address -- which is the part a
+  plain "mailto:" link loses.
+
+  Nothing is posted to a server, which is the point: there is no endpoint to
+  spam, and no third-party service holding the lab's messages. The cost is that
+  a visitor without a configured mail client gets nothing useful, so the address
+  stays visible in the Connect card beside it for anyone who would rather copy
+  it.
+*/}}
+<script>
+  (function () {
+    var form = document.querySelector('#contact form[action^="mailto:"]');
+    if (!form) return;
+    var to = form.getAttribute('action').slice('mailto:'.length);
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var get = function (n) {
+        var el = form.querySelector('[name="' + n + '"]');
+        return el ? el.value.trim() : '';
+      };
+      var name = get('name'), email = get('email');
+      var subject = get('subject') || 'Message from the lab website';
+      var body = get('message');
+
+      /* Keep who it came from in the body. The mail client will send from
+         whatever account it is set up with, which is usually the same person,
+         but not always -- and a reply needs the address they typed. */
+      var from = [name, email].filter(Boolean).join(' <') + (email ? '>' : '');
+      if (from) body += '\n\n--\n' + from;
+
+      window.location.href = 'mailto:' + to
+        + '?subject=' + encodeURIComponent(subject)
+        + '&body=' + encodeURIComponent(body);
+    });
+  })();
+</script>

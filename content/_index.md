@@ -183,15 +183,22 @@ sections:
       # if that is wanted back, at the cost of loading a third-party map on the
       # front page.
       map_url: https://www.google.com/maps/search/?api=1&query=40.799720,-77.862522
-      # The old site had a Name / Email / Message form here, so it is back.
+      # The old site had a Name / Email / Message form, so it is back -- but
+      # wired to open the visitor's own mail client rather than to post
+      # anywhere. The old one posted to https://formspree.io/kdm16@bx.psu.edu,
+      # Formspree's retired "email in the URL" style, so it had almost certainly
+      # been dropping messages silently for years.
       #
-      # NOTE THE ACTION NEEDS REPLACING. This is the endpoint the old site
-      # posted to, kept so the form is wired to what it always was, but it is
-      # Formspree's legacy "email in the URL" style, which they retired in
-      # favour of https://formspree.io/f/<form-id>. Submissions to it almost
-      # certainly go nowhere. Create a form in a Formspree account and put its
-      # id here, or point form_action at whatever handler the lab prefers --
-      # until then this collects messages and drops them.
+      # mailto means there is no endpoint for bots to submit to, so a public
+      # form cannot turn into a stream of spam, and no third-party service holds
+      # the lab's messages. A visitor without a mail client gets nothing from
+      # it, which is why the address stays visible and copyable in the Connect
+      # card beside it.
+      #
+      # layouts/_partials/hooks/body-end/contact-form-mailto.html does the
+      # wiring: the block emits method="POST" with no enctype, and a mailto
+      # submitted that way arrives mangled, so the submit is intercepted and the
+      # URL built by hand.
       show_form: true
-      form_action: https://formspree.io/kdm16@bx.psu.edu
+      form_action: mailto:kdm16@bx.psu.edu
 ---
