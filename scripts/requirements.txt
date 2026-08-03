@@ -18,3 +18,6 @@ numpy>=1.24,<3
 # Background removal. Downloads a ~176MB model to ~/.u2net on first use.
 rembg>=2.0,<3
 onnxruntime>=1.16,<2
+
+# For scripts/test_portraits.py. Run it with ./scripts/make-portraits --test.
+pytest>=7,<9
