@@ -5,6 +5,9 @@ name:
   family: Anthony
 user_groups:
 - Former Members
+projects:
+- mitochondrial_mutation_dynamics
+- microsatellite_variation_and_evolution
 weight: 31
 role: Research Technician
 interests:

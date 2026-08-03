@@ -5,6 +5,8 @@ name:
   family: Mohanty
 user_groups:
 - Members
+projects:
+- microsatellite_variation_and_evolution
 weight: 271
 role: Ph.D. Student
 bio: Saswat is interested in understanding the evolution of non-B-DNA structures in primates. Currently,

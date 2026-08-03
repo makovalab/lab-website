@@ -5,6 +5,8 @@ name:
   family: Ko
 user_groups:
 - Members
+projects:
+- sex_chromosome_evolution
 weight: 265
 role: Postdoctoral Scholar
 bio: Currently, Byung June focuses on telomere-to-telomere genome assembly and the functional research

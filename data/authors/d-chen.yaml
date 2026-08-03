@@ -5,6 +5,8 @@ name:
   family: Chen
 user_groups:
 - Former Members
+projects:
+- regional_variation_in_mutation_rates
 weight: 111
 role: Ph.D. student
 bio: 'Born and raised up in Nanjing, China. Trained as a computational

@@ -5,6 +5,9 @@ name:
   family: Chiaromonte
 user_groups:
 - Collaborators
+projects:
+- childhood_obesity
+- microsatellite_variation_and_evolution
 weight: 31
 bio: Francesca is a statistician developing methods for the analysis of large, high-dimensional and complex
   data, and applying such methods in contemporary “Omics” sciences and other scientific fields – including

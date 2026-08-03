@@ -5,6 +5,8 @@ name:
   family: Guiblet
 user_groups:
 - Former Members
+projects:
+- microsatellite_variation_and_evolution
 weight: 201
 role: Ph.D. student
 bio: 'I am interested in the relationship between genomics and human

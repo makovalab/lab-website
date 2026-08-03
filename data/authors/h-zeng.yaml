@@ -5,6 +5,9 @@ name:
   family: Zeng
 user_groups:
 - Members
+projects:
+- sex_chromosome_evolution
+- microsatellite_variation_and_evolution
 weight: 581
 role: Research Technologist
 bio: Huiqing's current interest in Makova Lab is using new technologies, such as ddPCR, next generation

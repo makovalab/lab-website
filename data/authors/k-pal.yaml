@@ -5,6 +5,8 @@ name:
   family: Pal
 user_groups:
 - Members
+projects:
+- sex_chromosome_evolution
 weight: 361
 role: Postdoctoral Scholar
 bio: Karol has a Computer Science background but also enjoys the biological aspect of his work. He did

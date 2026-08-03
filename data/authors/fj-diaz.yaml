@@ -5,6 +5,8 @@ name:
   family: Diaz
 user_groups:
 - Collaborators
+projects:
+- mitochondrial_mutation_dynamics
 weight: 61
 bio: Francisco's research focuses on understanding the molecular and functional interactions between oocytes
   and granulosa cells that promote production of a fertile oocyte. This knowledge can then be used to

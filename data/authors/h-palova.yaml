@@ -5,6 +5,9 @@ name:
   family: Palova
 user_groups:
 - Members
+projects:
+- microsatellite_variation_and_evolution
+- sex_chromosome_evolution
 weight: 371
 role: Researcher
 bio: Before joining Makova Lab, Hana worked for six years in the field of molecular genetic characterization

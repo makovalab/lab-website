@@ -5,6 +5,8 @@ name:
   family: Kamali
 user_groups:
 - Former Members
+projects:
+- microsatellite_variation_and_evolution
 weight: 241
 role: Computational Scientist
 bio: Kaivan is a computer scientist/software engineer, specializing in AI/ML. He enjoys data analysis

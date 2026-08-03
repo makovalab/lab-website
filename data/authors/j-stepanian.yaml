@@ -5,6 +5,8 @@ name:
   family: Stepanian
 user_groups:
 - Members
+projects:
+- sex_chromosome_evolution
 weight: 501
 role: Ph.D. Student
 bio: Johanna has a background in microbiology and computational biology, with a strong interest in the

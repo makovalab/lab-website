@@ -6,6 +6,8 @@ name:
 user_groups:
 - Collaborators
 - Former Members
+projects:
+- mitochondrial_mutation_dynamics
 weight: 41
 role: Postdoctoral scholar
 interests:

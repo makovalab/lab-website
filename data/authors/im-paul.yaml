@@ -5,6 +5,8 @@ name:
   family: Paul
 user_groups:
 - Collaborators
+projects:
+- childhood_obesity
 weight: 141
 bio: Ian Paul, MD, MSc, graduated from Penn State College of Medicine and completed his residency training
   at Duke University Medical Center in Durham, N.C. In addition to his responsibilities as a general pediatrician

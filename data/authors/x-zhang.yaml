@@ -5,6 +5,8 @@ name:
   family: Zhang
 user_groups:
 - Former Members
+projects:
+- microsatellite_variation_and_evolution
 weight: 591
 role: Ph.D. student
 bio: Xinru is a Ph.D. student in the Bioinformatics and Genomics Program co-advised by Dr. Kateryna Makova

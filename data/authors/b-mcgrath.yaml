@@ -5,6 +5,9 @@ name:
   family: McGrath
 user_groups:
 - Former Members
+projects:
+- sex_chromosome_evolution
+- microsatellite_variation_and_evolution
 weight: 331
 role: Associate Research Professor
 interests:

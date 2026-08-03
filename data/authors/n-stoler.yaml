@@ -5,6 +5,8 @@ name:
   family: Stoler
 user_groups:
 - Former Members
+projects:
+- mitochondrial_mutation_dynamics
 weight: 471
 role: Ph.D. student
 bio: 'My focus is on variation in mitochondrial DNA.  I develop methods
