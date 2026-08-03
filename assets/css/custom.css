@@ -74,3 +74,13 @@ figure.image-right figcaption {
   color: #374151;
   text-shadow: 0 0 6px #fff, 0 0 12px #fff, 0 0 20px #fff;
 }
+
+/* Every section shipped with equal padding above and below, which left each
+ * heading floating exactly halfway between two sections and belonging to
+ * neither. More room above than below attaches a heading to the content it
+ * opens. The hero is left alone: its height sets the shape of the box the DNA
+ * diagram is fitted into, which content/_index.md depends on. */
+.hbb-section:not(#hero_carousel) {
+  padding-top: 8rem;
+  padding-bottom: 4.5rem;
+}

@@ -57,6 +57,16 @@ sections:
         folders:
           - news
     design:
+      # News, Press Releases and Publications are three text lists in a row with
+      # no cards to tell them apart -- the one stretch of this page where a
+      # reader cannot see where one section ends. All three carry the same tint,
+      # so they read as a single band against the white sections either side
+      # rather than as stripes. Nothing else is tinted; the other sections are
+      # card grids and separate themselves.
+      background:
+        color:
+          light: '#f8fafc'
+          dark: '#172032'
       view: date-title-summary
 
   - block: collection
@@ -68,6 +78,16 @@ sections:
         folders:
           - press_release
     design:
+      # News, Press Releases and Publications are three text lists in a row with
+      # no cards to tell them apart -- the one stretch of this page where a
+      # reader cannot see where one section ends. All three carry the same tint,
+      # so they read as a single band against the white sections either side
+      # rather than as stripes. Nothing else is tinted; the other sections are
+      # card grids and separate themselves.
+      background:
+        color:
+          light: '#f8fafc'
+          dark: '#172032'
       view: date-title-summary
 
   - block: collection
@@ -79,6 +99,16 @@ sections:
         folders:
           - publication
     design:
+      # News, Press Releases and Publications are three text lists in a row with
+      # no cards to tell them apart -- the one stretch of this page where a
+      # reader cannot see where one section ends. All three carry the same tint,
+      # so they read as a single band against the white sections either side
+      # rather than as stripes. Nothing else is tinted; the other sections are
+      # card grids and separate themselves.
+      background:
+        color:
+          light: '#f8fafc'
+          dark: '#172032'
       view: citation
 
   - block: collection
