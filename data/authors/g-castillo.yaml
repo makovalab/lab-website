@@ -9,3 +9,35 @@ user_groups:
 # pinned at 1: Ko 265, Mohanty 271, Pal 361, Palova 371, Sieg 451, Stepanian
 # 501, Zeng 581, Zhao 601. Castillo comes before Ko.
 weight: 131
+
+# Everything below is still to be filled in. Uncomment what applies and delete
+# the rest; data/authors/j-sieg.yaml is a complete example of all of it.
+#
+# role shows under the name on her card and page. Free text -- the ones in use
+# are Professor, Postdoctoral Scholar, Ph.D. Student, Researcher, Research
+# Technologist, Administrative Assistant.
+# role: Ph.D. Student
+#
+# bio is the paragraph under the name. Plain prose, no markdown needed.
+# bio: ...
+#
+# interests and education each become a section on her own page, and are left
+# out entirely when empty rather than shown as an empty heading.
+# interests:
+# - ...
+# education:
+# - degree: ...
+#   institution: ...
+#
+# links puts icons on her card. at-symbol is email; see another author for the
+# rest.
+# links:
+# - icon: at-symbol
+#   url: mailto:...
+#
+# projects lists the projects she works on, by folder name under content/project/:
+# childhood_obesity, microsatellite_variation_and_evolution,
+# mitochondrial_mutation_dynamics, regional_variation_in_mutation_rates,
+# sex_chromosome_evolution. This is what puts her on a project's page.
+# projects:
+# - ...
