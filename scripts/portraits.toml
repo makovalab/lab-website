@@ -67,7 +67,14 @@ before this had the same problem. Worth knowing that this is not visible in the
 usual summary statistics: its matte covers 67% of the frame, the same as photos
 that worked, because what it gets wrong is local to the head. birefnet-portrait
 cuts him out cleanly. The parrot on his shoulder is kept: it is his, and it was
-in the published portrait too."""
+in the published portrait too.
+
+His original is itself a round crop, 671x671 with nothing outside the circle, so
+the arc is what cuts his shoulders off rather than any straight edge -- which
+arrived in the portrait as a bite out of his right side. extend_below follows
+the subject's own outline for that reason. Note it reads the colour to continue
+from a little way inside the cut: on him the pixels right on it still carry the
+orange wall, and copying those draws a rust-brown band across the shirt."""
 
 [byung_june]
 source = "photos/originals/byung_june.jpg"
@@ -103,7 +110,9 @@ origin = "images/original/jacob_sieg.png"
 source = "photos/originals/johanna.png"
 origin = "images/from-workspace/johanna-1027px-original.png"
 lighting = true
-note = "sunlit street background; her source is itself a circular crop, so the matte is harder than most"
+note = """sunlit street background, so the matte is harder than most. Her source is itself
+a circular crop, like Di's, and her hair and shirt end on that arc rather than
+on any edge of the frame -- see his entry."""
 
 [kaivan_kamali]
 source = "photos/originals/kaivan_kamali.png"

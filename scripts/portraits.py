@@ -126,15 +126,22 @@ LIGHTING_STRENGTH = 0.7   # apply only part of the correction
 
 MAX_ALIGN_ANGLE = 35.0  # beyond this the eye detection is more likely wrong than the head
 
-# Continuing a subject the photo cuts off at the bottom. The first is how much
-# of the bottom row the subject must occupy before it counts as cut off rather
-# than as a person who simply ends inside the frame; the second is how far the
-# shirt is carried on, as a fraction of the photo's height. Six tenths is well
-# past the bottom of the disc at any framing, so the join never shows.
+# Continuing a subject the photo cuts off below. The first is how much of the
+# subject's lower outline must lie along that edge before it counts as cut off
+# rather than as a person who simply ends inside the frame; the second is how
+# far the shirt is carried on, as a fraction of the photo's height. Six tenths
+# is well past the bottom of the disc at any framing, so the join never shows.
 TORSO_EDGE_FRACTION = 0.2
 TORSO_EXTEND = 0.6
 TORSO_BLUR = 0.06        # sideways blur at the far end, as a fraction of the width
 TORSO_BLUR_START = 0.55  # how much of that blur is already applied at the seam
+# How close to the photo's edge a column has to end before it counts as cut off,
+# as a fraction of the photo. Wide enough to survive MATTE_SHRINK and DEFRINGE,
+# which pull the cut-out a few pixels clear of the edge that truncated it.
+TORSO_EDGE_BAND = 0.015
+TORSO_MIN_DEPTH = 0.45   # a cut higher up the photo than this is not a torso
+TORSO_SAMPLE = 0.02      # how far above the cut the continuing colour is read from
+TORSO_SEAM = 0.008       # how far above the cut the fill starts, burying the matte edge
 
 # macOS resource forks and other dotfiles that are not really photos.
 IGNORED_PREFIXES = ("._", ".")
@@ -547,46 +554,117 @@ def detection_view(cut_out: Image.Image) -> Image.Image:
     return canvas.convert("RGB")
 
 
-def extend_below(cut_out: Image.Image) -> Image.Image:
-    """Carry the subject on downward when the photo cuts them off at the bottom.
+def photo_extent(image: Image.Image) -> np.ndarray:
+    """Where the photo actually holds a picture.
+
+    Everything for an ordinary photograph. Two of these sources are themselves
+    round crops taken off an old version of the site, and for those it is a disc
+    with nothing outside it -- which matters, because the edge that truncates
+    the subject is then that circle rather than the rectangle around it.
+    """
+    if image.mode not in ("RGBA", "LA", "P"):
+        return np.ones((image.height, image.width), dtype=bool)
+    return np.array(image.convert("RGBA"))[:, :, 3] > 128
+
+
+def extend_below(cut_out: Image.Image, extent: np.ndarray | None = None) -> Image.Image:
+    """Carry the subject on downward from wherever the photo stops holding them.
 
     A tight crop often ends part-way down the shirt. Framing then scales that
     edge into the middle of the disc, and because the eyes are levelled by
     rotating, the straight bottom of the photo lands as a diagonal slice across
-    the shoulders -- or, when the crop stops higher, as a band of empty
-    backdrop under the person. Replicating the last row downward carries the
-    shirt on instead.
+    the shoulders -- or, when the crop stops higher, as a band of empty backdrop
+    under the person. Continuing each column past the cut carries the shirt on
+    instead.
 
-    Only the bottom is extended. A torso really does continue out of frame,
-    whereas replicating the top would smear hair upward into the headroom the
-    framing is trying to leave, and replicating the sides would stretch a
-    shoulder sideways.
+    The cut is not always the bottom of the photo. Di's and Johanna's sources
+    are round crops, so what truncates them is the circle: their shoulders and
+    hair end along an arc part-way up the frame, which framing then delivers as
+    a curved bite out of one side. Following the subject's own lower outline
+    handles both, since a rectangle's bottom row is just the flat case of it.
+
+    Only downward. A torso really does continue out of frame, whereas
+    replicating the top would smear hair upward into the headroom the framing is
+    trying to leave, and replicating the sides would stretch a shoulder.
     """
-    alpha = np.array(cut_out.split()[-1])
-    if (alpha[-1, :] > 128).mean() < TORSO_EDGE_FRACTION:
-        return cut_out  # the photo already contains where the subject ends
+    arr = np.array(cut_out)
+    subject = arr[:, :, 3] > 128
+    height, width = subject.shape
+    if extent is None:
+        extent = np.ones_like(subject)
 
-    pad = max(1, round(cut_out.height * TORSO_EXTEND))
+    # The photo's own edge counts as a cut, so it has to be part of the rim.
+    # cv2.erode treats everything beyond the array as interior, which would hide
+    # exactly that -- and for a round source would hide the bottom of the circle,
+    # where it runs off the frame. Supplying a background border fixes both.
+    band = max(3, round(max(height, width) * TORSO_EDGE_BAND) | 1)
+    inner = cv2.erode(
+        extent.astype(np.uint8), np.ones((band, band), np.uint8),
+        borderType=cv2.BORDER_CONSTANT, borderValue=0,
+    ) > 0
+    rim = extent & ~inner
+
+    # Lowest subject pixel in each column, and whether the photo ran out there.
+    occupied = subject.any(axis=0)
+    lowest = np.where(occupied, height - 1 - subject[::-1].argmax(axis=0), -1)
+    columns = []
+    for x in range(width):
+        y = int(lowest[x])
+        if y < 0 or y < height * TORSO_MIN_DEPTH:
+            continue
+        if rim[max(0, y - band):y + band + 1, x].any():
+            columns.append((x, y))
+
+    # Same question the flat version asked, of the outline rather than of the
+    # bottom row: is the subject cut off, or do they simply end inside the photo?
+    if len(columns) < occupied.sum() * TORSO_EDGE_FRACTION:
+        return cut_out
+
+    pad = max(1, round(height * TORSO_EXTEND))
     # Padding only at the bottom leaves the origin alone, so the face box, eye
     # positions and crown measured above stay valid.
-    extended = cv2.copyMakeBorder(np.array(cut_out), 0, pad, 0, 0, cv2.BORDER_REPLICATE)
+    extended = cv2.copyMakeBorder(
+        arr, 0, pad, 0, 0, cv2.BORDER_CONSTANT, value=(0, 0, 0, 0)
+    )
+    filled = np.zeros(extended.shape[:2], dtype=bool)
+    depth = np.zeros(extended.shape[:2], dtype=np.float32)
 
-    # Replication alone draws every column straight down, which on a plain
-    # shirt passes for fabric but on a collar turns the V of skin into a stripe.
-    # Blurring it sideways, by more the further it goes, reads as cloth falling
-    # out of focus instead.
+    sample = max(2, round(height * TORSO_SAMPLE))
+    seam = max(1, round(height * TORSO_SEAM))
+    for x, y in columns:
+        # The pixels right on the cut are the worst ones to copy: they are the
+        # matte's own boundary and still carry what was behind the subject. On
+        # Di that is the orange wall, which continues as a rust-brown band. Read
+        # the colour from a little way inside instead, and take the median so a
+        # single edge pixel cannot set a whole column.
+        above = arr[max(0, y - sample):y + 1, x]
+        above = above[subject[max(0, y - sample):y + 1, x]]
+        if not len(above):
+            continue
+        colour = np.median(above, axis=0).astype(np.uint8)
+        colour[3] = 255
+        # Start just above the cut, so those same contaminated rows are covered
+        # rather than left as a thread along the join.
+        start = max(0, y - seam)
+        extended[start:, x] = colour
+        filled[start:, x] = True
+        depth[start:, x] = np.arange(extended.shape[0] - start, dtype=np.float32)
+
+    # Carrying a column straight down passes for fabric on a plain shirt but
+    # turns the V of an open collar into a stripe. Blurring sideways, by more
+    # the further it goes, reads as cloth falling out of focus instead.
     #
     # The ramp starts well above zero on purpose. Only the first inch or so of
     # the extension is ever inside the disc -- the rest is cropped away -- so a
     # ramp starting at zero blurs nothing anyone sees. Beginning part-blurred
-    # costs no visible seam, because the row being blurred is a copy of the row
-    # above it rather than a new edge.
-    height = cut_out.height
-    band = extended[height:]
-    kernel = max(3, int(cut_out.width * TORSO_BLUR) | 1)
-    blurred = cv2.blur(band, (kernel, 1))
-    ramp = np.linspace(TORSO_BLUR_START, 1.0, pad, dtype=np.float32)[:, None, None]
-    extended[height:] = (band * (1 - ramp) + blurred * ramp).astype(np.uint8)
+    # costs no visible seam, because what is being blurred is a flat colour.
+    kernel = max(3, int(width * TORSO_BLUR) | 1)
+    blurred = cv2.blur(extended, (kernel, 1))
+    ramp = TORSO_BLUR_START + (1 - TORSO_BLUR_START) * np.clip(depth / pad, 0, 1)
+    mixed = (extended * (1 - ramp[:, :, None]) + blurred * ramp[:, :, None]).astype(np.uint8)
+    # Only the invented pixels are touched; the photograph is left exactly as it
+    # was, which a blur applied to the whole band would not do.
+    extended[filled] = mixed[filled]
 
     return Image.fromarray(extended, "RGBA")
 
@@ -801,7 +879,7 @@ def make_portrait(
             route = "eyes (haar)"
 
     # After the head has been measured and before anything scales it.
-    cut_out = extend_below(cut_out)
+    cut_out = extend_below(cut_out, photo_extent(image))
 
     framed = frame_with_eyes(cut_out, face, eyes) if eyes else frame_on_face(cut_out, face)
     return lay_on_disc(framed, background), route

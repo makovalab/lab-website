@@ -191,15 +191,90 @@ def test_subject_that_ends_inside_the_frame_is_left_alone():
 
 
 def test_extending_does_not_move_anything_already_measured():
-    """Padding only the bottom keeps the origin, so face and eye coords hold."""
+    """Padding only the bottom keeps the origin, so face and eye coords hold.
+
+    The photograph itself is left alone apart from a few rows right at the cut,
+    which are painted over on purpose: they are the matte's own boundary and
+    still carry whatever was behind the subject.
+    """
     cut_out = torso(200, reaches_bottom=True)
 
     extended = portraits.extend_below(cut_out)
 
     assert extended.width == cut_out.width
-    original = np.asarray(cut_out)[: cut_out.height]
-    kept = np.asarray(extended)[: cut_out.height]
-    assert np.array_equal(original, kept)
+    seam = max(1, round(cut_out.height * portraits.TORSO_SEAM))
+    untouched = cut_out.height - seam - 1
+    assert np.array_equal(
+        np.asarray(cut_out)[:untouched], np.asarray(extended)[:untouched]
+    )
+
+
+def round_torso(size: int) -> tuple[Image.Image, np.ndarray]:
+    """A shirt cut off by a circular photo edge rather than a straight one.
+
+    Two of the sources are themselves round crops lifted off an old version of
+    the site, so what truncates the subject is an arc part-way up the frame.
+    """
+    extent = Image.new("L", (size, size), 0)
+    ImageDraw.Draw(extent).ellipse((0, 0, size - 1, size - 1), fill=255)
+    extent = np.asarray(extent) > 128
+
+    # Wide enough that the arc takes a real bite out of the shoulders, which is
+    # where it showed on the two round sources rather than at the centre.
+    image = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    ImageDraw.Draw(image).rectangle(
+        (int(size * 0.1), int(size * 0.3), int(size * 0.9), size - 1),
+        fill=(120, 40, 60, 255),
+    )
+    clipped = np.asarray(image).copy()
+    clipped[~extent] = 0
+    return Image.fromarray(clipped, "RGBA"), extent
+
+
+def test_a_subject_cut_off_by_a_curved_photo_edge_is_carried_on():
+    """The arc of a round source truncates the shirt as surely as a flat edge."""
+    cut_out, extent = round_torso(200)
+    shoulder = int(cut_out.width * 0.15)
+    before = np.asarray(cut_out)[:, :, 3]
+    # the arc really does end this column early, well above the frame
+    assert (before[:, shoulder] > 128).any()
+    assert not (before[int(cut_out.height * 0.9), shoulder] > 128)
+
+    extended = portraits.extend_below(cut_out, extent)
+
+    assert extended.height > cut_out.height
+    after = np.asarray(extended)[:, :, 3]
+    # it now runs unbroken from the shirt down past where the circle stopped
+    assert after[int(cut_out.height * 0.9), shoulder] > 128
+    assert after[cut_out.height + 10, shoulder] > 128
+
+
+def test_the_arc_is_filled_across_the_whole_shirt():
+    """A bite out of one shoulder is exactly what the round sources showed."""
+    cut_out, extent = round_torso(200)
+
+    extended = portraits.extend_below(cut_out, extent)
+
+    alpha = np.asarray(extended)[:, :, 3]
+    row = int(cut_out.height * 0.9)
+    shirt = slice(int(cut_out.width * 0.15), int(cut_out.width * 0.85))
+    assert (alpha[row, shirt] > 128).all()
+
+
+def test_a_round_source_whose_subject_stops_inside_the_circle_is_left_alone():
+    """Being round is not itself a reason to invent shirt."""
+    size = 200
+    extent = Image.new("L", (size, size), 0)
+    ImageDraw.Draw(extent).ellipse((0, 0, size - 1, size - 1), fill=255)
+    extent = np.asarray(extent) > 128
+
+    image = Image.new("RGBA", (size, size), (0, 0, 0, 0))
+    ImageDraw.Draw(image).rectangle(
+        (int(size * 0.35), int(size * 0.3), int(size * 0.65), int(size * 0.55)),
+        fill=(120, 40, 60, 255),
+    )
+
+    assert portraits.extend_below(image, extent).size == image.size
 
 
 # --- what the config records -------------------------------------------------
