@@ -13,10 +13,29 @@ sections:
       text: Genomics, evolution, and human genetics.
     design:
       background:
+        # The white here is not decoration: `contain` letterboxes the diagram
+        # whenever the window is not its own 2.76 shape, and the brightness
+        # filter below applies to this colour and to the image alike, so both
+        # land on the same grey and the letterboxing does not show as a band.
+        color: '#ffffff'
         image:
-          filename: Makova_BDNA_HERO_0.jpg
-          filters:
-            brightness: 0.6
+          # Labelled version is Makova_BDNA_HERO_0.jpg, kept as the source. Its
+          # "non-B DNA" and "B-DNA" were set to the right of the artwork, so any
+          # crop cut through them.
+          filename: Makova_BDNA_HERO_no_labels.png
+          # `cover` filled the box by cropping, which took the bottom off the
+          # strands at desktop widths and both ends of them below about 1900px.
+          # The diagram is the point of the image, so fit it whole instead.
+          size: contain
+          # Parallax means background-attachment: fixed, which sizes the image
+          # against the viewport rather than this 688px-tall box -- `contain`
+          # would then fit it to the window and shrink it out of the hero.
+          parallax: false
+          # No brightness filter. It was set to 0.6, which is the right move for
+          # a photographic hero with white text over it -- but this hero's text
+          # is dark and the diagram is drawn on white, so darkening it worked
+          # against both, greying the artwork and flattening the title's
+          # contrast against it.
 
   - block: collection
     id: projects
