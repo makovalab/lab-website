@@ -102,7 +102,10 @@ sections:
       sort_ascending: true
       cta:
         text: All collaborators
-        url: /people/
+        # /people/ opens on its Members section, which is 65 people long, so the
+        # anchor is what makes this land on the collaborators rather than on a
+        # page that reads as everyone.
+        url: /people/#collaborators
     design:
       show_role: true
       show_organizations: true
