@@ -1,0 +1,38 @@
+{{- /*
+  RSS listing people, for the /member/ and /collaborator/ feeds the old site
+  published. Both sections emit RSS only; which groups each covers comes from
+  `groups` in its own _index.md.
+
+  Items are built from data/authors rather than from section pages, because
+  people are data files on this site and these two sections hold no content of
+  their own -- they exist so the old feed URLs keep answering.
+*/ -}}
+{{- $page := .page -}}
+{{- $groups := .groups -}}
+{{- $people := slice -}}
+{{- range $slug, $a := site.Data.authors -}}
+  {{- if intersect (default (slice) $a.user_groups) $groups -}}
+    {{- $people = $people | append (dict "slug" $slug "author" $a) -}}
+  {{- end -}}
+{{- end -}}
+{{- $people = sort $people "slug" -}}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ $page.Title }} on {{ site.Title }}</title>
+    <link>{{ $page.Permalink }}</link>
+    <description>{{ $page.Title }} on {{ site.Title }}</description>
+    <generator>Hugo</generator>{{ with site.Language.LanguageCode }}
+    <language>{{ . }}</language>{{ end }}
+    <atom:link href="{{ $page.OutputFormats.Get "RSS" | default $page }}" rel="self" type="application/rss+xml" />
+    {{ range $people }}
+    {{- $term := site.GetPage (printf "/authors/%s" .slug) -}}
+    <item>
+      <title>{{ .author.name.display | default .slug }}</title>
+      <link>{{ with $term }}{{ .Permalink }}{{ else }}{{ printf "%sauthors/%s/" site.BaseURL .slug }}{{ end }}</link>
+      <guid>{{ with $term }}{{ .Permalink }}{{ else }}{{ printf "%sauthors/%s/" site.BaseURL .slug }}{{ end }}</guid>
+      {{- with .author.role }}
+      <description>{{ . }}</description>{{ end }}
+    </item>
+    {{ end }}
+  </channel>
+</rss>
