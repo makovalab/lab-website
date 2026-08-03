@@ -100,12 +100,12 @@ sections:
         - Collaborators
       sort_by: weight
       sort_ascending: true
-      cta:
-        text: All collaborators
-        # /people/ opens on its Members section, which is 65 people long, so the
-        # anchor is what makes this land on the collaborators rather than on a
-        # page that reads as everyone.
-        url: /people/#collaborators
+      # No call to action here on purpose. The Members block has one because
+      # this page shows 9 of 65 and the rest are worth a click. Every
+      # collaborator is already on this page -- nobody is flagged
+      # `Former Collaborators` -- so the button led to the same twenty people it
+      # was sitting under. Restore it, pointing at /people/#collaborators, once
+      # some collaborators are retired and the two lists differ.
     design:
       show_role: true
       show_organizations: true
