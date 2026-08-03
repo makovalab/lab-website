@@ -1,17 +1,11 @@
-+++
-title = "Publications"
-date = 2017-01-01T00:00:00
+---
+title: Publications
+# Citations, not cards. The card view gave all 140 papers a placeholder gradient
+# and paginated them ten at a time; a publication list wants to be a list.
+view: citation
+date: 2017-01-01 00:00:00
+header:
+  image: ''
+  caption: ''
+---
 
-# List format.
-#   0 = Simple
-#   1 = Detailed
-#   2 = APA
-#   3 = MLA
-#   4 = Stream
-list_format = 3
-
-# Optional featured image (relative to `static/img/` folder).
-[header]
-image = ""
-caption = ""
-+++

@@ -1,0 +1,14 @@
+schema: hugoblox/author/v1
+slug: nm-hwang
+name:
+  display: Nicole Hwang
+  family: Hwang
+user_groups:
+- Former Members
+projects:
+- childhood_obesity
+weight: 231
+role: Undergraduate student
+links:
+- icon: at-symbol
+  url: mailto:nmh5363@psu.edu

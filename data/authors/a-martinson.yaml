@@ -1,0 +1,9 @@
+schema: hugoblox/author/v1
+slug: a-martinson
+name:
+  display: Ali Martinson
+  family: Martinson
+user_groups:
+- Former Members
+weight: 321
+role: Undergraduate student

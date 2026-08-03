@@ -1,0 +1,17 @@
+schema: hugoblox/author/v1
+slug: b-mcgrath
+name:
+  display: Barb McGrath
+  family: McGrath
+user_groups:
+- Former Members
+projects:
+- sex_chromosome_evolution
+- microsatellite_variation_and_evolution
+weight: 331
+role: Associate Research Professor
+links:
+- icon: at-symbol
+  url: mailto:bcm5@psu.edu
+- icon: hero/phone
+  url: tel:+18148676234

@@ -50,3 +50,5 @@ url_poster = ""
 {{< figure src="image.jpg" title="Credit: Audrey Guiblet" >}}
 
 Several lines of our recent research have had mammalian sex chromosome evolution as a common theme. We have been studying the genomic determinants of X chromosome inactivation (XCI; Carrel et al. 2006). By contrasting the evolution of genes on sex chromosomes in eutherians with that of their autosomal homologs in marsupials and monotremes, we were able to shed light on the earliest stages of eutherian sex chromosome evolution (Wilson and Makova 2009). We also recently generated a comprehensive list of pseudogenes on the human Y and studied what determines whether a gene will survive or die on this chromosome (Wilson Sayres and Makova 2013). To test whether selection or drift leads to loss of genes on chromosome Y, we sequenced and analyzed all X-degenerate Y chromosome genes in gorilla (Goto et al. 2009) and are currently characterizing such genes in other primates. (Figure : Wilson Sayres & Makova 2013). Collaborators: Laura Carrel, Paul Medvedev.
+
+{{< project_related >}}

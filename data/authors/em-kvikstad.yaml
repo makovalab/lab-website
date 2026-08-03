@@ -1,0 +1,9 @@
+schema: hugoblox/author/v1
+slug: em-kvikstad
+name:
+  display: Erika Kvikstad
+  family: Kvikstad
+user_groups:
+- Former Members
+weight: 291
+role: Ph.D. student

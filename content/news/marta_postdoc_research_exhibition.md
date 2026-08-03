@@ -30,5 +30,5 @@ categories = []
   focal_point = ""
 +++
 
-Congratulations to [Marta Tomaszkiewicz]({{< ref "/member/marta_tomaszkiewicz.md" >}}) for her 3rd place during the 8th Annual Postdoc Research Exhibition!
+Congratulations to [Marta Tomaszkiewicz]({{< ref "/authors/m-tomaszkiewicz" >}}) for her 3rd place during the 8th Annual Postdoc Research Exhibition!
 

@@ -1,0 +1,9 @@
+schema: hugoblox/author/v1
+slug: r-campos-sanchez
+name:
+  display: Rebeca Campos-Sanchez
+  family: Campos-Sanchez
+user_groups:
+- Former Members
+weight: 81
+role: Ph.D. student

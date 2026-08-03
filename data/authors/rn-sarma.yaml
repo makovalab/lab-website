@@ -1,0 +1,12 @@
+schema: hugoblox/author/v1
+slug: rn-sarma
+name:
+  display: Rajalekshmi Narayana Sarma
+  family: Sarma
+user_groups:
+- Former Members
+weight: 341
+role: Research intern
+links:
+- icon: at-symbol
+  url: mailto:rajalekshmi.nrl@gmail.com

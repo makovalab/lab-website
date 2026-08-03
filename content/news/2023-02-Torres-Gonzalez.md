@@ -29,4 +29,4 @@ categories = []
   # Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
   focal_point = ""
 +++
-Congratulations to [Edmundo Torres-González]({{< ref "/member/edmundo_torres-gonzalez.md" >}}) for winning the GlaxoSmithKline (GSK) Graduate Fellowship from the Eberly College of Science in partnership with the College of Medicine and the Huck Institutes of the Life Sciences for the 2023-2024 academic year.
+Congratulations to [Edmundo Torres-González]({{< ref "/authors/e-torres-gonzález" >}}) for winning the GlaxoSmithKline (GSK) Graduate Fellowship from the Eberly College of Science in partnership with the College of Medicine and the Huck Institutes of the Life Sciences for the 2023-2024 academic year.

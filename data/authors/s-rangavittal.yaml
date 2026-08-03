@@ -1,0 +1,23 @@
+schema: hugoblox/author/v1
+slug: s-rangavittal
+name:
+  display: Samarth Rangavittal
+  family: Rangavittal
+user_groups:
+- Former Members
+projects:
+- sex_chromosome_evolution
+weight: 401
+role: Ph.D. student
+bio: 'I am a grad student in the Bioinformatics and Genomics program.  My
+
+  primary interest is in genome assembly of short and long read
+
+  sequence data.  I also spend time thinking about topics like the
+
+  sex chromosomes of primates, and how to mix computer science with
+
+  biology in new and interesting ways.'
+links:
+- icon: at-symbol
+  url: mailto:szr165@psu.edu

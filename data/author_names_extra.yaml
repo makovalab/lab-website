@@ -1,0 +1,19 @@
+# Extra spellings of lab people's names, by slug. Hand written; the generator
+# reads this and never writes it.
+#
+# This is the place for anything the matching rules cannot work out, and the
+# main case is a change of name. Nothing about "MA Wilson" and "MA Wilson
+# Sayres" says they are the same person -- the old site linked both only because
+# somebody recorded it, and the same will apply the next time a member marries
+# or otherwise changes their name. Add the old spelling here and their earlier
+# papers keep pointing at them.
+#
+# It also covers initials the rules refuse on purpose: they reject a name whose
+# initials contradict the ones on record, which is what keeps RA Harris apart
+# from Robert S Harris. If a real variant gets caught by that, put it here.
+#
+#   kd-makova:
+#     - "K Makova"
+#     - "Kateryna D Makova"
+#
+# Then re-run: python3 scripts/author_links.py

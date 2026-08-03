@@ -1,0 +1,196 @@
+{{/*
+  The publications list: every paper as a citation, with filters over them.
+
+  Overrides the theme's list template for two reasons.
+
+  It paginates at the site's pagerSize, which would put 139 papers across 14
+  pages. The filters work on what the browser already has, exactly as the old
+  site's did, so paging would leave them filtering one page at a time -- which is
+  why everything stays on one page. A citation is two lines, so the page is long
+  but light.
+
+  And the theme has nowhere to put filters. Type and year are the two the old
+  site had. Project is added because this site now records which project a paper
+  belongs to and it is the question a visitor is most likely to arrive with, and
+  a search box because 139 citations is more than anyone will scan for a title
+  or a name they half remember.
+
+  The view comes from `view: citation` in the section's front matter, so a paper
+  looks here exactly as it does on the front page, a project page or an author
+  page -- Paper Link, project, video and press buttons included.
+*/}}
+{{ define "main" }}
+
+<div class="max-w-prose mx-auto flex justify-center">
+  <article class="prose prose-slate lg:prose-xl dark:prose-invert">
+    <h1 class="lg:text-6xl">{{ .Title }}</h1>
+    {{ .Content }}
+  </article>
+</div>
+
+{{ $view := .Params.view | default "card" }}
+{{ $block := . }}
+{{ $pages := .Pages.ByDate.Reverse }}
+{{ $config := dict
+  "columns" (.Params.columns | default 2)
+  "len" (len $pages)
+  "fill_image" (.Params.fill_image | default true)
+  "show_date" (.Params.show_date | default true)
+  "show_read_time" (.Params.show_read_time | default true)
+  "show_read_more" (.Params.show_read_more | default true)
+}}
+
+{{/* Readable names for the type slugs. Anything unlisted falls back to the slug,
+     so a new type shows up in the filter rather than vanishing from it. */}}
+{{ $type_names := dict
+  "article-journal" "Journal article"
+  "chapter" "Book section"
+  "report" "Report"
+  "manuscript" "Preprint"
+  "paper-conference" "Conference paper"
+  "thesis" "Thesis"
+  "book" "Book"
+}}
+
+{{/* Only offer choices that exist, so no filter can empty the page on its own. */}}
+{{ $types := slice }}
+{{ $years := slice }}
+{{ $projects := slice }}
+{{ range $pages }}
+  {{ range (default (slice) .Params.publication_types) }}
+    {{ if not (in $types .) }}{{ $types = $types | append . }}{{ end }}
+  {{ end }}
+  {{ range (default (slice) .Params.projects) }}
+    {{ if not (in $projects .) }}{{ $projects = $projects | append . }}{{ end }}
+  {{ end }}
+  {{ $y := .Date.Format "2006" }}
+  {{ if not (in $years $y) }}{{ $years = $years | append $y }}{{ end }}
+{{ end }}
+{{ $years = sort $years "value" "desc" }}
+
+{{ range $pages }}
+  {{ if isset .Params "author_notes" }}
+    {{ $.Store.Set "has_alpine" true }}
+    {{ break }}
+  {{ end }}
+{{ end }}
+
+{{ $select := "rounded-md border border-zinc-300 dark:border-zinc-600 bg-white dark:bg-zinc-800 px-3 py-1.5 text-sm" }}
+
+<div class="flex flex-col items-center">
+
+  <div class="container px-8 mx-auto xl:px-5 max-w-screen-lg w-full">
+    <div class="flex flex-wrap items-end gap-4 mb-6">
+
+      <label class="flex flex-col text-sm">
+        <span class="mb-1 font-medium text-zinc-700 dark:text-zinc-300">Search</span>
+        <input id="pub-filter-text" type="search" placeholder="title or author"
+               class="{{ $select }} w-56" autocomplete="off">
+      </label>
+
+      <label class="flex flex-col text-sm">
+        <span class="mb-1 font-medium text-zinc-700 dark:text-zinc-300">Project</span>
+        <select id="pub-filter-project" class="{{ $select }}">
+          <option value="">All</option>
+          {{ range $projects }}
+            {{ $p := site.GetPage (printf "/project/%s" .) }}
+            <option value="{{ . }}">{{ with $p }}{{ .Params.btn_text | default .Title }}{{ else }}{{ . }}{{ end }}</option>
+          {{ end }}
+        </select>
+      </label>
+
+      <label class="flex flex-col text-sm">
+        <span class="mb-1 font-medium text-zinc-700 dark:text-zinc-300">Type</span>
+        <select id="pub-filter-type" class="{{ $select }}">
+          <option value="">All</option>
+          {{ range $types }}
+            <option value="{{ . }}">{{ index $type_names . | default . }}</option>
+          {{ end }}
+        </select>
+      </label>
+
+      <label class="flex flex-col text-sm">
+        <span class="mb-1 font-medium text-zinc-700 dark:text-zinc-300">Year</span>
+        <select id="pub-filter-year" class="{{ $select }}">
+          <option value="">All</option>
+          {{ range $years }}<option value="{{ . }}">{{ . }}</option>{{ end }}
+        </select>
+      </label>
+
+      <button id="pub-filter-reset" type="button"
+              class="{{ $select }} hidden cursor-pointer hover:bg-zinc-100 dark:hover:bg-zinc-700">
+        Clear
+      </button>
+
+      <p class="text-sm text-zinc-600 dark:text-zinc-400 pb-2" id="pub-filter-count"
+         data-total="{{ len $pages }}">{{ len $pages }} publications</p>
+    </div>
+  </div>
+
+  {{ partial "functions/render_view" (dict "fragment" "start" "page" $block "item" . "view" $view "config" $config) }}
+
+  {{ range $index, $item := $pages }}
+    <div class="pub-filter-item w-full"
+         data-pubtype="{{ delimit (default (slice) .Params.publication_types) " " }}"
+         data-projects="{{ delimit (default (slice) .Params.projects) " " }}"
+         data-year="{{ .Date.Format "2006" }}"
+         data-text="{{ lower (printf "%s %s" .Title (delimit (default (slice) .Params.authors) " ")) }}">
+      {{ partial "functions/render_view" (dict "page" . "item" . "view" $view "index" $index "config" $config) }}
+    </div>
+  {{ end }}
+
+  {{ partial "functions/render_view" (dict "fragment" "end" "page" $block "item" . "view" $view) }}
+
+  <p class="hidden text-zinc-600 dark:text-zinc-400 my-8" id="pub-filter-empty">
+    No publications match those filters.
+  </p>
+</div>
+
+<script>
+  (function () {
+    var text = document.getElementById('pub-filter-text');
+    var project = document.getElementById('pub-filter-project');
+    var type = document.getElementById('pub-filter-type');
+    var year = document.getElementById('pub-filter-year');
+    var reset = document.getElementById('pub-filter-reset');
+    var count = document.getElementById('pub-filter-count');
+    var empty = document.getElementById('pub-filter-empty');
+    if (!type || !year) return;
+    var items = Array.prototype.slice.call(document.querySelectorAll('.pub-filter-item'));
+    var total = Number(count.dataset.total);
+
+    function has(el, attr, want) {
+      return !want || (el.getAttribute(attr) || '').split(' ').indexOf(want) !== -1;
+    }
+
+    function apply() {
+      var q = text.value.trim().toLowerCase();
+      var p = project.value, t = type.value, y = year.value;
+      var shown = 0;
+      items.forEach(function (el) {
+        var ok = has(el, 'data-pubtype', t) &&
+                 has(el, 'data-projects', p) &&
+                 (!y || el.getAttribute('data-year') === y) &&
+                 (!q || (el.getAttribute('data-text') || '').indexOf(q) !== -1);
+        el.hidden = !ok;
+        if (ok) shown++;
+      });
+      count.textContent = shown === total
+        ? total + ' publications'
+        : shown + ' of ' + total + ' publications';
+      empty.classList.toggle('hidden', shown !== 0);
+      reset.classList.toggle('hidden', !(q || p || t || y));
+    }
+
+    [text, project, type, year].forEach(function (el) {
+      el.addEventListener('input', apply);
+      el.addEventListener('change', apply);
+    });
+    reset.addEventListener('click', function () {
+      text.value = ''; project.value = ''; type.value = ''; year.value = '';
+      apply();
+    });
+  })();
+</script>
+
+{{ end }}

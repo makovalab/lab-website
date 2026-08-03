@@ -1,0 +1,9 @@
+schema: hugoblox/author/v1
+slug: m-laurence
+name:
+  display: Malika Laurence
+  family: Laurence
+user_groups:
+- Former Members
+weight: 311
+role: Undergraduate student

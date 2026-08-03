@@ -1,0 +1,25 @@
+schema: hugoblox/author/v1
+slug: b-arbeithuber
+name:
+  display: Barbara Arbeithuber
+  family: Arbeithuber
+user_groups:
+- Collaborators
+- Former Members
+projects:
+- mitochondrial_mutation_dynamics
+weight: 41
+role: Postdoctoral scholar
+bio: In Prof. Makova's lab Barbara was interested in the accurate measurement of rare mutations. Her project
+  was focused on the inheritance of mitochondrial DNA; particularly, analysis of de novo mutations in
+  the germ line, as well as the inheritance of low-level variants.
+affiliations:
+- name: University Clinic of Gynaecology, Obstetrics and Gynaecological Endocrinology, Johannes Kepler
+    University Linz, Austria
+  role: Head of the Working Group
+education:
+- degree: Ph.D.
+  institution: Johannes Kepler University Linz, Austria
+links:
+- icon: at-symbol
+  url: mailto:barbara.arbeithuber@jku.at

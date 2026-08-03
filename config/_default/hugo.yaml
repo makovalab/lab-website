@@ -1,0 +1,72 @@
+# Configuration of Hugo
+# Guide: https://docs.hugoblox.com/tutorial/
+# Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
+# This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
+
+# Website name (set in params.yaml under hugoblox.branding.name)
+title: 'The Makova Lab at Penn State'
+# Website URL
+baseURL: 'http://www.bx.psu.edu/makova_lab/'
+
+############################
+## LANGUAGE
+############################
+
+defaultContentLanguage: en
+hasCJKLanguage: false
+defaultContentLanguageInSubdir: false
+removePathAccents: true
+
+############################
+## PAGE OPTIONS
+############################
+
+cascade:
+  - target:
+      path: /slides/**
+      kind: page
+    outputs: [HTML, present]
+
+############################
+## ADVANCED
+############################
+
+build:
+  writeStats: true
+enableGitInfo: false
+summaryLength: 30
+pagination:
+  pagerSize: 10
+enableEmoji: true
+enableRobotsTXT: true
+footnotereturnlinkcontents: <sup>^</sup>
+ignoreFiles: [".ipynb_checkpoints$", "\\.Rmd$", "\\.Rmarkdown$", "_cache$"]
+disableAliases: false  # legacy URLs are preserved via `aliases:`
+outputs:
+  home: [HTML, RSS, headers, redirects, backlinks]
+  section: [HTML, RSS]
+imaging:
+  resampleFilter: lanczos
+  quality: 90
+  anchor: smart
+  hint: picture
+timeout: 600000
+taxonomies:
+  author: authors
+  tag: tags
+  # `category` carried no content but the old site published /categories/;
+  # keeping it declared preserves that URL.
+  category: categories
+  publication_type: publication_types
+markup:
+  _merge: deep
+  highlight:
+    lineNos: false
+  goldmark:
+    parser:
+      # Preserve the heading anchors the Blackfriday-era site generated.
+      autoIDType: blackfriday
+security:
+  _merge: deep
+sitemap:
+  _merge: deep

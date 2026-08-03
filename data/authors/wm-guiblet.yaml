@@ -1,0 +1,19 @@
+schema: hugoblox/author/v1
+slug: wm-guiblet
+name:
+  display: Wilfried Guiblet
+  family: Guiblet
+user_groups:
+- Former Members
+projects:
+- microsatellite_variation_and_evolution
+weight: 201
+role: Ph.D. student
+bio: 'I am interested in the relationship between genomics and human
+
+  physiology.  My current project is to relate the different type of
+
+  DNA polymerases and their variability to specific mutation patterns.'
+links:
+- icon: at-symbol
+  url: mailto:wmg133@psu.edu

@@ -1,7 +1,0 @@
-{{- /*
-  Reproduces the alias/redirect page Hugo 0.50 generated (it was hardcoded in
-  hugolib/alias.go, not an overridable template). Hugo's current built-in alias
-  page drops <meta name="robots" content="noindex">, which would let these 12
-  redirect stubs be indexed. Kept byte-identical to what this site published.
-*/ -}}
-<!DOCTYPE html><html><head><title>{{ .Permalink }}</title><link rel="canonical" href="{{ .Permalink }}"/><meta name="robots" content="noindex"><meta charset="utf-8" /><meta http-equiv="refresh" content="0; url={{ .Permalink }}" /></head></html>

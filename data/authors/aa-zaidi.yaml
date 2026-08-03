@@ -1,0 +1,25 @@
+schema: hugoblox/author/v1
+slug: aa-zaidi
+name:
+  display: Arslan Zaidi
+  family: Zaidi
+user_groups:
+- Former Members
+projects:
+- mitochondrial_mutation_dynamics
+weight: 571
+role: Postdoctoral Scholar
+bio: 'I am interested in studying both the proximal (developmental) and
+
+  ultimate (evolutionary) causes of human genetic variation.  I am
+
+  currently examining the transmission of mitochondrial heteroplasmies
+
+  in families to understand the biological processes governing
+
+  mitochondrial DNA inheritance in humans.  When I’m not science-ing,
+
+  I’m drawing or re-reading The Lord of the Rings.'
+links:
+- icon: at-symbol
+  url: mailto:saz5078@psu.edu

@@ -1,4 +1,5 @@
 +++
+summary = "UNIVERSITY PARK, Pa. — Differences among the DNA of seven ape species — including humans — are greater than originally thought, according to an international team led by researchers at Penn State, the National Human Genome Research Institute (NHGRI) and the University of Washington. They revealed…"
 title = "Complete genome sequences of six ape species unveiled"
 subtitle = "Previously inaccessible regions reveal novel insights that may advance understanding of evolution and conservation genetics for endangered apes as well as human health"
 date = 2025-04-09T00:00:00

@@ -1,0 +1,27 @@
+schema: hugoblox/author/v1
+slug: k-pal
+name:
+  display: Karol Pal
+  family: Pal
+user_groups:
+- Members
+projects:
+- sex_chromosome_evolution
+weight: 361
+role: Postdoctoral Scholar
+bio: Karol has a Computer Science background but also enjoys the biological aspect of his work. He did
+  his PhD in Oncology analyzing clonal evolution in leukemias. Currently he is focusing on a more standard
+  type of evolution, that of the primate sex chromosomes. He enjoys creating interactive visual representations
+  of his findings. Outside of the lab Karol likes playing music and scuba diving.
+interests:
+- Bioinformatics
+- Molecular Evolution
+- Data Visualization
+education:
+- degree: Ph.D. in Oncology
+  institution: Masaryk University, Brno, Czechia
+- degree: M.S. in Bioinformatics
+  institution: Masaryk University, Brno, Czechia
+links:
+- icon: at-symbol
+  url: mailto:kxp5629@psu.edu

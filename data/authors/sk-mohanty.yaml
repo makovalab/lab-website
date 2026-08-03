@@ -1,0 +1,22 @@
+schema: hugoblox/author/v1
+slug: sk-mohanty
+name:
+  display: Saswat Kumar Mohanty
+  family: Mohanty
+user_groups:
+- Members
+projects:
+- microsatellite_variation_and_evolution
+weight: 271
+role: Ph.D. Student
+bio: Saswat is interested in understanding the evolution of non-B-DNA structures in primates. Currently,
+  he is working mainly on a specific type of non-B-DNA structure called the G-quadruplex or G4, for example,
+  developing bioinformatic tools to analyze genome-wide distribution of these structures.
+interests:
+- Primate genomics and bioinformatics
+education:
+- degree: M.S. in Biological Sciences
+  institution: IISER Kolkata, India
+links:
+- icon: at-symbol
+  url: mailto:skm6640@psu.edu

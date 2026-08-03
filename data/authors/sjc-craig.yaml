@@ -1,0 +1,32 @@
+schema: hugoblox/author/v1
+slug: sjc-craig
+name:
+  display: Sarah J. Carnahan Craig
+  family: Craig
+user_groups:
+- Former Members
+projects:
+- childhood_obesity
+weight: 91
+role: Research Assistant Professor
+bio: 'Sarah is interested in human evolution with a specific emphasis
+
+  on genetic variation within and between species, gene duplication,
+
+  and the evolution of regulatory elements. She found that the application
+
+  of knowledge from these genetic investigations to explain (or help
+
+  explain) phenotypic observations in humans (especially related to
+
+  reproduction and human health) to be particularly exciting. Her
+
+  project in the Makova Lab was focused on childhood obesity.'
+interests:
+- Human evolution
+- Childhood obesity
+links:
+- icon: at-symbol
+  url: mailto:sarah@bx.psu.edu
+- icon: hero/phone
+  url: tel:+18148632185

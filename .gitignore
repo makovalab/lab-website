@@ -3,8 +3,10 @@ resources/
 .hugo_build.lock
 
 # Local photo-processing workspace: source photos, virtualenvs and intermediate
-# crops. Large (>1GB) and not part of the site. Only the finished 200x200
-# portraits belong in the repo, under static/img/member/.
+# crops. Large (>1GB) and not part of the site. Only the finished portraits
+# belong in the repo, under static/img/member/. Which original each was made
+# from is recorded in scripts/portraits.toml, since the archive itself is not
+# here to be looked at.
 images/
 .venv/
 
@@ -22,3 +24,9 @@ __pycache__/
 /hugo
 /hugo_*.tar.gz
 /LICENSE
+
+# Node toolchain for the Tailwind engine (HugoBlox). Installed with `npm install`.
+node_modules/
+
+# Throwaway virtualenv for scripts/migrate/*.py (PyYAML only).
+.venv-migrate/

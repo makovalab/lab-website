@@ -1,0 +1,35 @@
+schema: hugoblox/author/v1
+slug: kd-makova
+name:
+  display: Kateryna Makova, Ph.D.
+  family: Makova
+user_groups:
+- Members
+weight: 1
+role: Professor
+bio: 'Kateryna is interested in genomics, evolution, and human genetics.
+
+  Her lab studies mutations using both computational and experimental
+
+  approaches.  Additional topics of interest include sex chromosome
+
+  evolution and genomics of childhood obesity.'
+interests:
+- Genomics, evolution, and human genetics
+- Sex chromosome evolution
+- Genomics of childhood obesity
+affiliations:
+- name: Department of Biology
+  role: Professor
+- name: Center for Medical Genomics
+  role: Director
+education:
+- degree: Ph.D. in Biology
+  institution: Texas Tech University
+- degree: M.S. in Biochemistry and Molecular Biology
+  institution: Kiev State University Kiev, Ukraine
+links:
+- icon: at-symbol
+  url: mailto:kmakova@bx.psu.edu
+- icon: hero/phone
+  url: tel:+18148631619

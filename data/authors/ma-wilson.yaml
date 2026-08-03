@@ -1,0 +1,11 @@
+schema: hugoblox/author/v1
+slug: ma-wilson
+name:
+  display: Melissa A. Wilson Sayres
+  family: Sayres
+user_groups:
+- Former Members
+weight: 551
+role: Ph.D. student
+_alternate_slugs:
+- ma-wilson-sayres

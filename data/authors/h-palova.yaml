@@ -1,0 +1,30 @@
+schema: hugoblox/author/v1
+slug: h-palova
+name:
+  display: Hana Palova
+  family: Palova
+user_groups:
+- Members
+projects:
+- microsatellite_variation_and_evolution
+- sex_chromosome_evolution
+weight: 371
+role: Researcher
+bio: Before joining Makova Lab, Hana worked for six years in the field of molecular genetic characterization
+  of pediatric solid tumors and hereditary diseases in Prof. Slaby’s research group at CEITEC, Masaryk
+  University, Brno, Czechia. She got familiar with the interpretation of next generation sequencing data
+  (mainly WES, RNA seq) and a spectrum of molecular genetic methods. She collaborated on several publications
+  and grant projects. In Makova Lab she is responsible for cell cultivation, performing molecular biology
+  methods, and has recently started a new project focusing on the study of telomeres in macaques. Apart
+  from work, she enjoys spending time with her husband and 3 year-old son.
+interests:
+- Molecular biology and genetics of cancer and hereditary diseases
+- Molecular and cellular biology
+education:
+- degree: Ph.D. in Genomics and Proteomics
+  institution: Masaryk University, Brno, Czechia
+- degree: M.S. in Molecular and Cellular Biology
+  institution: Palacky University, Olomouc, Czechia
+links:
+- icon: at-symbol
+  url: mailto:hjp5418@psu.edu

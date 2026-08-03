@@ -1,0 +1,25 @@
+schema: hugoblox/author/v1
+slug: z-szpiech
+name:
+  display: Zachary Szpiech
+  family: Szpiech
+user_groups:
+- Collaborators
+weight: 81
+bio: Zachary works at the interface of population genetics and evolutionary genomics. His work has relevance
+  to a number of fields including medical genetics, anthropology, and conservation genetics.
+interests:
+- Evolutionary biology
+- Population genetics
+affiliations:
+- name: Department of Biology, Institute for Computational and Data Sciences, Penn State University
+  role: Assistant Professor
+education:
+- degree: Ph.D. in Bioinformatics
+  institution: University of Michigan
+- degree: M.S. in Bioinformatics
+  institution: University of Michigan
+links:
+- icon: hero/globe-alt
+  url: https://szpiech.com/index.html
+  label: Website

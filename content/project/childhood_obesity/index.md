@@ -55,3 +55,5 @@ url_poster = ""
 {{< figure src="image.png" title="" >}}
 
 Obesity is becoming the major epidemic of the 21st century, and we are studying this disease in an integrated way - from the perspective of genomics, microbiomics, and epigenomics. We are following a large group of newborn children until they are at least 3 years of age, and will be finding genes linked to the development of obesity in some of them. This collaboration includes clinicians, statisticians, and social scientists to obtain a multifaceted picture of this important phenotype. Collaborators: Ian Paul, Francesca Chiaromonte.
+
+{{< project_related >}}

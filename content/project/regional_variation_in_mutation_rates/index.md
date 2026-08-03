@@ -50,3 +50,5 @@ url_poster = ""
 {{< figure src="image.jpg" title="Credit: Marta Tomaszkiewicz" >}}
 
 Mutation rates vary at a fine scale - even within individual chromosomes. We are using statistical modeling to study such regional variation in mutation rates. Our analysis of insertions vs. deletions revealed that they are formed, at least in part, by different molecular mechanisms and that, in addition to replication, recombination plays an important role in indel formation (Kvikstad et al. 2007). Employing wavelet transformation techniques, we demonstrated the importance of genomic scale for regional variation in mutation rates (Kvikstad et al. 2009). Using specialized statistical approaches, we have investigated the structure of rate co-variation for four mutation types (point mutations, insertions, deletions, and microsatellite mutations) and simultaneously exploring the associations with multiple genomic features (Ananda et al. 2011). Moreover, we were able to segment the genome into regions with high and low rates of different mutations (Kurupummulage Don, Ananda, et al. 2013). Collaborator: Francesca Chiaromonte.
+
+{{< project_related >}}

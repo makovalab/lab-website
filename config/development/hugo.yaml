@@ -1,0 +1,4 @@
+# Applies only to `hugo server`, which runs in the development environment.
+# `hugo` (production) uses the baseURL in config/_default/hugo.yaml, so the
+# deployed site keeps its /makova_lab/ path. Nothing here can reach production.
+baseURL: '/'

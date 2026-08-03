@@ -1,4 +1,5 @@
 +++
+summary = "Weight gain trajectories in early childhood are related to the composition of oral bacteria of two-year-old children, suggesting that this understudied aspect of a child’s microbiota -- the collection of microorganisms, including beneficial bacteria, residing in the mouth -- could serve as an early…"
 title = "Young children’s oral bacteria may predict obesity"
 date = 2018-09-18T00:00:00
 draft = false

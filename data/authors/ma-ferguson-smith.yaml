@@ -1,0 +1,29 @@
+schema: hugoblox/author/v1
+slug: ma-ferguson-smith
+name:
+  display: Malcolm Ferguson-Smith
+  family: Ferguson-Smith
+user_groups:
+- Collaborators
+weight: 81
+bio: Malcolm Ferguson-Smith's significant contributions to human genetics and cytogenetics range from
+  early studies applying the sex chromatin method to the analysis and frequency of intersexual states,
+  and to genome mapping using chromosome rearrangements. Malcolm was the first to report the now familiar
+  phenomenon of satellite association, the 48 XXXY karyotype, the specificity of location of secondary
+  constrictions in the human chromosome set and gene location by in situ hybridization.
+interests:
+- Genetics
+- Human genomics
+- Molecular biology of sex chromosomes
+affiliations:
+- name: University of Cambridge
+  role: Emeritus Professor of Pathology
+education:
+- degree: MBBS
+  institution: University of Glasgow
+links:
+- icon: at-symbol
+  url: mailto:maf12@cam.ac.uk
+- icon: hero/globe-alt
+  url: https://www.research.vet.cam.ac.uk/research-staff-directory/principal-investigators/systems-pathology/malcom-ferguson-smith
+  label: Website

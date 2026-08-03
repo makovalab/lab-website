@@ -1,0 +1,9 @@
+schema: hugoblox/author/v1
+slug: yd-kelkar
+name:
+  display: Yogeshwar Kelkar
+  family: Kelkar
+user_groups:
+- Former Members
+weight: 251
+role: Ph.D. student

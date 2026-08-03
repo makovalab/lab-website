@@ -1,0 +1,9 @@
+schema: hugoblox/author/v1
+slug: c-rogers
+name:
+  display: Carolyn Rogers
+  family: Rogers
+user_groups:
+- Former Members
+weight: 421
+role: Undergraduate student

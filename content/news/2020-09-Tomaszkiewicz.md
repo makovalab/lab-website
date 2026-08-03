@@ -29,4 +29,4 @@ categories = []
   # Options: Smart, Center, TopLeft, Top, TopRight, Left, Right, BottomLeft, Bottom, BottomRight
   focal_point = ""
 +++
-[Marta Tomaszkiewicz]({{< ref "/member/marta_tomaszkiewicz.md" >}}) won the first prize for the poster presentation at the 13th Research Exhibition for postdocs and assistant research professors at Penn State
+[Marta Tomaszkiewicz]({{< ref "/authors/m-tomaszkiewicz" >}}) won the first prize for the poster presentation at the 13th Research Exhibition for postdocs and assistant research professors at Penn State

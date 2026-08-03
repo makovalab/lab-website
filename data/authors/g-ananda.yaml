@@ -1,0 +1,9 @@
+schema: hugoblox/author/v1
+slug: g-ananda
+name:
+  display: Guru Ananda
+  family: Ananda
+user_groups:
+- Former Members
+weight: 21
+role: Postdoctoral Scholar

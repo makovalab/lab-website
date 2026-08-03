@@ -1,0 +1,9 @@
+schema: hugoblox/author/v1
+slug: a-breski
+name:
+  display: Amanda Breski
+  family: Breski
+user_groups:
+- Former Members
+weight: 71
+role: Undergraduate student

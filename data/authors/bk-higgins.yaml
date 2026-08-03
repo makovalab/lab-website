@@ -1,0 +1,13 @@
+schema: hugoblox/author/v1
+slug: bk-higgins
+name:
+  display: Bonnie K Higgins
+  family: Higgins
+user_groups:
+- Former Members
+weight: 221
+role: Research Technician
+bio: Mitochondrial change and inheritance patterns
+links:
+- icon: at-symbol
+  url: mailto:bkg102@psu.edu

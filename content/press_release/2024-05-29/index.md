@@ -1,4 +1,5 @@
 +++
+summary = "Newly generated, complete “end-to-end” reference genomes for the sex chromosomes of five great ape species and one lesser ape species — produced by an international collaborative team led by researchers at Penn State, the National Human Genome Research Institute and the University of Washington —…"
 title = "Complete X and Y chromosome sequences of living great ape species determined"
 subtitle = "New end-to-end sequences uncover enormous variation on the Y chromosome, informing human evolution and disease as well as conservation genetics of endangered apes"
 date = 2024-05-29T00:00:00

@@ -1,0 +1,9 @@
+schema: hugoblox/author/v1
+slug: b-schultz
+name:
+  display: Bryant Schultz
+  family: Schultz
+user_groups:
+- Former Members
+weight: 441
+role: Undergraduate student

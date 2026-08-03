@@ -1,0 +1,23 @@
+schema: hugoblox/author/v1
+slug: x-zhang
+name:
+  display: Xinru Zhang
+  family: Zhang
+user_groups:
+- Former Members
+projects:
+- microsatellite_variation_and_evolution
+weight: 591
+role: Ph.D. student
+bio: Xinru is a Ph.D. student in the Bioinformatics and Genomics Program co-advised by Dr. Kateryna Makova
+  and Dr. Yi-Fei Huang. Currently, she is studying the evolution of human genome, specifically G-quadruplexes
+  and regulatory elements. By integrating machine learning and phylogenetic inferences, she aims to explore
+  the connection between evolutionary biology and human health.
+interests:
+- Molecular evolution
+education:
+- degree: B.S. in Biology
+  institution: Wuhan University, China
+links:
+- icon: at-symbol
+  url: mailto:xmz5176@psu.edu

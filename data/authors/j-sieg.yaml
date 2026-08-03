@@ -1,0 +1,28 @@
+schema: hugoblox/author/v1
+slug: j-sieg
+name:
+  display: Jacob Sieg
+  family: Sieg
+user_groups:
+- Members
+projects:
+- microsatellite_variation_and_evolution
+weight: 451
+role: Postdoctoral Scholar
+bio: Jacob's current research in Makova Lab uses a combination of experimental and computational approaches
+  to characterize the role of non-canonical DNA secondary structures in primate genomes. Before joining
+  Makova Lab, Jacob studied RNA biochemistry. His Ph.D. thesis work with Dr. Philip Bevilacqua updated
+  thermodynamic models that describe RNA secondary structures to better reflect the cellular environment.
+  His undergraduate thesis work focused on drug targeting RNA thermometers in bacteria.
+interests:
+- Nucleic acids chemistry and biology
+- Molecular evolution
+- Non-canonical DNA secondary structures
+education:
+- degree: Ph.D. in Chemistry
+  institution: Penn State University
+- degree: B.S. in Biochemistry
+  institution: Ohio Universisty Honors Tutorial College
+links:
+- icon: at-symbol
+  url: mailto:jus841@psu.edu

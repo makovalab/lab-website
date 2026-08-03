@@ -1,0 +1,28 @@
+schema: hugoblox/author/v1
+slug: m-degiorgio
+name:
+  display: Michael DeGiorgio
+  family: DeGiorgio
+user_groups:
+- Collaborators
+weight: 51
+bio: Michael leads a data science research group focusing on the development and application of statistical
+  and machine learning techniques in genomics.
+interests:
+- Development and application of statistical and machine learning techniques in genomics
+affiliations:
+- name: Department of Electrical Engineering and Computer Science, Florida Atlantic University
+  role: Associate Chair
+education:
+- degree: Ph.D. in Bioinformatics
+  institution: University of Michigan
+- degree: B.S. in Mathematics
+  institution: University of Central Florida
+- degree: B.S. in Computer Science
+  institution: University of Central Florida
+links:
+- icon: at-symbol
+  url: mailto:mdegiorg@fau.edu
+- icon: hero/globe-alt
+  url: https://www.fau.edu/engineering/directory/faculty/degiorgio/
+  label: Website

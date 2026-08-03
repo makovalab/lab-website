@@ -1,0 +1,15 @@
+schema: hugoblox/author/v1
+slug: b-weissensteiner
+name:
+  display: Bernadette Weissensteiner
+  family: Weissensteiner
+user_groups:
+- Former Members
+projects:
+- sex_chromosome_evolution
+- microsatellite_variation_and_evolution
+weight: 531
+role: Lab Technician
+links:
+- icon: at-symbol
+  url: mailto:be.weissensteiner@gmail.com

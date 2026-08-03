@@ -21,6 +21,18 @@ jobs:
         env:
           BUNDLE_BUILD__NOKOGIRI: --use-system-libraries
 
+      # The theme builds its own CSS with the Tailwind CLI and its hero block
+      # from preact, both of which come from package.json. Without them Hugo
+      # fails on the first page it renders, so this has to run before the build.
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install Node dependencies
+        run: npm ci
+
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
@@ -43,11 +55,21 @@ jobs:
             echo "::error::Raw HTML was dropped -- check markup.goldmark.renderer.unsafe"
             exit 1
           fi
-          # The home page is built entirely from content/home/*.md widgets. A
-          # .Data.Pages semantics change once made all of them vanish silently.
-          count=$(grep -c 'class="home-section"' public/index.html || true)
-          if [ "$count" -lt 8 ]; then
-            echo "::error::Home page has $count widget sections, expected at least 8"
+          # The home page is a stack of blocks from content/_index.md. A
+          # .Data.Pages semantics change once made every section of it vanish
+          # silently, so count them: hero, projects, news, press releases,
+          # publications, videos, members, collaborators, contact.
+          count=$(grep -c 'hbb-section' public/index.html || true)
+          if [ "$count" -lt 9 ]; then
+            echo "::error::Home page has $count block sections, expected at least 9"
+            exit 1
+          fi
+          # Publications, and the people and project pages that reuse the same
+          # view, render as citations. A theme change that dropped the override
+          # would leave placeholder cards behind instead.
+          cites=$(grep -c 'view-citation' public/publication/index.html || true)
+          if [ "$cites" -lt 100 ]; then
+            echo "::error::Publication list has $cites citations, expected ~139"
             exit 1
           fi
 
@@ -57,11 +79,18 @@ jobs:
         # root so internal links resolve when checked from a working copy.
         # ignore-missing-alt and no-enforce-https are non-default; the rest of
         # html-proofer's defaults already match what this site needs.
+        #
+        # allow-missing-href is needed by the theme's search panel: its results
+        # are an Alpine `<template x-for>` whose anchors carry `:href` rather
+        # than `href`, so the attribute only exists once a search has run. It
+        # appears on every page, which is 319 failures for markup that is valid
+        # HTML5 and works at runtime.
         run: |
           bundle exec htmlproofer . \
             --checks Links,Images,Scripts \
             --disable-external \
             --ignore-missing-alt \
+            --allow-missing-href \
             --no-enforce-https \
             --assume-extension .html \
             --extensions .html \

@@ -1,4 +1,5 @@
 +++
+summary = "The speed and error rate of DNA synthesis is influenced by the three-dimensional structure of the DNA. Using “third-generation” genome-wide DNA sequencing data, a team of researchers from Penn State and the Czech Academy of Sciences showed that sequences with the potential to form unusual DNA…"
 title = "DNA structure impacts rate and accuracy of DNA synthesis"
 date = 2018-11-13T00:00:00
 draft = false

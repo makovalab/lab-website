@@ -31,5 +31,5 @@ categories = []
 +++
 
 
-Congratulations to [Sarah]({{< ref "/member/sarah_carnahan_craig.md" >}}) on winning the Penn State Clinical and Translational Science Institute Novel Methodologies in Health Research Award!
+Congratulations to [Sarah]({{< ref "/authors/sjc-craig" >}}) on winning the Penn State Clinical and Translational Science Institute Novel Methodologies in Health Research Award!
 

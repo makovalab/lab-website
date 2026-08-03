@@ -1,0 +1,25 @@
+schema: hugoblox/author/v1
+slug: ka-eckert
+name:
+  display: Kristin Eckert
+  family: Eckert
+user_groups:
+- Collaborators
+weight: 71
+bio: Prof. Eckert is focused on mechanisms of human cell mutagenesis and repetitive DNA replication in
+  relation to genome evolution.
+interests:
+- Genome evolution
+- Molecular mechanisms of carcinogenesis
+affiliations:
+- name: Department of Pathology and Laboratory Medicine and Department of Biochemistry and Molecular Biology
+  role: Professor
+education:
+- degree: Ph.D. in Oncology
+  institution: University of Wisconsin-Madison
+- degree: B.S. in Microbiology
+  institution: Penn State University
+links:
+- icon: hero/globe-alt
+  url: https://www.huck.psu.edu/people/kristin-eckert
+  label: Website

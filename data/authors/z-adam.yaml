@@ -1,0 +1,9 @@
+schema: hugoblox/author/v1
+slug: z-adam
+name:
+  display: Zaky Adam
+  family: Adam
+user_groups:
+- Former Members
+weight: 11
+role: Postdoctoral Scholar

@@ -1,0 +1,9 @@
+schema: hugoblox/author/v1
+slug: l-peng
+name:
+  display: Lei Peng
+  family: Peng
+user_groups:
+- Former Members
+weight: 391
+role: Undergraduate student

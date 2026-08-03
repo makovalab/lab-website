@@ -1,0 +1,27 @@
+schema: hugoblox/author/v1
+slug: e-torres-gonzalez
+name:
+  display: Edmundo Torres-González
+  family: Torres-González
+user_groups:
+- Former Members
+projects:
+- mitochondrial_mutation_dynamics
+- childhood_obesity
+weight: 501
+role: Ph.D. student
+bio: 'Before starting his PhD in the Makova lab, Edmundo worked on regional human variation as an undergraduate
+  in Puerto Rico and on translational cancer genomics as a postdoc in NIH. As part of this thesis work,
+  he focuses on mitochondrial genomics that cover its evolution, and
+
+  relation to complex phenotypes.'
+interests:
+- Mitochondrial and nuclear genome coevolution
+- Mutagenesis in mitochondrial DNA
+- Mitochondrial DNA copy number in context of child weight gain
+education:
+- degree: B.S. in Biology
+  institution: University of Puerto Rico at Mayagüez
+links:
+- icon: at-symbol
+  url: mailto:ejt89@psu.edu

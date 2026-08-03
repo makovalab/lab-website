@@ -1,0 +1,24 @@
+schema: hugoblox/author/v1
+slug: m-cechova
+name:
+  display: Monika Cechova (Michalovova)
+  family: (Michalovova)
+user_groups:
+- Former Members
+projects:
+- sex_chromosome_evolution
+weight: 101
+role: Ph.D. student
+bio: 'I enjoy bioinformatics as a tool to study evolution of sex chromosomes,
+
+  transposable elements and gene expression.  I am interested in
+
+  topics covering RNASeq, variant calling, mapping, genome assembly
+
+  and new sequencing technologies.'
+links:
+- icon: at-symbol
+  url: mailto:biomonika@psu.edu
+- icon: hero/globe-alt
+  url: http://sites.psu.edu/biomonika/
+  label: Website

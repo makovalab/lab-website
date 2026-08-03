@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Turn ordinary photos into the round 200x200 member portraits the site uses.
+"""Turn ordinary photos into the round member portraits the site uses.
 
 Run this through ``./scripts/make-portraits``, which creates the virtualenv and
 installs the dependencies first.
@@ -10,13 +10,19 @@ Pipeline, per photo::
       -> honour EXIF rotation (phone photos are usually stored sideways)
       -> rembg: cut the person out of the background
       -> composite onto one flat colour, so every portrait matches
-      -> find the face, take a square crop around it
-      -> scale to 200x200
+      -> find the face and measure the head
+      -> scale to the largest of 200/400/600 the photo fills unenlarged
       -> apply a soft-edged circular alpha mask
     static/img/member/linnea_smeds.png
 
 The output name comes from the input filename, so name the photo after the
-member id used in ``content/member/<id>.md``.
+member id used in ``content/member/<id>.md``. Photos listed in
+``portraits.toml`` are the exception: they keep their own names and are matched
+to a member by the ``source`` recorded there.
+
+Every measurement below is a fraction of ``SIZE`` rather than a pixel count, so
+one photo yields the same framing at any size. ``test_portraits.py`` guards
+that; ``./scripts/make-portraits --test`` runs it.
 """
 
 import math
@@ -31,6 +37,12 @@ from PIL import Image, ImageDraw, ImageFilter, ImageOps
 
 # --- Look of the finished portrait -------------------------------------------
 
+# Edge length of the finished portrait. Overridable with --size, because the
+# usable resolution varies per person: most sources only support 200, while the
+# handful with an original photo still on hand support 400 or 600. Everything
+# below is expressed as a fraction of SIZE, so the framing is identical at any
+# size. A source cannot be enlarged past its own detail -- see --size for the
+# head-height each value needs.
 SIZE = 200
 # Flat colour behind the cut-out person. #d3d3d3, matching the backdrop the
 # earlier pipeline produced -- huiqing_zeng, hana_palova, karol_pal, jacob_sieg,
@@ -52,8 +64,11 @@ ALPHA_FLOOR = 26  # below this, rembg alpha is background haze rather than a rea
 
 # The existing portraits have a circle that fades out over roughly six pixels
 # rather than a hard edge. Reproduced by insetting the circle and blurring it.
-FEATHER = 1.8
-INSET = 2.0
+# Both are fractions of SIZE -- 1.8px and 2.0px at the original 200 -- so that a
+# 600px portrait scaled down into the same slot on the page shows the same soft
+# edge as its 200px neighbours rather than a harder, more aliased one.
+FEATHER = 0.009
+INSET = 0.010
 SUPERSAMPLE = 4  # mask is drawn this much larger, then shrunk, to anti-alias it
 
 # Ordered least to most permissive. alt_tree yields the fewest false positives
@@ -85,6 +100,15 @@ EYE_HEIGHT = 0.46     # how far down the frame the eyes sit
 # of the output. Passport standards put the head at 70-80% of the frame; a
 # little less suits a round crop, which trims the corners anyway.
 HEAD_HEIGHT = 0.62
+
+# Sizes a finished portrait may be made at. Which one a person gets is a fact
+# about their photo rather than about them: the head is drawn at HEAD_HEIGHT of
+# the frame, so 600 needs about 372px of crown-to-chin in the original, 400
+# needs 248 and 200 needs 124. The script measures the head and picks the
+# largest size the photo can fill, because enlarging past that invents detail
+# rather than showing more. The site is served by a framework that resizes
+# down, so one file per person at its best size is enough.
+SIZE_LADDER = (200, 400, 600)
 HEAD_CENTRE_HEIGHT = 0.48  # where the middle of the head sits, when eyes are unknown
 HEAD_CENTRE_BLEND = 0.5    # 0 = centre on the eyes, 1 = centre on the head silhouette
 
@@ -101,6 +125,23 @@ TARGET_SPREAD = 133.0     # 10th-to-90th percentile spread, i.e. contrast
 LIGHTING_STRENGTH = 0.7   # apply only part of the correction
 
 MAX_ALIGN_ANGLE = 35.0  # beyond this the eye detection is more likely wrong than the head
+
+# Continuing a subject the photo cuts off below. The first is how much of the
+# subject's lower outline must lie along that edge before it counts as cut off
+# rather than as a person who simply ends inside the frame; the second is how
+# far the shirt is carried on, as a fraction of the photo's height. Six tenths
+# is well past the bottom of the disc at any framing, so the join never shows.
+TORSO_EDGE_FRACTION = 0.2
+TORSO_EXTEND = 0.6
+TORSO_BLUR = 0.06        # sideways blur at the far end, as a fraction of the width
+TORSO_BLUR_START = 0.55  # how much of that blur is already applied at the seam
+# How close to the photo's edge a column has to end before it counts as cut off,
+# as a fraction of the photo. Wide enough to survive MATTE_SHRINK and DEFRINGE,
+# which pull the cut-out a few pixels clear of the edge that truncated it.
+TORSO_EDGE_BAND = 0.015
+TORSO_MIN_DEPTH = 0.45   # a cut higher up the photo than this is not a torso
+TORSO_SAMPLE = 0.02      # how far above the cut the continuing colour is read from
+TORSO_SEAM = 0.008       # how far above the cut the fill starts, burying the matte edge
 
 # macOS resource forks and other dotfiles that are not really photos.
 IGNORED_PREFIXES = ("._", ".")
@@ -127,6 +168,30 @@ def load_registry() -> dict[str, dict]:
 
 def repo_root() -> Path:
     return Path(__file__).resolve().parent.parent
+
+
+def registry_sources(registry: dict[str, dict]) -> tuple[list[tuple[str, Path]], list[tuple[str, str]]]:
+    """The (member, photo) pairs recorded in portraits.toml, and the missing ones.
+
+    Source photos live in images/, which is a local workspace rather than part
+    of the repository -- it is far too big to commit. So the path recorded here
+    may well not resolve on someone else's machine, and a missing one is
+    reported rather than treated as an error.
+    """
+    found: list[tuple[str, Path]] = []
+    missing: list[tuple[str, str]] = []
+    for member, entry in sorted(registry.items()):
+        source = entry.get("source")
+        if not source:
+            continue
+        path = Path(source)
+        if not path.is_absolute():
+            path = repo_root() / path
+        if path.is_file():
+            found.append((member, path))
+        else:
+            missing.append((member, source))
+    return found, missing
 
 
 def load_photo(path: Path) -> Image.Image:
@@ -461,14 +526,20 @@ def normalise_lighting(
     return result
 
 
+def size_for_head(head_px: float) -> int:
+    """The largest ladder size this head fills without being enlarged."""
+    fits = [edge for edge in SIZE_LADDER if HEAD_HEIGHT * edge <= head_px]
+    return max(fits) if fits else min(SIZE_LADDER)
+
+
 def circular_mask(size: int) -> Image.Image:
     """A circle with a soft edge, matching the site's existing portraits."""
     big = size * SUPERSAMPLE
-    inset = INSET * SUPERSAMPLE
+    inset = INSET * size * SUPERSAMPLE
     mask = Image.new("L", (big, big), 0)
     ImageDraw.Draw(mask).ellipse((inset, inset, big - 1 - inset, big - 1 - inset), fill=255)
     return mask.resize((size, size), Image.LANCZOS).filter(
-        ImageFilter.GaussianBlur(radius=FEATHER)
+        ImageFilter.GaussianBlur(radius=FEATHER * size)
     )
 
 
@@ -481,6 +552,121 @@ def detection_view(cut_out: Image.Image) -> Image.Image:
     canvas = Image.new("RGBA", cut_out.size, (128, 128, 128, 255))
     canvas.alpha_composite(cut_out)
     return canvas.convert("RGB")
+
+
+def photo_extent(image: Image.Image) -> np.ndarray:
+    """Where the photo actually holds a picture.
+
+    Everything for an ordinary photograph. Two of these sources are themselves
+    round crops taken off an old version of the site, and for those it is a disc
+    with nothing outside it -- which matters, because the edge that truncates
+    the subject is then that circle rather than the rectangle around it.
+    """
+    if image.mode not in ("RGBA", "LA", "P"):
+        return np.ones((image.height, image.width), dtype=bool)
+    return np.array(image.convert("RGBA"))[:, :, 3] > 128
+
+
+def extend_below(cut_out: Image.Image, extent: np.ndarray | None = None) -> Image.Image:
+    """Carry the subject on downward from wherever the photo stops holding them.
+
+    A tight crop often ends part-way down the shirt. Framing then scales that
+    edge into the middle of the disc, and because the eyes are levelled by
+    rotating, the straight bottom of the photo lands as a diagonal slice across
+    the shoulders -- or, when the crop stops higher, as a band of empty backdrop
+    under the person. Continuing each column past the cut carries the shirt on
+    instead.
+
+    The cut is not always the bottom of the photo. Di's and Johanna's sources
+    are round crops, so what truncates them is the circle: their shoulders and
+    hair end along an arc part-way up the frame, which framing then delivers as
+    a curved bite out of one side. Following the subject's own lower outline
+    handles both, since a rectangle's bottom row is just the flat case of it.
+
+    Only downward. A torso really does continue out of frame, whereas
+    replicating the top would smear hair upward into the headroom the framing is
+    trying to leave, and replicating the sides would stretch a shoulder.
+    """
+    arr = np.array(cut_out)
+    subject = arr[:, :, 3] > 128
+    height, width = subject.shape
+    if extent is None:
+        extent = np.ones_like(subject)
+
+    # The photo's own edge counts as a cut, so it has to be part of the rim.
+    # cv2.erode treats everything beyond the array as interior, which would hide
+    # exactly that -- and for a round source would hide the bottom of the circle,
+    # where it runs off the frame. Supplying a background border fixes both.
+    band = max(3, round(max(height, width) * TORSO_EDGE_BAND) | 1)
+    inner = cv2.erode(
+        extent.astype(np.uint8), np.ones((band, band), np.uint8),
+        borderType=cv2.BORDER_CONSTANT, borderValue=0,
+    ) > 0
+    rim = extent & ~inner
+
+    # Lowest subject pixel in each column, and whether the photo ran out there.
+    occupied = subject.any(axis=0)
+    lowest = np.where(occupied, height - 1 - subject[::-1].argmax(axis=0), -1)
+    columns = []
+    for x in range(width):
+        y = int(lowest[x])
+        if y < 0 or y < height * TORSO_MIN_DEPTH:
+            continue
+        if rim[max(0, y - band):y + band + 1, x].any():
+            columns.append((x, y))
+
+    # Same question the flat version asked, of the outline rather than of the
+    # bottom row: is the subject cut off, or do they simply end inside the photo?
+    if len(columns) < occupied.sum() * TORSO_EDGE_FRACTION:
+        return cut_out
+
+    pad = max(1, round(height * TORSO_EXTEND))
+    # Padding only at the bottom leaves the origin alone, so the face box, eye
+    # positions and crown measured above stay valid.
+    extended = cv2.copyMakeBorder(
+        arr, 0, pad, 0, 0, cv2.BORDER_CONSTANT, value=(0, 0, 0, 0)
+    )
+    filled = np.zeros(extended.shape[:2], dtype=bool)
+    depth = np.zeros(extended.shape[:2], dtype=np.float32)
+
+    sample = max(2, round(height * TORSO_SAMPLE))
+    seam = max(1, round(height * TORSO_SEAM))
+    for x, y in columns:
+        # The pixels right on the cut are the worst ones to copy: they are the
+        # matte's own boundary and still carry what was behind the subject. On
+        # Di that is the orange wall, which continues as a rust-brown band. Read
+        # the colour from a little way inside instead, and take the median so a
+        # single edge pixel cannot set a whole column.
+        above = arr[max(0, y - sample):y + 1, x]
+        above = above[subject[max(0, y - sample):y + 1, x]]
+        if not len(above):
+            continue
+        colour = np.median(above, axis=0).astype(np.uint8)
+        colour[3] = 255
+        # Start just above the cut, so those same contaminated rows are covered
+        # rather than left as a thread along the join.
+        start = max(0, y - seam)
+        extended[start:, x] = colour
+        filled[start:, x] = True
+        depth[start:, x] = np.arange(extended.shape[0] - start, dtype=np.float32)
+
+    # Carrying a column straight down passes for fabric on a plain shirt but
+    # turns the V of an open collar into a stripe. Blurring sideways, by more
+    # the further it goes, reads as cloth falling out of focus instead.
+    #
+    # The ramp starts well above zero on purpose. Only the first inch or so of
+    # the extension is ever inside the disc -- the rest is cropped away -- so a
+    # ramp starting at zero blurs nothing anyone sees. Beginning part-blurred
+    # costs no visible seam, because what is being blurred is a flat colour.
+    kernel = max(3, int(width * TORSO_BLUR) | 1)
+    blurred = cv2.blur(extended, (kernel, 1))
+    ramp = TORSO_BLUR_START + (1 - TORSO_BLUR_START) * np.clip(depth / pad, 0, 1)
+    mixed = (extended * (1 - ramp[:, :, None]) + blurred * ramp[:, :, None]).astype(np.uint8)
+    # Only the invented pixels are touched; the photograph is left exactly as it
+    # was, which a blur applied to the whole band would not do.
+    extended[filled] = mixed[filled]
+
+    return Image.fromarray(extended, "RGBA")
 
 
 def similarity_warp(
@@ -644,7 +830,15 @@ def make_portrait(
     lighting: bool,
     lighting_strength: float,
     background: tuple[int, int, int],
+    size: int | None = None,
 ) -> tuple[Image.Image, str]:
+    # None means "as large as this photo supports", decided once the head has
+    # been measured below. Every geometry constant is a fraction of SIZE, so
+    # setting it is enough to rescale the whole pipeline.
+    global SIZE
+    if size is not None:
+        SIZE = size
+
     image = load_photo(path)
     cut_out = cut_out_person(image, model, union_model) if remove_background else image
     if remove_background and defringe_edges:
@@ -669,6 +863,12 @@ def make_portrait(
         face, eyes = find_face(view), None
         route = "face box"
 
+    if size is None:
+        # The alpha matte gives the true crown, which the face box does not, so
+        # the size is chosen from the head the portrait will actually show.
+        crown, chin, _ = head_extent(cut_out, face)
+        SIZE = size_for_head(chin - crown)
+
     if lighting:
         cut_out = normalise_lighting(cut_out, face, lighting_strength)
 
@@ -677,6 +877,9 @@ def make_portrait(
         eyes = eye_positions(view, face)
         if eyes is not None:
             route = "eyes (haar)"
+
+    # After the head has been measured and before anything scales it.
+    cut_out = extend_below(cut_out, photo_extent(image))
 
     framed = frame_with_eyes(cut_out, face, eyes) if eyes else frame_on_face(cut_out, face)
     return lay_on_disc(framed, background), route
@@ -763,6 +966,25 @@ def describe(path: Path) -> str:
     is_flag=True,
     help="Keep colour the cut-out edge picked up from the old background.",
 )
+@click.option(
+    "--size",
+    type=click.IntRange(min=64),
+    default=SIZE,
+    show_default="measured from the photo",
+    metavar="PIXELS",
+    help="Force the edge length of every portrait in this run. By default each "
+         "is made at the largest of "
+         f"{', '.join(str(edge) for edge in SIZE_LADDER)} its photo can fill: "
+         f"the head is drawn at {HEAD_HEIGHT:.0%} of the frame, so that needs "
+         "roughly 124px of crown-to-chin for 200, 248px for 400 and 372px for "
+         "600.",
+)
+@click.option(
+    "--from-registry",
+    is_flag=True,
+    help="Rebuild every portrait whose source photo is recorded in "
+         "portraits.toml, each at its recorded size. Implies --force.",
+)
 @click.option("--force", is_flag=True, help="Replace portraits that already exist.")
 @click.pass_context
 def main(
@@ -770,6 +992,8 @@ def main(
     photos: tuple[Path, ...],
     inbox: Path | None,
     out: Path | None,
+    size: int,
+    from_registry: bool,
     keep_background: bool,
     no_detect: bool,
     no_eye_frame: bool,
@@ -785,9 +1009,29 @@ def main(
     after the member, e.g. linnea_smeds.jpg for content/member/linnea_smeds.md.
     """
     inbox = inbox or repo_root() / "photos" / "inbox"
-    out = out or repo_root() / "static" / "img" / "member"
+    # Where a portrait lands depends on whether the person is a lab member or a
+    # collaborator, which is recorded per person. An explicit --out overrides
+    # that for the whole run.
+    out_given = out is not None
 
-    selected = sorted(photos) if photos else collect_photos(inbox)
+    registry = load_registry()
+
+    # A photo named on the command line, or dropped in the inbox, is already
+    # named after the member. One named in portraits.toml is not -- it is
+    # whatever the original file happened to be called -- so it is carried
+    # alongside the id rather than having the id read back off the filename.
+    if from_registry:
+        selected, missing = registry_sources(registry)
+        for member, source in missing:
+            click.echo(
+                f"  {click.style('SKIPPED', fg='yellow')} {member}\n"
+                f"            recorded source is not there: {source}"
+            )
+        force = True
+    else:
+        chosen = sorted(photos) if photos else collect_photos(inbox)
+        selected = [(path.stem, path) for path in chosen]
+
     if not selected:
         click.echo(f"Nothing to do: no photos found in {describe(inbox)}/")
         click.echo(
@@ -796,22 +1040,37 @@ def main(
         )
         return
 
-    out.mkdir(parents=True, exist_ok=True)
     processed: list[str] = []
     skipped: list[tuple[str, str]] = []
 
-    registry = load_registry()
+    size_given = ctx.get_parameter_source("size") is ParameterSource.COMMANDLINE
 
-    for path in selected:
-        # content/member/<id>.md expects the portrait to be <id>.png
-        destination = out / f"{path.stem}.png"
+    for member, path in selected:
+        # Per-person settings, overridden by anything given on the command line.
+        entry = registry.get(member, {})
+
+        # content/<collection>/<id>.md expects the portrait to be <id>.png in the
+        # matching image folder.
+        folder = out if out_given else (
+            repo_root() / "static" / "img" / entry.get("collection", "member")
+        )
+        folder.mkdir(parents=True, exist_ok=True)
+        destination = folder / f"{member}.png"
         if destination.exists() and not force:
             reason = f"{destination.name} already exists. Re-run with --force to replace it."
             skipped.append((path.name, reason))
             continue
 
-        # Per-person settings, overridden by anything given on the command line.
-        entry = registry.get(path.stem, {})
+        # How big a portrait can usefully be is a property of the photo, so it
+        # is normally measured from it. A recorded size overrides that for the
+        # photos where the measurement reads better than the detail justifies;
+        # --size overrides everything, for trying a run out.
+        if size_given:
+            chosen_size = size
+        elif "size" in entry:
+            chosen_size = int(entry["size"])
+        else:
+            chosen_size = None
         settings = {
             "remove_background": not entry.get("keep_background", keep_background),
             "detect_face": entry.get("detect", not no_detect),
@@ -827,7 +1086,9 @@ def main(
                 settings[name] = value
 
         try:
-            portrait, route = make_portrait(path, background=background, **settings)
+            portrait, route = make_portrait(
+                path, background=background, size=chosen_size, **settings
+            )
         except SkipPhoto as exc:
             skipped.append((path.name, str(exc)))
             continue
@@ -837,8 +1098,10 @@ def main(
                 "--keep-background to skip background removal."
             ) from None
         portrait.save(destination, "PNG", optimize=True)
-        tag = route if path.stem not in registry else f"{route}, registry"
-        processed.append(f"{path.name} -> {describe(destination)}  [{tag}]")
+        tag = route if member not in registry else f"{route}, registry"
+        processed.append(
+            f"{path.name} -> {describe(destination)}  [{SIZE}px, {tag}]"
+        )
 
     for line in processed:
         click.echo(f"  {click.style('OK', fg='green')}      {line}")

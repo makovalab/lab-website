@@ -1,0 +1,14 @@
+schema: hugoblox/author/v1
+slug: a-barrett
+name:
+  display: Alison Barrett
+  family: Barrett
+user_groups:
+- Former Members
+projects:
+- mitochondrial_mutation_dynamics
+weight: 51
+role: Undergraduate student
+links:
+- icon: at-symbol
+  url: mailto:ajb6548@psu.edu

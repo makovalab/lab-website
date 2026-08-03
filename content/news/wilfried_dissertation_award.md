@@ -30,6 +30,6 @@ categories = []
   focal_point = ""
 +++
 
-Congratulations to [Wilfried Guiblet]({{< ref "/member/wilfried_guiblet.md" >}}) on winning the Huck Dissertation Research Award 2015!
+Congratulations to [Wilfried Guiblet]({{< ref "/authors/wm-guiblet" >}}) on winning the Huck Dissertation Research Award 2015!
 
 

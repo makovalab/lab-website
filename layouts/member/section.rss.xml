@@ -1,0 +1,1 @@
+{{- partial "people_feed.xml" (dict "page" . "groups" (default (slice) .Params.groups)) -}}

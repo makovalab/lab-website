@@ -1,0 +1,29 @@
+schema: hugoblox/author/v1
+slug: j-stepanian
+name:
+  display: Johanna Stepanian
+  family: Stepanian
+user_groups:
+- Members
+projects:
+- sex_chromosome_evolution
+weight: 501
+role: Ph.D. Student
+bio: Johanna has a background in microbiology and computational biology, with a strong interest in the
+  study of evolution. She currently works on the evolution of sex chromosomes across primates. Although
+  skilled in both wet and dry lab work, she is more drawn to the computational side of research. Her long
+  term interests lie in bioinformatics and evolutionary biology, including RNA-seq, genomic diversity,
+  and population structure, driven by a continued interest in bringing computational approaches to biological
+  questions. Outside the lab, she enjoys biking, traveling, and crafts.
+interests:
+- Human genetics and diversity
+- Evolution
+- Bioinformatics
+education:
+- degree: M.S. in Computational Biology
+  institution: Universidad de los Andes
+- degree: B.S. in Industrial Microbiology
+  institution: Pontificia Universidad Javeriana
+links:
+- icon: at-symbol
+  url: mailto:jbs7382@psu.edu

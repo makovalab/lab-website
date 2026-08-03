@@ -1,0 +1,135 @@
+/* Figure classes carried over from the old site's content.
+ *
+ * 18 pages use `class="image-center"` or `class="image-right"` in a figure
+ * shortcode. `image-center` was never defined in any stylesheet -- not here and
+ * not on the old site either -- so it has always been inert; the old academic
+ * theme simply constrained figures by default and made that hard to notice.
+ * This theme does not, so those figures render at the full column width. On a
+ * portrait-orientation photo that is much worse than it sounds: award3.jpg is
+ * 775x1008, so at column width it stands several screens tall and pushes the
+ * text off the page.
+ *
+ * So both classes are given the behaviour their names have always promised.
+ * Capping the height matters more than capping the width here, because it is
+ * the tall ones that break the page, and a width cap does nothing for them.
+ */
+
+figure.image-center {
+  margin: 1.5rem auto;
+  text-align: center;
+}
+
+figure.image-center img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 32rem;
+  width: auto;
+  height: auto;
+}
+
+figure.image-right {
+  float: right;
+  width: 47%;
+  padding: 0 0 0 1em;
+  margin: 0.5em 0 0.25em 1em;
+  clear: right;
+}
+
+figure.image-right img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Floating a figure alongside text stops making sense once the column is
+ * narrow enough that 47% of it cannot hold a picture. */
+@media (max-width: 640px) {
+  figure.image-right {
+    float: none;
+    width: auto;
+    padding: 0;
+    margin: 1.5rem auto;
+  }
+}
+
+figure.image-center figcaption,
+figure.image-right figcaption {
+  font-size: smaller;
+}
+
+/* The hero's DNA diagram runs right behind its wording, and the strands cross
+ * the subtitle in particular. A white halo lifts the text off the artwork
+ * without putting a panel over the diagram or fading it.
+ *
+ * The colours are pinned rather than left to Tailwind's dark: variants. The
+ * hero's background is set to white in both colour schemes (content/_index.md
+ * explains why), so `dark:text-gray-100` would otherwise turn this text light
+ * on white for anyone whose system asks for dark. */
+#hero_carousel h1 {
+  color: #111827;
+  text-shadow: 0 0 8px #fff, 0 0 16px #fff, 0 0 28px #fff;
+}
+
+#hero_carousel p {
+  color: #374151;
+  text-shadow: 0 0 6px #fff, 0 0 12px #fff, 0 0 20px #fff;
+}
+
+/* Every section shipped with equal padding above and below, which left each
+ * heading floating exactly halfway between two sections and belonging to
+ * neither. More room above than below attaches a heading to the content it
+ * opens. The hero is left alone: its height sets the shape of the box the DNA
+ * diagram is fitted into, which content/_index.md depends on. */
+.hbb-section:not(#hero_carousel) {
+  padding-top: 8rem;
+  padding-bottom: 4.5rem;
+}
+
+/* A section given `background.color.light` + `.dark` renders the dark colour
+ * from a media query:
+ *
+ *   @media (prefers-color-scheme: dark) { .home-section-bg[style*=--dark-bg-color] {...} }
+ *   .dark .home-section-bg[style*=--dark-bg-color] {...}
+ *
+ * but every text colour on the page comes from Tailwind's class-based `dark:`
+ * variant, which keys off `.dark` on <html>. The two disagree for a reader whose
+ * system is in night mode but who has chosen this site's light theme: the
+ * section takes its dark background while the text stays dark, and the headings
+ * and summaries are unreadable -- 1.06:1 for a heading -- until a hover panel
+ * paints something light behind them.
+ *
+ * So pin the light background back whenever the site itself is in light mode.
+ * Higher specificity than the theme's rule, and !important to match it. */
+@media (prefers-color-scheme: dark) {
+  html:not(.dark) .home-section-bg[style*="--dark-bg-color"] {
+    background-color: #f8fafc !important;
+  }
+}
+
+/* The row hover panel in News and Press Releases is bg-zinc-50, with
+ * dark:bg-zinc-800/50 over it -- both picked to show against a plain page. On
+ * the tinted band they land within a couple of values of the background
+ * (#fafafa on #f8fafc), so the hover stopped registering. Give it something it
+ * can be seen against: white, lifted by a soft shadow so it reads as a card
+ * rising rather than a colour shift. Dark gets a white wash, which stays a step
+ * lighter than the tint instead of the half-transparent zinc landing on it.
+ *
+ * Keyed off .dark rather than a media query, to match how the theme's text
+ * colours work -- see the note above about the two disagreeing.
+ *
+ * Match on opacity-0 as well as the inset: each row carries two elements with
+ * these inset classes, the hover panel at z-0 and an invisible click target at
+ * z-20 covering the whole row. Colouring the second one paints an opaque box
+ * over the text, which is only obvious in light mode -- in dark the wash is
+ * faint enough to look fine. */
+#news [class~="-inset-x-4"][class~="opacity-0"],
+#press_releases [class~="-inset-x-4"][class~="opacity-0"] {
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px rgb(15 23 42 / 0.05), 0 6px 16px rgb(15 23 42 / 0.08);
+}
+
+html.dark #news [class~="-inset-x-4"][class~="opacity-0"],
+html.dark #press_releases [class~="-inset-x-4"][class~="opacity-0"] {
+  background-color: rgb(255 255 255 / 0.08);
+  box-shadow: none;
+}

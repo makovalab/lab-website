@@ -30,6 +30,6 @@ categories = []
   focal_point = ""
 +++
 
-[Monika Cechova (Michalovova)]({{< ref "/member/monika_cechova.md" >}}) receives the CBIOS predoctoral training grant from the NIH's National Institute of General Medical Sciences!
+[Monika Cechova (Michalovova)]({{< ref "/authors/m-cechova" >}}) receives the CBIOS predoctoral training grant from the NIH's National Institute of General Medical Sciences!
 
 

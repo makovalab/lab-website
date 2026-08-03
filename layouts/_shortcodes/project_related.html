@@ -1,0 +1,74 @@
+{{/*
+  Everything else on the site that belongs to this project: the people working
+  on it, the press it drew, and the papers that came out of it.
+
+  The old site put these four lists at the foot of every project page, built
+  from a `projects` field on each of those pages. That field survived the
+  migration on publications and press releases, and was restored for people --
+  it lives in data/authors/<slug>.yaml rather than in front matter, since people
+  are data files here rather than content.
+
+  Rendered from a shortcode rather than a layout override so the theme's own
+  page template keeps working; this simply lands at the end of the body.
+*/}}
+
+{{ $id := path.Base .Page.File.Dir }}
+
+{{/* People. Only current members and collaborators, matching the old site --
+     a project that ran for a decade would otherwise list everyone who ever
+     touched it, which is what the alumni list on /people/ is for. */}}
+{{ $people := slice }}
+{{ range $slug, $a := hugo.Data.authors }}
+  {{ if in (default (slice) $a.projects) $id }}
+    {{ $people = $people | append (dict "slug" $slug "author" $a) }}
+  {{ end }}
+{{ end }}
+
+{{ $groups := slice (dict "title" "Members" "group" "Members") (dict "title" "Collaborators" "group" "Collaborators") }}
+
+{{ range $groups }}
+  {{ $title := .title }}
+  {{ $want := .group }}
+  {{ $rows := where $people "author.user_groups" "intersect" (slice $want) }}
+  {{ with $rows }}
+    <h2>{{ $title }}</h2>
+    <div class="not-prose grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4 mb-10">
+      {{ range . }}
+        {{ $a := .author }}
+        {{ $avatar := resources.GetMatch (printf "media/authors/%s.*" .slug) }}
+        <a href="/authors/{{ .slug }}/" class="group flex flex-col items-center text-center no-underline">
+          {{ with $avatar }}
+            {{ $img := .Fill "160x160 Center" }}
+            <img src="{{ $img.RelPermalink }}" width="80" height="80" loading="lazy"
+                 class="w-20 h-20 rounded-full mb-2 transition-transform group-hover:scale-105"
+                 alt="{{ $a.name.display }}">
+          {{ end }}
+          <span class="text-sm font-semibold text-zinc-800 dark:text-zinc-100">{{ $a.name.display }}</span>
+          {{ with $a.role }}<span class="text-xs text-zinc-600 dark:text-zinc-400">{{ . }}</span>{{ end }}
+        </a>
+      {{ end }}
+    </div>
+  {{ end }}
+{{ end }}
+
+{{/* Press releases and publications, newest first, using the same views the
+     front page uses so a citation looks identical wherever it appears. */}}
+{{ $press := where (where site.RegularPages "Type" "press_release") "Params.projects" "intersect" (slice $id) }}
+{{ with $press.ByDate.Reverse }}
+  <h2>Press Releases</h2>
+  <div class="not-prose mb-10">
+    {{ range $i, $p := . }}
+      {{ partial "views/date-title-summary.html" (dict "item" $p "index" $i "config" (dict)) }}
+    {{ end }}
+  </div>
+{{ end }}
+
+{{ $pubs := where (where site.RegularPages "Type" "publication") "Params.projects" "intersect" (slice $id) }}
+{{ with $pubs.ByDate.Reverse }}
+  <h2>Publications</h2>
+  <div class="not-prose">
+    {{ range $i, $p := . }}
+      {{ partial "views/citation.html" (dict "item" $p "index" $i "config" (dict)) }}
+    {{ end }}
+  </div>
+{{ end }}

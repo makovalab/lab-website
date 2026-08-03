@@ -1,0 +1,33 @@
+# Navigation Links
+#   These mirror the pre-migration menu exactly: every entry is an anchor into a
+#   homepage block, and each block sets a matching `id:` in content/_index.md, so
+#   the fragment URLs people have bookmarked keep working.
+
+main:
+  - name: Home
+    url: '/#hero_carousel'
+    weight: 1
+  - name: Projects
+    url: '/#projects'
+    weight: 20
+  - name: News
+    url: '/#news'
+    weight: 30
+  - name: Press Releases
+    url: '/#press_releases'
+    weight: 40
+  - name: Publications
+    url: '/#publications'
+    weight: 50
+  - name: Videos
+    url: '/#videos'
+    weight: 60
+  - name: Members
+    url: '/#members'
+    weight: 70
+  - name: Collaborators
+    url: '/#collaborators'
+    weight: 80
+  - name: Contact
+    url: '/#contact'
+    weight: 90

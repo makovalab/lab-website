@@ -1,0 +1,23 @@
+schema: hugoblox/author/v1
+slug: k-kamali
+name:
+  display: Kaivan Kamali
+  family: Kamali
+user_groups:
+- Former Members
+projects:
+- microsatellite_variation_and_evolution
+weight: 241
+role: Computational Scientist
+bio: Kaivan is a computer scientist/software engineer, specializing in AI/ML. He enjoys data analysis
+  and applying AI/ML techniques to bioinformatics data. Currently, his research focuses on non-B DNA data.
+interests:
+- Artificial Intelligence and Machine Learning
+- Software engineering
+- Bioinformatics
+education:
+- degree: Ph.D. in Computer Science and Engineering
+  institution: Penn State University
+links:
+- icon: at-symbol
+  url: mailto:kxk302@psu.edu

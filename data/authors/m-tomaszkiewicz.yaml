@@ -1,0 +1,27 @@
+schema: hugoblox/author/v1
+slug: m-tomaszkiewicz
+name:
+  display: Marta Tomaszkiewicz
+  family: Tomaszkiewicz
+user_groups:
+- Former Members
+projects:
+- sex_chromosome_evolution
+weight: 491
+role: Research Assistant Professor
+bio: 'From the very beginning of my studies, I have been trying to
+
+  understand the evolution of sex chromosomes across invertebrate and
+
+  vertebrate taxa.  Now, my postdoctoral research is focused on the
+
+  Y chromosomes of primates.  Using comparative genomics tools I am
+
+  trying to answer important questions linked to the male heterogamety
+
+  of our closest relatives.'
+links:
+- icon: at-symbol
+  url: mailto:marta@bx.psu.edu
+- icon: hero/phone
+  url: tel:+18148632185
