@@ -1,12 +1,18 @@
 {{/*
-  Overrides the theme's citation view to add a link per project the paper
-  belongs to. Publications carry a `projects` list in their front matter -- the
-  one association the migration kept intact -- and a paper may sit under any
-  number of them, so this renders one button each.
+  Overrides the theme's citation view for two things.
 
-  A full copy of the upstream partial with the block near the bottom added,
-  because the theme offers no per-item hook inside a citation. If the citation
-  markup changes upstream, re-copy it and re-apply that block.
+  The paper's own links and the projects it belongs to share one row. Upstream
+  renders the links inside each of the APA and MLA branches, so they are lifted
+  out of both and emitted once below, together with a link per project. A paper
+  may sit under any number of projects, so this is a list.
+
+  A full copy of the upstream partial, because the theme offers no per-item hook
+  inside a citation. If the citation markup changes upstream, re-copy it and
+  re-apply the marked block -- and re-check that the attachments block still
+  appears twice, since removing it is what lets the row be shared.
+
+  "DOI" reads as "Paper Link" here; that is not done in this file but by
+  overriding the btn_doi string in i18n/en.yaml.
 */}}
 {{ $item := .item }}
 {{ $year_value := $item.Params.event_start | default $item.Date }}
@@ -32,11 +38,6 @@
     <span class="ml-1">{{ partial "components/award_badge.html" (dict "award" . "page" $item "variant" "inline") }}</span>
   {{ end }}
 
-  {{ if $has_attachments }}
-  <div class="flex flex-wrap space-x-3">
-    {{ partial "page_links" (dict "page" $item "is_list" 1) }}
-  </div>
-  {{ end }}
 
   {{/* MLA Style */}}
   {{ else }}
@@ -51,20 +52,16 @@
     <span class="ml-1">{{ partial "components/award_badge.html" (dict "award" . "page" $item "variant" "inline") }}</span>
   {{ end }}
 
-  {{ if $has_attachments }}
-  <div class="flex flex-wrap space-x-3">
-    {{ partial "page_links" (dict "page" $item "is_list" 1) }}
-  </div>
-  {{ end }}
 
   {{ end }}
 
-  {{/* --- added: one link per project this paper belongs to --- */}}
-  {{ with $item.Params.projects }}
-  <div class="mt-1 flex flex-wrap gap-2">
-    {{ range . }}
-      {{ $proj := site.GetPage (printf "/project/%s" .) }}
-      {{ with $proj }}
+  {{/* --- added: the paper's links and its projects, on one line --- */}}
+  {{ $projects := $item.Params.projects }}
+  {{ if or $has_attachments $projects }}
+  <div class="mt-1 flex flex-wrap items-center gap-x-3 gap-y-2">
+    {{ with $has_attachments }}{{ partial "page_links" (dict "page" $item "is_list" 1) }}{{ end }}
+    {{ range $projects }}
+      {{ with site.GetPage (printf "/project/%s" .) }}
         <a href="{{ .RelPermalink }}"
            class="inline-flex items-center rounded-full bg-zinc-100 dark:bg-zinc-800 px-3 py-1 text-xs font-medium text-zinc-700 dark:text-zinc-200 no-underline hover:bg-zinc-200 dark:hover:bg-zinc-700 transition">
           {{ .Params.btn_text | default .Title }}

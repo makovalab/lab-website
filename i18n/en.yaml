@@ -1,0 +1,8 @@
+# Overrides single strings from the theme's own i18n/en.yaml. Hugo merges this
+# over the module's file, so only the ids named here change.
+
+# The link on a citation goes to the paper itself. "DOI" names the identifier
+# rather than the destination, which reads as jargon to anyone outside the
+# field; "Paper Link" says where the button goes.
+- id: btn_doi
+  translation: Paper Link
