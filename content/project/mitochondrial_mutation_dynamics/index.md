@@ -54,3 +54,5 @@ url_poster = ""
 {{< figure src="image.png" title="Credit: Arslan Zaidi" >}}
 
 With sequencing now possible at high depth, we aim to examine mutation process directly, by examining the DNA of children and their parents. Mitochondrial DNA (mtDNA) provides a good starting point for such an investigation due to its compact size and high mutation rate. We have established an experimental and computational pipeline to study mtDNA mutations and heteroplasmy frequency shifts (Goto et al. 2011), therefore we are in great position to study the patterns and rates of mtDNA mutations at unprecedented detail. Our recent study suggested that mitochondrial DNA undergoes through a very small bottleneck during oogenesis and that the number of heteroplasmies in the offspring increases with maternal age at fertilization (Rebolledo Jaramillo, Su, et al. 2014). Collaborators: Anton Nekrutenko, Francesca Chiaromonte, Rasmus Nielsen (Figure : Afgan et al. 2011).
+
+{{< project_related >}}

@@ -53,3 +53,5 @@ Approximately 13% of the genome can fold into DNA structures different from the 
 
 Collaborators: [Kristin Eckert]({{< ref "/authors/ka-eckert" >}}) and [Francesca Chiaromonte]({{< ref "/authors/f-chiaromonte" >}})
 
+
+{{< project_related >}}
