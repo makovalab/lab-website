@@ -39,3 +39,9 @@ node_modules/
 # started. Master never had a lockfile; CI resolves html-proofer fresh, which is
 # what has always worked.
 Gemfile.lock
+
+# Bundler installs gems here when `bundle install` is run with a path, and Go
+# turns on vendoring the moment it sees a vendor/ directory beside go.mod --
+# then fails, because that directory holds gems and no modules.txt. It breaks
+# the Hugo build locally exactly as it broke the deploy.
+/vendor/

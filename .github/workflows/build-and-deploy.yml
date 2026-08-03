@@ -14,13 +14,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
-        env:
-          BUNDLE_BUILD__NOKOGIRI: --use-system-libraries
-
       # The theme builds its own CSS with the Tailwind CLI and its hero block
       # from preact, both of which come from package.json. Without them Hugo
       # fails on the first page it renders, so this has to run before the build.
@@ -72,6 +65,20 @@ jobs:
             echo "::error::Publication list has $cites citations, expected ~139"
             exit 1
           fi
+
+      # Ruby is only needed by html-proofer below, and it has to come after the
+      # Hugo build rather than before it. `bundler-cache: true` installs gems
+      # into vendor/bundle at the repository root, and Go turns on vendoring
+      # automatically when it sees a vendor/ directory beside go.mod -- then
+      # fails, because that directory holds gems and has no modules.txt listing
+      # the Hugo modules. The old site had its theme committed under themes/ and
+      # used no Go modules, so a stray vendor/ never mattered there.
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+        env:
+          BUNDLE_BUILD__NOKOGIRI: --use-system-libraries
 
       - name: Check Site
         working-directory: ./public
