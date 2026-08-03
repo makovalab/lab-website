@@ -105,3 +105,31 @@ figure.image-right figcaption {
     background-color: #f8fafc !important;
   }
 }
+
+/* The row hover panel in News and Press Releases is bg-zinc-50, with
+ * dark:bg-zinc-800/50 over it -- both picked to show against a plain page. On
+ * the tinted band they land within a couple of values of the background
+ * (#fafafa on #f8fafc), so the hover stopped registering. Give it something it
+ * can be seen against: white, lifted by a soft shadow so it reads as a card
+ * rising rather than a colour shift. Dark gets a white wash, which stays a step
+ * lighter than the tint instead of the half-transparent zinc landing on it.
+ *
+ * Keyed off .dark rather than a media query, to match how the theme's text
+ * colours work -- see the note above about the two disagreeing.
+ *
+ * Match on opacity-0 as well as the inset: each row carries two elements with
+ * these inset classes, the hover panel at z-0 and an invisible click target at
+ * z-20 covering the whole row. Colouring the second one paints an opaque box
+ * over the text, which is only obvious in light mode -- in dark the wash is
+ * faint enough to look fine. */
+#news [class~="-inset-x-4"][class~="opacity-0"],
+#press_releases [class~="-inset-x-4"][class~="opacity-0"] {
+  background-color: #ffffff;
+  box-shadow: 0 1px 2px rgb(15 23 42 / 0.05), 0 6px 16px rgb(15 23 42 / 0.08);
+}
+
+html.dark #news [class~="-inset-x-4"][class~="opacity-0"],
+html.dark #press_releases [class~="-inset-x-4"][class~="opacity-0"] {
+  background-color: rgb(255 255 255 / 0.08);
+  box-shadow: none;
+}
