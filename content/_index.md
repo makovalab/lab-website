@@ -183,4 +183,15 @@ sections:
       # if that is wanted back, at the cost of loading a third-party map on the
       # front page.
       map_url: https://www.google.com/maps/search/?api=1&query=40.799720,-77.862522
+      # The old site had a Name / Email / Message form here, so it is back.
+      #
+      # NOTE THE ACTION NEEDS REPLACING. This is the endpoint the old site
+      # posted to, kept so the form is wired to what it always was, but it is
+      # Formspree's legacy "email in the URL" style, which they retired in
+      # favour of https://formspree.io/f/<form-id>. Submissions to it almost
+      # certainly go nowhere. Create a form in a Formspree account and put its
+      # id here, or point form_action at whatever handler the lab prefers --
+      # until then this collects messages and drops them.
+      show_form: true
+      form_action: https://formspree.io/kdm16@bx.psu.edu
 ---
