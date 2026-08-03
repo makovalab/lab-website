@@ -10,7 +10,7 @@
 {{- $page := .page -}}
 {{- $groups := .groups -}}
 {{- $people := slice -}}
-{{- range $slug, $a := site.Data.authors -}}
+{{- range $slug, $a := hugo.Data.authors -}}
   {{- if intersect (default (slice) $a.user_groups) $groups -}}
     {{- $people = $people | append (dict "slug" $slug "author" $a) -}}
   {{- end -}}
@@ -21,7 +21,7 @@
     <title>{{ $page.Title }} on {{ site.Title }}</title>
     <link>{{ $page.Permalink }}</link>
     <description>{{ $page.Title }} on {{ site.Title }}</description>
-    <generator>Hugo</generator>{{ with site.Language.LanguageCode }}
+    <generator>Hugo</generator>{{ with site.Language.Locale }}
     <language>{{ . }}</language>{{ end }}
     <atom:link href="{{ $page.OutputFormats.Get "RSS" | default $page }}" rel="self" type="application/rss+xml" />
     {{ range $people }}

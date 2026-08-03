@@ -22,7 +22,7 @@
   {{- end -}}
 
   {{ range $index, $raw := $authors }}
-    {{- $slug := index site.Data.author_links $raw -}}
+    {{- $slug := index hugo.Data.author_links $raw -}}
     {{- $termPage := "" -}}
     {{- with $slug }}{{ $termPage = site.GetPage (printf "/authors/%s" .) }}{{ end -}}
     {{- $profile := partial "functions/get_author_profile" (dict "slug" ($raw | urlize) "title" $raw) -}}

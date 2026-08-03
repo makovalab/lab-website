@@ -18,7 +18,7 @@
      a project that ran for a decade would otherwise list everyone who ever
      touched it, which is what the alumni list on /people/ is for. */}}
 {{ $people := slice }}
-{{ range $slug, $a := site.Data.authors }}
+{{ range $slug, $a := hugo.Data.authors }}
   {{ if in (default (slice) $a.projects) $id }}
     {{ $people = $people | append (dict "slug" $slug "author" $a) }}
   {{ end }}

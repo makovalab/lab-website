@@ -147,7 +147,7 @@
      so use it. */}}
 {{ $slug := path.Base .RelPermalink }}
 {{ $names := slice }}
-{{ range $raw, $s := site.Data.author_links }}
+{{ range $raw, $s := hugo.Data.author_links }}
   {{ if eq $s $slug }}{{ $names = $names | append $raw }}{{ end }}
 {{ end }}
 {{ $papers := .Pages }}
