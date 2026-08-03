@@ -56,3 +56,21 @@ figure.image-center figcaption,
 figure.image-right figcaption {
   font-size: smaller;
 }
+
+/* The hero's DNA diagram runs right behind its wording, and the strands cross
+ * the subtitle in particular. A white halo lifts the text off the artwork
+ * without putting a panel over the diagram or fading it.
+ *
+ * The colours are pinned rather than left to Tailwind's dark: variants. The
+ * hero's background is set to white in both colour schemes (content/_index.md
+ * explains why), so `dark:text-gray-100` would otherwise turn this text light
+ * on white for anyone whose system asks for dark. */
+#hero_carousel h1 {
+  color: #111827;
+  text-shadow: 0 0 8px #fff, 0 0 16px #fff, 0 0 28px #fff;
+}
+
+#hero_carousel p {
+  color: #374151;
+  text-shadow: 0 0 6px #fff, 0 0 12px #fff, 0 0 20px #fff;
+}
