@@ -167,14 +167,20 @@ sections:
       title: Contact
       email: kdm16@bx.psu.edu
       phone: '+1-814-863-1619'
+      # The address the migration carried over kept the old theme's shape --
+      # street / city / region / postcode / country. This block reads
+      # `address.lines` or a plain string and ignores anything else, so the
+      # address was in the config but nothing rendered it and the lab's postal
+      # address had quietly dropped off the site.
       address:
-        street: 310 Wartik Lab
-        city: University Park
-        region: Pennsylvania
-        postcode: '16802'
-        country: United States
-        country_code: US
-      coordinates:
-        latitude: '40.799720'
-        longitude: '-77.862522'
+        lines:
+          - 310 Wartik Lab
+          - University Park, Pennsylvania 16802
+          - United States
+      # Built from the latitude and longitude the old config carried
+      # (40.799720, -77.862522), which nothing here reads directly. The old site
+      # showed an embedded map; this block also takes `map_embed` for an iframe
+      # if that is wanted back, at the cost of loading a third-party map on the
+      # front page.
+      map_url: https://www.google.com/maps/search/?api=1&query=40.799720,-77.862522
 ---
