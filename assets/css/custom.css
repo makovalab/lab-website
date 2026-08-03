@@ -84,3 +84,24 @@ figure.image-right figcaption {
   padding-top: 8rem;
   padding-bottom: 4.5rem;
 }
+
+/* A section given `background.color.light` + `.dark` renders the dark colour
+ * from a media query:
+ *
+ *   @media (prefers-color-scheme: dark) { .home-section-bg[style*=--dark-bg-color] {...} }
+ *   .dark .home-section-bg[style*=--dark-bg-color] {...}
+ *
+ * but every text colour on the page comes from Tailwind's class-based `dark:`
+ * variant, which keys off `.dark` on <html>. The two disagree for a reader whose
+ * system is in night mode but who has chosen this site's light theme: the
+ * section takes its dark background while the text stays dark, and the headings
+ * and summaries are unreadable -- 1.06:1 for a heading -- until a hover panel
+ * paints something light behind them.
+ *
+ * So pin the light background back whenever the site itself is in light mode.
+ * Higher specificity than the theme's rule, and !important to match it. */
+@media (prefers-color-scheme: dark) {
+  html:not(.dark) .home-section-bg[style*="--dark-bg-color"] {
+    background-color: #f8fafc !important;
+  }
+}
