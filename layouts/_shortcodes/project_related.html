@@ -36,7 +36,11 @@
       {{ range . }}
         {{ $a := .author }}
         {{ $avatar := resources.GetMatch (printf "media/authors/%s.*" .slug) }}
-        <a href="/authors/{{ .slug }}/" class="group flex flex-col items-center text-center no-underline">
+        {{/* Their own page's link, not a hand-built "/authors/..." -- this site
+             is served under /makova_lab/ and an absolute path drops it. */}}
+        {{ $href := relURL (printf "authors/%s/" .slug) }}
+        {{ with site.GetPage (printf "/authors/%s" .slug) }}{{ $href = .RelPermalink }}{{ end }}
+        <a href="{{ $href }}" class="group flex flex-col items-center text-center no-underline">
           {{ with $avatar }}
             {{ $img := .Fill "160x160 Center" }}
             <img src="{{ $img.RelPermalink }}" width="80" height="80" loading="lazy"
