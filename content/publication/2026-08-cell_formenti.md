@@ -31,7 +31,7 @@ authors:
 - D Larkin
 - C Lee
 - H Li
-- K Makova
+- KD Makova
 - P Masterson
 - T Murphy
 - K McCaffrey
