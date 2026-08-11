@@ -2,7 +2,11 @@
 title: Microsattelite markers in wood mouse and striped field mouse (genus Apodemus)
 date: 1998-02-01 00:00:00
 authors:
-- ''
+- KD Makova
+- JC Patton
+- EYu Krysanov
+- RK Chesser
+- RJ Baker
 publication_types:
 - article-journal
 publication:
