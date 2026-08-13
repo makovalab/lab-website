@@ -1,5 +1,5 @@
 ---
-title: HPRC2-A human pangenome reference with near-complete coverage of common genetic variation
+title: HPRC2":" A human pangenome reference with near-complete coverage of common genetic variation
 date: 2026-07-22 00:00:00
 authors:
 - JK Lucas
