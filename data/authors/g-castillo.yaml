@@ -4,11 +4,13 @@ name:
   display: Genesis Castillo
   family: Castillo
 user_groups:
-- Members
-# Members sort by weight, which runs alphabetically by surname with the PI
-# pinned at 1: Ko 265, Mohanty 271, Pal 361, Palova 371, Sieg 451, Stepanian
-# 501, Zeng 581, Zhao 601. Castillo comes before Ko.
-weight: 131
+- Former Members
+# Weight is one numbering shared by the members and the former members, running
+# alphabetically by surname with the PI pinned at 1. She was 131, which put her
+# between Kateryna and Ko while she was a member; among the former members that
+# landed her after Dickins. Carnahan Craig is 91 and Cechova 101, and Castillo
+# sorts between them.
+weight: 95
 
 # Everything below is still to be filled in. Uncomment what applies and delete
 # the rest; data/authors/j-sieg.yaml is a complete example of all of it.
