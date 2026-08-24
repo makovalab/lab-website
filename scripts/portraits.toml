@@ -167,3 +167,14 @@ note = """a studio headshot, so nothing had to be salvaged. Her hair falls in fr
 her shoulders, which is why the finished portrait shows no clothing where most of
 the others do -- the framing is the usual one, there is simply hair where a
 collar would be."""
+
+[marie_kratka]
+source = "photos/originals/marie_kratka.jpg"
+origin = "supplied by the lab, August 2026"
+note = """a full-length greenhouse photo, 3862x5805, so there is resolution to spare and it
+measures 600 comfortably. A blurred leaf hangs in front of her hair on the left
+and lands inside the finished disc as a pale green patch. It is not a matte
+error -- the leaf is in front of her, so no model can drop it, and
+birefnet-portrait keeps a larger and brighter piece of it than the default does.
+Left as it is rather than painted out; retouching the original is the only way
+to remove it."""

@@ -1,0 +1,36 @@
+schema: hugoblox/author/v1
+slug: m-kratka
+name:
+  display: Marie Kratka
+  family: Kratka
+user_groups:
+- Members
+projects:
+- microsatellite_variation_and_evolution
+# Weight is one numbering shared by the members and the former members, running
+# alphabetically by surname with the PI pinned at 1. Among the members that is
+# Ko 265, Mohanty 271, Sieg 451, Stepanian 501, Zeng 581, Zhao 601; among the
+# former members either side of her, Krasilnikova 261 and Kuruppumullage Don
+# 281. Kratka sorts after Ko and before both.
+weight: 266
+role: Postdoctoral Scholar
+bio: Marie joined the Makova Lab as a postdoctoral researcher after completing her PhD at the Institute
+  of Biophysics of the Czech Academy of Sciences, where her work in evolutionary genomics focused on repeatome
+  dynamics and centromere evolution in holocentric plants. Her current project aims to elucidate how non-canonical
+  DNA secondary structures influence gene expression and cell differentiation in primates. She also worked
+  on cultivated meat, pathogen surveillance, and the development of antifibrotic hydrogels. In her free
+  time, Marie enjoys plant-based cooking, book club meeting discussions, and dabbling in digital fabrication
+  crafts.
+interests:
+- Non-canonical DNA secondary structures in primates
+- Bioinformatics
+- Evolutionary genomics
+- Oxford Nanopore sequencing
+education:
+- degree: Ph.D. in Genomics and Proteomics
+  institution: Masaryk University, Czech Academy of Sciences
+# No email was supplied. Every other current member has one; add it here when it
+# is known, and the icon appears on her card and page.
+# links:
+# - icon: at-symbol
+#   url: mailto:...
