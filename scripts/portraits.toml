@@ -169,12 +169,20 @@ the others do -- the framing is the usual one, there is simply hair where a
 collar would be."""
 
 [marie_kratka]
-source = "photos/originals/marie_kratka.jpg"
-origin = "supplied by the lab, August 2026"
+source = "photos/originals/marie_kratka-retouched.jpg"
+origin = "photos/originals/marie_kratka.jpg, supplied by the lab, August 2026"
 note = """a full-length greenhouse photo, 3862x5805, so there is resolution to spare and it
-measures 600 comfortably. A blurred leaf hangs in front of her hair on the left
-and lands inside the finished disc as a pale green patch. It is not a matte
-error -- the leaf is in front of her, so no model can drop it, and
-birefnet-portrait keeps a larger and brighter piece of it than the default does.
-Left as it is rather than painted out; retouching the original is the only way
-to remove it."""
+measures 600 comfortably. A strand of hair has fallen away from the main mass on
+her left, and through the gap you can see a blurred leaf and some bright glass.
+rembg reads that gap as part of her, because hair encloses it on every side, so
+the leaf survived into the disc as a pale green wedge. No choice of model avoids
+it -- the leaf is in front of her, not behind, and birefnet-portrait keeps a
+larger and brighter piece of it than the default does.
+
+The source above is the photo with that one gap filled in with hair borrowed
+from further into the same strands; scripts/retouch_hair_gap.py does it and can
+redo it, and 0.23% of the photo is touched, all of it inside the gap. The photo
+as supplied is kept unedited at the path in `origin`. Painting the leaf out of
+the hair alone is not enough and makes it worse: the matte then keeps the bright
+glasshouse behind it instead, which reads as a khaki wedge rather than a green
+one. The gap has to be filled, not recoloured."""

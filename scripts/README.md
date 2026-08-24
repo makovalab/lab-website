@@ -133,7 +133,13 @@ They are committed on purpose: a portrait you cannot remake is a portrait you
 can only lose, and the workspace these were recovered from is not in the
 repository and has already been partly lost once.
 
-**Not everyone has one.** Fourteen members do. For the other twenty-four the
+A photo that needed retouching keeps both files: the one as it was supplied, and
+a `-retouched` copy beside it, which is the one `source` names. The photo nobody
+has edited is the thing you cannot get back, so it stays. Marie Kratka is the
+one such case so far, and `retouch_hair_gap.py` is the edit, written down rather
+than done by hand so that it can be undone or redone.
+
+**Not everyone has one.** Sixteen members do. For the other twenty-four the
 committed PNG in `static/img/member/` is the only copy in existence — there is
 no original to go back to. Treat those as originals in their own right: do not
 run them through the script hoping to improve them, because a bad matte or a
