@@ -190,3 +190,16 @@ further into the same strands. scripts/retouch_hair_gap.py does it and can redo
 it; 0.22% of the photo is touched, all of it under the leaf, and the script
 asserts the edit does not escape its region. The photo as supplied is kept
 unedited at the path in `origin`."""
+
+[mayra_mendoza_cerna]
+source = "photos/originals/mayra_mendoza_cerna.jpg"
+origin = "supplied by the lab, September 2026"
+note = """a studio headshot on a grey seamless, already square at 800x800 and already close
+to the crop this script wants, which is why so little of it is thrown away. It
+measures 600 with nothing to spare -- crown to chin is just over the 372px that
+size needs -- so it is at the top of the ladder rather than comfortably inside
+it, and a smaller copy of this photo would come out at 400.
+
+Nothing special was needed. u2net_human_seg cuts her out cleanly, including the
+loose hair on her left, and YuNet finds the eyes, so the framing comes from the
+eye route rather than a fallback."""

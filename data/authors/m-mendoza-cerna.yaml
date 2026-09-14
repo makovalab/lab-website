@@ -1,0 +1,37 @@
+schema: hugoblox/author/v1
+slug: m-mendoza-cerna
+name:
+  display: Mayra Mendoza Cerna
+  family: Mendoza Cerna
+user_groups:
+- Members
+projects:
+- microsatellite_variation_and_evolution
+# The People page draws the members and the former members as two separate
+# lists, each sorted by this weight, so what it decides is her place among the
+# members: Ko 265, Kratka 266, Mohanty 271, Sieg 451, Stepanian 501, Zeng 581,
+# Zhao 601. Mendoza Cerna sorts after Kratka and before Mohanty, hence 268.
+weight: 268
+role: Postdoctoral Scholar
+bio: Currently, Mayra focuses on telomere-to-telomere (T2T) genome assembly and pangenomics, including the
+  development of a Przewalski's horse pangenome to support conservation genomics and free-ranging population
+  health management. She is also interested in non-B DNA structures and their role in genome biology. Prior
+  to joining the Makova Lab, Mayra completed her Ph.D. in Genetics and Genomics at Texas A&M University,
+  supervised by Dr. Terje Raudsepp, where she developed a chromosome-level reference genome for the alpaca
+  (Vicugna pacos) integrating molecular cytogenetics and long-read sequencing — work that led to the
+  identification of satellite DNA sequences specific to South American camelids. Outside of science, Mayra
+  enjoys solving puzzles and spending quality time with her two young children.
+interests:
+- Telomere-to-telomere genome assembly and pangenomics
+- Molecular cytogenetics and repetitive DNA
+- Non-B DNA structures and genome biology
+education:
+- degree: Ph.D. in Genetics and Genomics
+  institution: Texas A&M University, College Station, Texas
+- degree: M.S. in Animal Production
+  institution: Universidad Nacional Agraria La Molina, Lima, Peru
+- degree: B.S. in Genetics and Biotechnology
+  institution: Universidad Nacional Mayor de San Marcos, Lima, Peru
+links:
+- icon: at-symbol
+  url: mailto:mnm6008@psu.edu
