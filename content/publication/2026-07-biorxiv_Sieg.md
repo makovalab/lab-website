@@ -16,7 +16,7 @@ abstract: Progress has been made in identifying G-quadruplexes (G4s) and other n
 
 
 projects:
-- mitochondrial_mutation_dynamics
+- microsatellite_variation_and_evolution
 hugoblox:
   ids:
     doi: https://doi.org/10.64898/2026.07.17.739277
