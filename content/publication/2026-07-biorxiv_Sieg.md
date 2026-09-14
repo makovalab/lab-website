@@ -1,0 +1,26 @@
+---
+title: Direct detection of alternative DNA conformations with long-read sequencing and machine learning approaches
+date: 2026-07-18 00:00:00
+authors:
+- JP Sieg 
+- H Zeng
+- L Heaverly
+- KD Makova
+
+publication_types:
+- article-journal
+publication:
+  name: bioRxiv
+  short_name: bioRxiv
+abstract: Progress has been made in identifying G-quadruplexes (G4s) and other non-canonical (non-B) DNA structures in live cells. However, these experiments have been limited by methodological constraints, including low resolution and specificity, and GC-sequencing bias inherent to the short-read sequencing technologies. Direct, single-molecule, and long-read technologies have the potential to address these shortcomings. Here, we investigated the use of long-read DNA sequencing with Oxford Nanopore Technologies (ONT) to detect G4 and other non-B DNA structures. We applied ONT sequencing to oligos known to form G4s in vitro, as well as to DNA from live cells. Both experiments were probed with potassium permanganate, a chemical that preferentially oxidizes single-stranded DNA (ssDNA). We determined that G4 structures can be resolved by ONT sequencing, and a G4 motif’s sequencing error profile depends on the original structural state of the G4 (as determined in vitro). We next applied machine learning algorithms (logistic regression, random forest, XGBoost, and 1D convolutional neural networks) to the raw ONT sequencing current data. Using these approaches, we could determine whether a sequencing read originated from a G4 motif in the G4 vs. B-form conformation with ∼90% accuracy. Further, we demonstrated that it is possible to sequence permanganate-modified DNA directly using ONT, with minimal effects on the read length, yield, and alignment accuracy. We conclude that at high ONT sequencing depth, this approach can identify B-folded vs. single-stranded DNA regions in cells, with ssDNA frequently present across several non-B DNA structures.
+
+
+projects:
+- mitochondrial_mutation_dynamics
+hugoblox:
+  ids:
+    doi: https://doi.org/10.64898/2026.07.17.739277
+image:
+  caption: ''
+  focal_point: ''
+---
