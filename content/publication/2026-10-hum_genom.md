@@ -14,7 +14,7 @@ publication:
   short_name: Hum Genom, IN PRESS
 abstract: 
 projects:
-- 
+- sex_chromosome_evolution
 hugoblox:
   ids:
     doi: 
