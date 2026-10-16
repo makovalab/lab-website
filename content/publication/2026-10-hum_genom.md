@@ -11,7 +11,7 @@ publication_types:
 - article-journal
 publication:
   name: Human Genomics
-  short_name: Human Genomics, IN PRESS
+  short_name: HUMAN GENOMICS, IN PRESS
 abstract: 
 projects:
 - sex_chromosome_evolution
