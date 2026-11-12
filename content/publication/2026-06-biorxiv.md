@@ -1,5 +1,5 @@
 ---
-title: Population-scale Y chromosome assemblies reveal recurrent remodeling within constrained architectures
+title: A population-scale Y chromosome assemblies reveal recurrent remodeling within constrained architectures
 date: 2026-06-06 00:00:00
 authors:
 - P Hallast
